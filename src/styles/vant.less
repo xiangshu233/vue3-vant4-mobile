@@ -1,0 +1,11 @@
+// vant 主题变量
+// 要更改全部主题色只能通过 body 选择器修改，但是无法 js 修改，也可能是我不会 o((⊙﹏⊙))o
+// ConfigProvider 虽然也能修改但是效率太低还要一个一个找对应组件的样式变量(目前采用这种方式)
+// 详情：https: //vant-contrib.gitee.io/vant/v4/#/zh-CN/config-provider#bian-liang-lie-biao
+body {
+  --van-primary-color: @primaryColor;
+}
+
+.van-action-sheet__cancel {
+  color: var(--van-primary-color) !important;
+}

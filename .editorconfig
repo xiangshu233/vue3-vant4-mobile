@@ -1,0 +1,43 @@
+# 官网是这么介绍 EditorConfig 的：
+# EditorConfig帮助开发人员在不同的编辑器和IDE之间定义和维护一致的编码样式。
+# EditorConfig 项目由用于定义编码样式的文件格式和一组文本编辑器插件组成，这些插件使编辑器能够读取文件格式并遵循定义的样式。
+# EditorConfig 文件易于阅读，并且与版本控制系统配合使用。
+# 不同的开发人员，不同的编辑器，有不同的编码风格，而 EditorConfig 就是用来协同团队开发人员之间的代码的风格及样式规范化的一个工具，
+# 而.editorconfig正是它的默认配置文件
+
+#EditorConfig 的匹配规则是从上往下，即先定义的规则优先级比后定义的优先级要高。
+
+# 告诉 EditorConfig 插件，这是根文件，不用继续往上查找
+root = true
+
+# 匹配全部文件
+[*]
+
+# 设置字符集
+charset=utf-8
+
+# 结尾换行符，可选"lf"、"cr"、"crlf"
+end_of_line=LF
+
+# 在文件结尾插入新行
+insert_final_newline=true
+
+# 缩进风格，可选"space"、"tab"
+indent_style=space
+
+# 缩进的空格数
+indent_size=2
+
+max_line_length = 100
+
+# 匹配 yml 和 yaml、json 结尾的文件
+[*.{yml,yaml,json}]
+indent_style = space
+indent_size = 2
+
+[*.md]
+# 删除一行中的前后空格
+trim_trailing_whitespace = false
+
+[Makefile]
+indent_style = tab

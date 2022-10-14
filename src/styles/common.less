@@ -1,0 +1,98 @@
+#app,
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+[data-theme='dark'] {
+
+  &,
+  * {
+    color-scheme: dark !important;
+  }
+
+  body {
+    background-color: #121212;
+    color: var(--van-text-color) !important;
+  }
+}
+
+[data-theme='light'] {
+
+  &,
+  * {
+    color-scheme: light !important;
+  }
+
+  body {
+    background-color: #fcfbfe;
+    color: var(--van-gray-8) !important;
+  }
+}
+
+a:focus,
+a:active,
+button,
+div,
+svg,
+span {
+  outline: none;
+}
+
+body {
+  line-height: 1.5;
+  font-size: 14px;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--van-cascader-active-color);
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+a:active {
+  color: var(--van-notice-bar-text-color);
+  color: rgb(#0000, 0.7);
+}
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+a:active,
+a:hover {
+  outline: 0;
+  text-decoration: none;
+}
+
+.zoom-fade-enter-active,
+.zoom-fade-leave-active {
+  transition: transform 0.35s, opacity 0.28s ease-in-out;
+}
+
+.zoom-fade-enter-from {
+  opacity: 0;
+  transform: scale(0.97);
+}
+
+.zoom-fade-leave-to {
+  opacity: 0;
+  transform: scale(1.03);
+}
+
+.xicon {
+  font-size: 42px;
+
+  svg {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}

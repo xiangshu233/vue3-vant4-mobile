@@ -1,3 +1,20 @@
-# vue3-vant4-mobile
-vue3.2 + vite + vant4 + pinia + ts 移动端 h5 模板
-文档完善中...
+# vue3-ts
+
+## Project setup
+```
+pnpm install
+```
+
+### Compiles and hot-reloads for development
+```
+pnpm dev
+```
+
+### Compiles and minifies for production
+```
+pnpm build
+```
+
+
+### Customize configuration
+See [Configuration Reference](https://vitejs.cn/guide/features.html).
