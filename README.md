@@ -1,0 +1,3 @@
+# vue3-vant4-mobile
+vue3.2 + vite + vant4 + pinia + ts 移动端 h5 模板
+文档完善中...
