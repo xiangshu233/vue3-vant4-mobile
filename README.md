@@ -1,4 +1,4 @@
-# vue3-ts
+# vue3-vant4-mobile
 
 ## Project setup
 ```
