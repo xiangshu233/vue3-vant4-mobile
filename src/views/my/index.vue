@@ -111,23 +111,14 @@
       opacity: 0.9;
     }
   }
-  .my-card {
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.7);
-    .van-cell {
-      align-items: center;
-      background: transparent;
-      &:active {
-        background-color: var(--van-cell-active-color);
-      }
-      .xicon {
-        margin-right: 10px;
-      }
+  .van-cell {
+    align-items: center;
+    background: transparent;
+    &:active {
+      background-color: var(--van-cell-active-color);
     }
-  }
-  html[data-theme='dark'] {
-    .my-card {
-      background: rgba(30, 30, 30, 0.7);
+    .xicon {
+      margin-right: 10px;
     }
   }
 </style>

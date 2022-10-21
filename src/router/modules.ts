@@ -17,7 +17,7 @@ const routeModuleList: Array<RouteRecordRaw> = [
         path: 'index',
         name: 'DashboardPage',
         meta: {
-          keepAlive: true,
+          keepAlive: false,
         },
         component: () => import('@/views/dashboard/index.vue'),
       },
@@ -81,6 +81,7 @@ const routeModuleList: Array<RouteRecordRaw> = [
     meta: {
       title: '修改昵称',
       innerPage: true,
+      keepAlive: false,
     },
     component: () => import('@/views/my/EditNickname.vue'),
   },

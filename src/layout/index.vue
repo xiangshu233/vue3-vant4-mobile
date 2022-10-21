@@ -3,6 +3,14 @@
     <van-nav-bar v-if="getShowHeader" fixed placeholder :title="getTitle" />
     <routerView class="flex-1 overflow-x-hidden">
       <template #default="{ Component, route }">
+        <!--
+          keep-alive 标签的 include 属性是根据组件的 name 判断的，
+          所以 index.vue 和 list.vue 等页面 vue 文件里一定要写上 name，
+          并且与 router 路由表中使用的 name 属性 一致，否则无效
+          本项目使用了 vite-plugin-vue-setup-extend 插件
+          可直接在 script 标签上书写 name 如：
+          <script setup lang="ts" name="DashboardPage">
+        -->
         <keep-alive v-if="keepAliveComponents" :include="keepAliveComponents">
           <component :is="Component" :key="route.fullPath" />
         </keep-alive>
@@ -46,12 +54,3 @@
 </script>
 
 <style scoped lang="less"></style>
-
-<!--
-  keep-alive 标签的 include 属性是根据组件的 name 判断的，
-  所以 index.vue 和 list.vue 等页面 vue 文件里一定要写上 name，
-  并且与 router 路由表中使用的 name 属性 一致，否则无效
-  本项目使用了 vite-plugin-vue-setup-extend 插件
-  可直接在 script 标签上书写 name 如：
-  <script setup lang="ts" name="DashboardPage">
--->

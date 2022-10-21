@@ -96,3 +96,16 @@ a:hover {
     height: 100% !important;
   }
 }
+
+.my-card {
+  backdrop-filter: blur(10px);
+  /* stylelint-disable-next-line color-function-notation */
+  background: rgba(255, 255, 255, 70%);
+}
+
+html[data-theme='dark'] {
+  .my-card {
+    /* stylelint-disable-next-line color-function-notation */
+    background: rgba(30, 30, 30, 70%);
+  }
+}

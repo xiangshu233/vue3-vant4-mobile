@@ -1,10 +1,12 @@
 <template>
   <vanConfigProvider :theme="getDarkMode" :theme-vars="getThemeVars">
-    <router-view v-slot="{ Component }">
+    <routerView v-slot="{ Component }">
       <transition name="fade-slide" mode="out-in" appear>
-        <component :is="Component" />
+        <keep-alive v-if="keepAliveComponents" :include="keepAliveComponents">
+          <component :is="Component" />
+        </keep-alive>
       </transition>
-    </router-view>
+    </routerView>
   </vanConfigProvider>
 </template>
 
@@ -12,8 +14,13 @@
   import { computed } from 'vue';
   import { useDesignSettingStore } from '@/store/modules/designSetting';
   import { darken, lighten } from '@/utils/index';
+  import { useRouteStore } from '@/store/modules/route';
 
+  const routeStore = useRouteStore();
   const designStore = useDesignSettingStore();
+
+  // 需要缓存的路由组件
+  const keepAliveComponents = computed(() => routeStore.keepAliveComponents);
 
   const getDarkMode = computed(() => designStore.getDarkMode);
 

@@ -1,117 +1,66 @@
 <template>
-  <div>
-    <van-field name="radio" label="单选框">
-      <template #input>
-        <van-radio-group v-model="checked" direction="horizontal">
-          <van-radio name="1">单选框 1</van-radio>
-          <van-radio name="2">单选框 2</van-radio>
-        </van-radio-group>
-      </template>
-    </van-field>
-    <van-field name="checkbox" label="复选框">
-      <template #input>
-        <van-checkbox v-model="checked2" shape="square" />
-      </template>
-    </van-field>
-    <van-field name="checkboxGroup" label="复选框组">
-      <template #input>
-        <van-checkbox-group v-model="groupChecked" direction="horizontal">
-          <van-checkbox name="1" shape="square">复选框 1</van-checkbox>
-          <van-checkbox name="2" shape="square">复选框 2</van-checkbox>
-        </van-checkbox-group>
-      </template>
-    </van-field>
-    <van-field name="slider" label="滑块">
-      <template #input>
-        <van-slider v-model="value" />
-      </template>
-    </van-field>
-    <van-field
-      v-model="result"
-      is-link
-      readonly
-      name="calendar"
-      label="日历"
-      placeholder="点击选择日期"
-      @click="showCalendar = true"
-    />
-    <van-calendar v-model:show="showCalendar" @confirm="onConfirm" />
-    <van-field
-      v-model="fieldValue"
-      is-link
-      readonly
-      label="地区"
-      placeholder="请选择所在地区"
-      @click="show = true"
-    />
-    <van-popup v-model:show="show" round position="bottom">
-      <van-cascader
-        v-model="cascaderValue"
-        title="请选择所在地区"
-        :options="options"
-        @close="show = false"
-        @finish="onFinish"
-      />
-    </van-popup>
-    <van-switch v-model="checked" />
-    <van-notice-bar
-      left-icon="volume-o"
-      text="无论我们能活多久，我们能够享受的只有无法分割的此刻，此外别无其他。"
-    />
-    <van-steps direction="vertical" :active="0">
-      <van-step>
-        <h3>【城市】物流状态1</h3>
-        <p>2016-07-12 12:40</p>
-      </van-step>
-      <van-step>
-        <h3>【城市】物流状态2</h3>
-        <p>2016-07-11 10:00</p>
-      </van-step>
-      <van-step>
-        <h3>快件已发货</h3>
-        <p>2016-07-10 09:30</p>
-      </van-step>
-    </van-steps>
-    <div style="height: 300px; background: #000"></div>
+  <div class="flex flex-col justify-center items-center h-screen p-60px">
+    <div class="wel-box flex flex-col items-center justify-between w-full">
+      <SvgIcon class="logo enter-y" :size="130" name="logo" />
+      <div
+        class="text-darkBlue dark:text-garyWhite text-2xl font-black mt-12 mb-4 text-center enter-y"
+        >欢迎来到 {{ title }}</div
+      >
+      <div class="w-full mt-4 mb-6 enter-y">
+        <van-swipe class="h-30" :autoplay="3000" :indicator-color="designStore.appTheme">
+          <van-swipe-item
+            class="text-gray-700 dark:text-gray-400 leading-relaxed text-center"
+            v-for="(text, index) in getSwipeText"
+            :key="index"
+          >
+            <p class="text-lg">{{ text.title }}</p>
+            <p class="text-sm">{{ text.details }}</p>
+          </van-swipe-item>
+        </van-swipe>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts" name="DashboardPage">
-  import { ref } from 'vue';
+  import { computed } from 'vue';
+  import { useDesignSettingStore } from '@/store/modules/designSetting';
+  import SvgIcon from '@/components/SvgIcon.vue';
+  import { useGlobSetting } from '@/hooks/setting';
 
-  const checked2 = ref('1');
-  const checked = ref(false);
-  const groupChecked = ref([]);
-  const value = ref(50);
+  const designStore = useDesignSettingStore();
+  const globSetting = useGlobSetting();
 
-  const result = ref('');
-  const showCalendar = ref(false);
-  const onConfirm = (date) => {
-    result.value = `${date.getMonth() + 1}/${date.getDate()}`;
-    showCalendar.value = false;
-  };
+  const { title } = globSetting;
 
-  const show = ref(false);
-  const fieldValue = ref('');
-  const cascaderValue = ref('');
-  // 选项列表，children 代表子选项，支持多级嵌套
-  const options = [
-    {
-      text: '浙江省',
-      value: '330000',
-      children: [{ text: '杭州市', value: '330100' }],
-    },
-    {
-      text: '江苏省',
-      value: '320000',
-      children: [{ text: '南京市', value: '320100' }],
-    },
-  ];
-  // 全部选项选择完毕后，会触发 finish 事件
-  const onFinish = ({ selectedOptions }) => {
-    show.value = false;
-    fieldValue.value = selectedOptions.map((option) => option.text).join('/');
-  };
+  const getSwipeText = computed(() => {
+    return [
+      {
+        title: '💡 最新技术栈',
+        details: '基于Vue3、Vant4、Vite、TypeScript、windiCss等最新技术栈开发',
+      },
+      {
+        title: '⚡️ 轻量快速的热重载',
+        details: '无论应用程序大小如何，都始终极快的模块热重载（HMR）',
+      },
+      {
+        title: '🔩 主题配置',
+        details: '具备主题配置及黑暗主题适配，且持久化保存',
+      },
+      {
+        title: '🛠️ 丰富的 Vite 插件',
+        details: '集成大部分 Vite 插件，无需繁琐配置，开箱即用',
+      },
+      {
+        title: '📊 内置 useEcharts hooks',
+        details: '满足大部分图表展示，只需要写你的 options',
+      },
+      {
+        title: '🥳 完善的登录系统、路由、Axios配置',
+        details: '所有架构已搭建完毕，你可以直接开发你的业务需求',
+      },
+    ];
+  });
 </script>
 
 <style scoped lang="less"></style>
