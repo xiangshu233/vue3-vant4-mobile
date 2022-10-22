@@ -21,6 +21,7 @@ const __APP_INFO__ = {
   lastBuildTime: format(new Date(), 'yyyy-MM-dd HH:mm:ss'),
 };
 
+/** @type {import('vite').UserConfig} */
 export default ({ command, mode }: ConfigEnv): UserConfig => {
   // process.cwd() 方法返回 Node.js 进程的当前工作目录
   // mode 返回应用的环境模式 development（开发环境） 或者 production（生产环境）

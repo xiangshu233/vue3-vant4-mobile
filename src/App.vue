@@ -1,7 +1,7 @@
 <template>
-  <vanConfigProvider :theme="getDarkMode" :theme-vars="getThemeVars">
+  <vanConfigProvider :theme="getDarkMode" :theme-vars="getThemeVars()">
     <routerView v-slot="{ Component }">
-      <transition name="fade-slide" mode="out-in" appear>
+      <transition :name="getTransitionName" mode="out-in" appear>
         <keep-alive v-if="keepAliveComponents" :include="keepAliveComponents">
           <component :is="Component" />
         </keep-alive>
@@ -11,21 +11,19 @@
 </template>
 
 <script setup lang="ts">
-  import { computed } from 'vue';
-  import { useDesignSettingStore } from '@/store/modules/designSetting';
+  import { computed, unref } from 'vue';
   import { darken, lighten } from '@/utils/index';
   import { useRouteStore } from '@/store/modules/route';
+  import { useDesignSetting } from '@/hooks/setting/useDesignSetting';
 
   const routeStore = useRouteStore();
-  const designStore = useDesignSettingStore();
+  const { getDarkMode, getAppTheme, getIsPageAnimate, getPageAnimateType } = useDesignSetting();
 
   // 需要缓存的路由组件
   const keepAliveComponents = computed(() => routeStore.keepAliveComponents);
 
-  const getDarkMode = computed(() => designStore.getDarkMode);
-
-  const getThemeVars = computed(() => {
-    const appTheme = designStore.appTheme;
+  const getThemeVars = () => {
+    const appTheme = unref(getAppTheme);
     const darkenStr = darken(appTheme, 25);
     const lightenStr = lighten(appTheme, 10);
 
@@ -66,6 +64,10 @@
       tabbarItemActiveColor: appTheme,
       treeSelectItemActiveColor: appTheme,
     };
+  };
+
+  const getTransitionName = computed(() => {
+    return unref(getIsPageAnimate) ? unref(getPageAnimateType) : undefined;
   });
 </script>
 

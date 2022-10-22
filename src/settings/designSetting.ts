@@ -1,12 +1,16 @@
 // app theme preset color
 
-interface DesignSettingState {
+export interface DesignSettingState {
   // 系统主题
   darkMode: 'light' | 'dark';
   // 系统风格
   appTheme: string;
   // 系统内置风格
   appThemeList: string[];
+  // 是否开启路由动画
+  isPageAnimate: boolean;
+  // 路由动画类型
+  pageAnimateType: string;
 }
 
 export const appThemeList: string[] = [
@@ -38,6 +42,10 @@ const setting: DesignSettingState = {
   appTheme: '#5d9dfe',
   //系统内置主题色列表
   appThemeList,
+  //是否开启路由动画
+  isPageAnimate: true,
+  //路由动画类型
+  pageAnimateType: 'zoom-fade',
 };
 
 export default setting;

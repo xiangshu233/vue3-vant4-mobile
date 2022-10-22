@@ -1,12 +1,11 @@
 <template>
   <div class="flex flex-col justify-center items-center h-screen p-60px">
     <div class="wel-box flex flex-col items-center justify-between w-full">
-      <SvgIcon class="logo enter-y" :size="130" name="logo" />
-      <div
-        class="text-darkBlue dark:text-garyWhite text-2xl font-black mt-12 mb-4 text-center enter-y"
+      <SvgIcon class="logo" :size="130" name="logo" />
+      <div class="text-darkBlue dark:text-garyWhite text-2xl font-black mt-12 mb-4 text-center"
         >欢迎来到 {{ title }}</div
       >
-      <div class="w-full mt-4 mb-6 enter-y">
+      <div class="w-full mt-4 mb-6">
         <van-swipe class="h-30" :autoplay="3000" :indicator-color="designStore.appTheme">
           <van-swipe-item
             class="text-gray-700 dark:text-gray-400 leading-relaxed text-center"

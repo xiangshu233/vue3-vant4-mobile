@@ -1,17 +1,9 @@
 import { defineStore } from 'pinia';
 import { store } from '@/store';
 import designSetting from '@/settings/designSetting';
+import type { DesignSettingState } from '@/settings/designSetting';
 
-const { darkMode, appTheme, appThemeList } = designSetting;
-
-interface DesignSettingState {
-  // 系统主题
-  darkMode: 'light' | 'dark';
-  // 系统风格
-  appTheme: string;
-  // 系统内置风格
-  appThemeList: string[];
-}
+const { darkMode, appTheme, appThemeList, isPageAnimate, pageAnimateType } = designSetting;
 
 export const useDesignSettingStore = defineStore({
   id: 'app-design-setting',
@@ -19,6 +11,8 @@ export const useDesignSettingStore = defineStore({
     darkMode,
     appTheme,
     appThemeList,
+    isPageAnimate,
+    pageAnimateType,
   }),
   getters: {
     getDarkMode(): 'light' | 'dark' {
@@ -30,10 +24,19 @@ export const useDesignSettingStore = defineStore({
     getAppThemeList(): string[] {
       return this.appThemeList;
     },
+    getIsPageAnimate(): boolean {
+      return this.isPageAnimate;
+    },
+    getPageAnimateType(): string {
+      return this.pageAnimateType;
+    },
   },
   actions: {
     setDarkMode(mode: 'light' | 'dark'): void {
       this.darkMode = mode;
+    },
+    setPageAnimateType(type: string): void {
+      this.pageAnimateType = type;
     },
   },
   // 持久化
