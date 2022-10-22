@@ -22,20 +22,20 @@
 ## 截图预览
 <p align="center">
   <span>
-    <img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022091917.png" width="280" />
-    <img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022092004.png" width="280" />
-    <img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022092015.png" width="280" />
-    <img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022092022.png" width="280" />
+    <img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022091917.png" width="300" />
+    <img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022092004.png" width="300" />
+    <img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022092015.png" width="300" />
+    <img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022092022.png" width="300" />
   </span>
 </p>
 
 
 <p align="center">
   <span>
-    <img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022092052.png" width="280" />
-    <img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022092140.png" width="280" />
-    <img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022092224.png" width="280" />
-    <img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022092358.png" width="280" />
+    <img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022092052.png" width="300" />
+    <img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022092140.png" width="300" />
+    <img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022092224.png" width="300" />
+    <img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022092358.png" width="300" />
   </span>
 </p>
 
@@ -51,11 +51,11 @@
 - [Vue-Router-Next](https://router.vuejs.org/) - 熟悉 `Vue-Router`基本使用
 - [Echarts5](https://echarts.apache.org/handbook/zh/get-started/) - 熟悉 `Echarts` 基本使用
 - [Xicons](https://www.xicons.org/#/) - 本项目推荐图标库，当然你也可以使用 `IconSVg`
-- [Postcss-px-to-viewport-8-plugin](https://github.com/lkxian888/postcss-px-to-viewport-8-plugin) - 了解手机端 px 转 viewport 插件的作用
+- [Postcss-px-to-viewport-8-plugin](https://github.com/lkxian888/postcss-px-to-viewport-8-plugin) - 了解手机端 `px` 转 `viewport` 插件的作用
 - [Lodash-es](https://www.lodashjs.com/) - `Js`高性能工具库
 - [WindiCss](https://cn.windicss.org/guide/) - 原子化 `Css`，熟悉 `Windicss` 基本使用
-- [Mock.js](https://github.com/nuysoft/Mock) - mockjs 了解基本语法
-- [Es6+](http://es6.ruanyifeng.com/) - 熟悉 es6 基本语法
+- [Mock.js](https://github.com/nuysoft/Mock) -  了解 `mockjs` 基本语法
+- [Es6+](http://es6.ruanyifeng.com/) - 熟悉 `es6` 基本语法
 
 ##  环境准备
 
