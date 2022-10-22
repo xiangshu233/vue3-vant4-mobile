@@ -4,7 +4,7 @@ specifiers:
   '@commitlint/cli': ^17.0.3
   '@commitlint/config-conventional': ^17.0.3
   '@types/fs-extra': ^9.0.13
-  '@types/lodash': ^4.14.184
+  '@types/lodash-es': ^4.17.6
   '@types/mockjs': ^1.0.6
   '@types/node': ^18.7.1
   '@typescript-eslint/eslint-plugin': ^5.33.1
@@ -67,7 +67,7 @@ specifiers:
   vue-types: ^4.2.1
 
 dependencies:
-  '@types/lodash': 4.14.184
+  '@types/lodash-es': 4.17.6
   '@vicons/antd': 0.12.0
   '@vicons/ionicons5': 0.12.0
   '@vicons/utils': 0.1.4_vue@3.2.39
@@ -572,6 +572,12 @@ packages:
   /@types/json-schema/7.0.11:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
     dev: true
+
+  /@types/lodash-es/4.17.6:
+    resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==}
+    dependencies:
+      '@types/lodash': 4.14.184
+    dev: false
 
   /@types/lodash/4.14.184:
     resolution: {integrity: sha512-RoZphVtHbxPZizt4IcILciSWiC6dcn+eZ8oX9IWEYfDMcocdd42f7NPI6fQj+6zI8y4E0L7gu2pcZKLGTRaV9Q==}
