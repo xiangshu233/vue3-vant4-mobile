@@ -17,7 +17,7 @@
 
 
 ## 介绍
-👋👋👋 Vue3 Vant4 Mobile 使用了最新的`Vue3.2`、`Vite3`、`Vant4`、`Pinia2`、`Typescript`、`Windicss` 等主流技术开发，集成 `Dark Mode`(暗黑)模式和系统主题色，且持久化保存，集成 `Mock` 数据，顺便写了个 登录/注册/找回密码 页面（包括逻辑），你只需要替换你的API即可，简单写了个包含 `NavBar`、`TabBar`的 `Layout`，顺便全页面均可以 `keep-alive`。最基本的`Axios`、`useEcharts`、`IconSvg`、也已内置，还有代码规范检查工具`Eslint`、`Prettier`、`Stylelint`。现在，你可以在此之上直接开发你的业务代码！希望你能喜欢。🥳🥳🥳
+👋👋👋 Vue3 Vant4 Mobile 使用了最新的`Vue3.2`、`Vite3`、`Vant4`、`Pinia2`、`Typescript`、`Windicss`等主流技术开发，集成 `Dark Mode`(暗黑)模式和系统主题色，并且持久化保存，集成 `Mock` 数据，顺便写了个 登录/注册/找回密码 页面（包括逻辑），你只需要替换你的API即可，顺便写了个包含 `NavBar`、`TabBar`的 `Layout`，顺便集成了`Axios`、`useEcharts`、`IconSvg`，顺便集成了代码规范检查工具`Eslint`、`Prettier`、`Stylelint`。顺便全页面均可以 `keep-alive`，顺便......好吧没有了。现在，你可以在此之上直接开发你的业务代码！希望你能喜欢。🥳🥳🥳
 
 ## 截图预览
 <p align="center">
@@ -40,7 +40,8 @@
 </p>
 
 ## 线上预览
-- [vue3-vant4-mobile](https://vue3-vant4-mobile.xiangshu233.cn/)
+
+- <a href="https://vue3-vant4-mobile.xiangshu233.cn/" target="_blank">vue3-vant4-mobile</a>
 
 账号：admin，密码：123456
 
