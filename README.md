@@ -1,6 +1,7 @@
 <div align="center">
   <a href="https://github.com/xiangshu233/vue3-vant4-mobile">
-    <img alt="Vue3Vant4MobileLogo" width="200" height="200" src="https://raw.githubusercontent.com/xiangshu233/blogAssets/main/2022/10/logo.svg">
+    <img alt="Vue3Vant4MobileLogo" width="200" height="200" src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/07/logo.svg">
+
   </a>
 </div><br><br>
 
