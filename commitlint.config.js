@@ -63,8 +63,8 @@ module.exports = {
     customScopesAlign: !scopeComplete ? 'top' : 'bottom',
     defaultScope: scopeComplete,
     scopes: [...scopes, 'mock'],
-    allowEmptyIssuePrefixs: false,
-    allowCustomIssuePrefixs: false,
+    allowEmptyIssuePrefixs: true,
+    allowCustomIssuePrefixs: true,
     messages: {
       type: '选择你要提交的类型 :',
       scope: '选择一个提交范围（可选）:',
