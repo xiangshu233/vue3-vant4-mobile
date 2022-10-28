@@ -13,14 +13,14 @@
   <img src="https://img.shields.io/github/issues-closed/xiangshu233/vue3-vant4-mobile" alt="issues" />
 </p>
 
-
 <h1 align="center">vue3-vant4-mobile</h1>
 
-
 ## 介绍
-👋👋👋 Vue3 Vant4 Mobile 使用了最新的`Vue3.2`、`Vite3`、`Vant4`、`Pinia2`、`Typescript`、`Windicss`等主流技术开发，集成 `Dark Mode`(暗黑)模式和系统主题色，并且持久化保存，集成 `Mock` 数据，顺便写了个 登录/注册/找回密码 页面（包括逻辑），你只需要替换你的API即可，顺便写了个包含 `NavBar`、`TabBar`的 `Layout`，顺便集成了`Axios`、`useEcharts`、`IconSvg`，顺便集成了代码规范检查工具`Eslint`、`Prettier`、`Stylelint`。顺便全页面均可以 `keep-alive`，顺便......好吧没有了。现在，你可以在此之上直接开发你的业务代码！希望你能喜欢。🥳🥳🥳
+
+👋👋👋 Vue3 Vant4 Mobile 使用了最新的`Vue3.2`、`Vite3`、`Vant4`、`Pinia2`、`Typescript`、`Windicss`等主流技术开发，集成 `Dark Mode`(暗黑)模式和系统主题色，并且持久化保存，集成 `Mock` 数据，顺便写了个 登录/注册/找回密码 页面（包括逻辑），你只需要替换你的 API 即可，顺便写了个包含 `NavBar`、`TabBar`的 `Layout`，顺便集成了`Axios`、`useEcharts`、`IconSvg`，顺便集成了代码规范检查工具`Eslint`、`Prettier`、`Stylelint`。顺便全页面均可以 `keep-alive`，顺便......好吧没有了。现在，你可以在此之上直接开发你的业务代码！希望你能喜欢。🥳🥳🥳
 
 ## 截图预览
+
 <p align="center">
   <span>
     <img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022091917.png" width="400" />
@@ -29,7 +29,6 @@
     <img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022092022.png" width="400" />
   </span>
 </p>
-
 
 <p align="center">
   <span>
@@ -42,37 +41,35 @@
 
 ## 线上预览
 
-- <a href="https://vue3-vant4-mobile.xiangshu233.cn/" target="_blank">vue3-vant4-mobile</a>
+- <a href="https://vvmobile.xiangshu233.cn/" target="_blank">vue3-vant4-mobile</a>
 
 账号：admin，密码：123456
 
 账号：test，密码：123456
 
-
 或者扫描以下二维码进入手机演示
+
 <p align="center">
-  <img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/vue3-vant4-mobile-QR-code.png" width="200" />
+  <img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/07/vue3-vant4-mobile-QR-code.png" width="200" />
 </p>
 
 ## 基础知识
 
-既然你搜了 `vue3`、`vant4` 此类关键词，则默认你会用这些配套技术栈。
-
 - [Vite](https://cn.vitejs.dev/) - 熟悉 `Vite` 特性
 - [Vue3](https://v3.vuejs.org/) - 熟悉 `Vue3` 基础语法
-- [Vant4](https://youzan.github.io/vant/v4/#/zh-CN) - `vant4` 组件基本使用
-- [Pinia](https://pinia.vuejs.org/) -  比 `Vuex` 简单
-- [TypeScript](https://www.typescriptlang.org/) -  熟悉 `TypeScript` 基本语法
+- [Vant4](https://youzan.github.io/vant/v4/#/zh-CN) - 掌握 `vant4` 组件基本使用
+- [Pinia](https://pinia.vuejs.org/) - 熟悉 `Pinia` 特性
+- [TypeScript](https://www.typescriptlang.org/) - 熟悉 `TypeScript` 基本语法
 - [Vue-Router-Next](https://router.vuejs.org/) - 熟悉 `Vue-Router`基本使用
 - [Echarts5](https://echarts.apache.org/handbook/zh/get-started/) - 熟悉 `Echarts` 基本使用
 - [Xicons](https://www.xicons.org/#/) - 本项目推荐图标库，当然你也可以使用 `IconSVg`
 - [Postcss-px-to-viewport-8-plugin](https://github.com/lkxian888/postcss-px-to-viewport-8-plugin) - 了解手机端 `px` 转 `viewport` 插件的作用
-- [Lodash-es](https://www.lodashjs.com/) - `Js`高性能工具库
-- [WindiCss](https://cn.windicss.org/guide/) - 原子化 `Css`，熟悉 `Windicss` 基本使用
-- [Mock.js](https://github.com/nuysoft/Mock) -  了解 `mockjs` 基本语法
-- [Es6+](http://es6.ruanyifeng.com/) - 熟悉 `es6` 基本语法
+- [Lodash-es](https://www.lodashjs.com/) - `JS`高性能工具库
+- [WindiCss](https://cn.windicss.org/guide/) - 原子化 `CSS`，熟悉 `Windicss` 基本使用
+- [Mock.js](https://github.com/nuysoft/Mock) - 了解 `Mockjs` 基本语法
+- [Es6+](http://es6.ruanyifeng.com/) - 熟悉 `ES6` 基本语法
 
-##  环境准备
+## 环境准备
 
 本地环境需要安装 [pnpm7.x](https://www.pnpm.cn/)、[Node.js](http://nodejs.org/) 和 [Git](https://git-scm.com/)
 
@@ -143,17 +140,12 @@ pnpm build
 支持现代浏览器, 不支持 IE
 
 | [![ Edge](https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png)](http://godban.github.io/browsers-support-badges/) IE | [![ Edge](https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png)](http://godban.github.io/browsers-support-badges/) Edge | [![Firefox](https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png)](http://godban.github.io/browsers-support-badges/) Firefox | [![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png)](http://godban.github.io/browsers-support-badges/) Chrome | [![Safari](https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png)](http://godban.github.io/browsers-support-badges/) Safari |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| not support                                                  | last 2 versions                                              | last 2 versions                                              | last 2 versions                                              | last 2 versions                                              |
+| --- | --- | --- | --- | --- |
+| not support | last 2 versions | last 2 versions | last 2 versions | last 2 versions |
 
 ## 维护者
 
 [@xiangshu233](https://github.com/xiangshu233)
-
-
-## 小声比比
-
-这个Logo是我在网上随便找的，不知道是谁的Logo（🧎‍♂️🧎‍♂️🧎‍♂️），如果有侵权之类的（萌新不懂），请[邮箱](mailto:xiangshu233@outlook.com)通知我一下，秒删。另外本项目代码大量借鉴（复制）[naive-ui-admin](https://github.com/jekip/naive-ui-admin)、[vue-vben-admin](https://github.com/vbenjs/vue-vben-admin) 代码/逻辑，我太菜了。😭😭😭
 
 ## LICENSE
 
