@@ -43,7 +43,7 @@ specifiers:
   postcss: ^8.4.16
   postcss-html: ^1.0.0
   postcss-less: ^6.0.0
-  postcss-px-to-viewport-8-plugin: ^1.1.5
+  postcss-mobile-forever: ^2.2.2
   prettier: ^2.7.1
   qs: ^6.11.0
   rimraf: ^3.0.2
@@ -121,7 +121,7 @@ devDependencies:
   postcss: 8.4.16
   postcss-html: 1.5.0
   postcss-less: 6.0.0_postcss@8.4.16
-  postcss-px-to-viewport-8-plugin: 1.1.5
+  postcss-mobile-forever: 2.2.2_postcss@8.4.16
   prettier: 2.7.1
   rimraf: 3.0.2
   rollup: 2.79.0
@@ -4068,18 +4068,20 @@ packages:
     resolution: {integrity: sha512-3sOlxmbKcSHMjlUXQZKQ06jOswE7oVkXPxmZdoB1r5l0q6gTFTQSHxNxOrCccElbW7dxNytifNEo8qidX2Vsig==}
     dev: true
 
+  /postcss-mobile-forever/2.2.2_postcss@8.4.16:
+    resolution: {integrity: sha512-biAaA41V0eiabqZ6fAykhByK+rYADUYQLg6Wvf1FcvJSEE98XRrDykSKAgrK6/+5UhIMJHBjoUJIfEouI5bhHA==}
+    peerDependencies:
+      postcss: ^8.0.0
+    dependencies:
+      postcss: 8.4.16
+    dev: true
+
   /postcss-prefix-selector/1.16.0_postcss@5.2.18:
     resolution: {integrity: sha512-rdVMIi7Q4B0XbXqNUEI+Z4E+pueiu/CS5E6vRCQommzdQ/sgsS4dK42U7GX8oJR+TJOtT+Qv3GkNo6iijUMp3Q==}
     peerDependencies:
       postcss: '>4 <9'
     dependencies:
       postcss: 5.2.18
-    dev: true
-
-  /postcss-px-to-viewport-8-plugin/1.1.5:
-    resolution: {integrity: sha512-qM6x2NyGbRj8R15o/LCbw5hacU+XK1s80zTvWgLjHsOP8B9P1KbDZbNS11BG6/WPut8LR8DvEU5iKw8JnQn9MQ==}
-    dependencies:
-      object-assign: 4.1.1
     dev: true
 
   /postcss-resolve-nested-selector/0.1.1:
