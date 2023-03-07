@@ -1,5 +1,5 @@
 <template>
-  <div class="enter-y fixed bottom-0 w-full !-z-5">
+  <div class="enter-y fixed bottom-0 w-full !-z-5 wave-wrapper">
     <svg
       class="ignore-waves"
       xmlns="http://www.w3.org/2000/svg"
@@ -52,6 +52,12 @@
 </script>
 
 <style scoped lang="less">
+  .wave-wrapper {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+  }
   .ignore-waves {
     position: relative;
     display: block;
