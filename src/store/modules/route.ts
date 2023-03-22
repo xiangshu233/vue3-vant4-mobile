@@ -21,13 +21,13 @@ export const useRouteStore = defineStore({
     },
   },
   actions: {
-    setRouters(routers) {
+    setRouters(routers: RouteRecordRaw[]) {
       this.routers = routers;
     },
-    setMenus(menus) {
+    setMenus(menus: RouteRecordRaw[]) {
       this.menus = menus;
     },
-    setKeepAliveComponents(compNames) {
+    setKeepAliveComponents(compNames: string[]) {
       // 设置需要缓存的组件
       this.keepAliveComponents = compNames;
     },
