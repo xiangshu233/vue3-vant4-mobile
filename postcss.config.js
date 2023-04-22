@@ -25,15 +25,14 @@ const baseViewportOpts = {
   // 需要忽略的CSS选择器，不会转为视口单位，使用原有的px等单位。
   // 下面配置表示类名中含有'keep-px'以及'.ignore'类都不会被转换
   selectorBlackList: ['.ignore', 'keep-px'],
+  // 下面配置表示属性值包含 '1px solid' 的内容不会转换
+  valueBlackList: ['1px solid'],
   // exclude: [/node_modules/], // 忽略某些文件夹下的文件或特定文件
   // include: [/src/], // 如果设置了include，那将只有匹配到的文件才会被转换
   border: true, // 为桌面端和横屏视图添加边框
   disableDesktop: false, // 关闭桌面端适配
   disableLandscape: false, // 关闭横屏适配
-  mobileConfig: {
-    viewportUnit: 'vw', // 指定需要转换成的视口单位，建议使用 vw
-    fontViewportUnit: 'vw', // 字体使用的视口单位
-  },
+  mobileUnit: 'vw', // 指定需要转换成的视口单位，建议使用 vw
 };
 
 module.exports = {

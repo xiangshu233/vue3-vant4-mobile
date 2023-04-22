@@ -43,7 +43,7 @@ specifiers:
   postcss: ^8.4.16
   postcss-html: ^1.0.0
   postcss-less: ^6.0.0
-  postcss-mobile-forever: ^2.2.2
+  postcss-mobile-forever: ^3.3.1
   prettier: ^2.7.1
   qs: ^6.11.0
   rimraf: ^3.0.2
@@ -121,7 +121,7 @@ devDependencies:
   postcss: 8.4.16
   postcss-html: 1.5.0
   postcss-less: 6.0.0_postcss@8.4.16
-  postcss-mobile-forever: 2.2.2_postcss@8.4.16
+  postcss-mobile-forever: 3.3.1_postcss@8.4.16
   prettier: 2.7.1
   rimraf: 3.0.2
   rollup: 2.79.0
@@ -4068,8 +4068,8 @@ packages:
     resolution: {integrity: sha512-3sOlxmbKcSHMjlUXQZKQ06jOswE7oVkXPxmZdoB1r5l0q6gTFTQSHxNxOrCccElbW7dxNytifNEo8qidX2Vsig==}
     dev: true
 
-  /postcss-mobile-forever/2.2.2_postcss@8.4.16:
-    resolution: {integrity: sha512-biAaA41V0eiabqZ6fAykhByK+rYADUYQLg6Wvf1FcvJSEE98XRrDykSKAgrK6/+5UhIMJHBjoUJIfEouI5bhHA==}
+  /postcss-mobile-forever/3.3.1_postcss@8.4.16:
+    resolution: {integrity: sha512-NShcD9Nk0PBrFV6pghn3M6JvZOiK1AvPFvhneTOecmAmxmGn3DXJVaWcULM4tk0CtEgYLZCFY2FBDP8hhwRlnw==}
     peerDependencies:
       postcss: ^8.0.0
     dependencies:
