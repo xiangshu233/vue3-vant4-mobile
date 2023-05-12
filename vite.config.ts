@@ -121,12 +121,12 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       //     }
       // }
     },
-
-    optimizeDeps: {
-      include: [],
-      // 打包时强制排除的依赖项
-      exclude: [],
-    },
+    // 有需要再打开，否则 既不优化 也不排除
+    // optimizeDeps: {
+    //   include: [],
+    //   // 打包时强制排除的依赖项
+    //   exclude: [],
+    // },
 
     // 加载插件
     plugins: createVitePlugins(viteEnv, isBuild, prodMock),
