@@ -52,12 +52,23 @@
 </script>
 
 <style scoped lang="less">
+  @keyframes move-forever {
+    0% {
+      transform: translate3d(-90px, 0, 0);
+    }
+
+    100% {
+      transform: translate3d(85px, 0, 0);
+    }
+  }
+
   .wave-wrapper {
     position: fixed;
     width: 100%;
     left: 0;
     bottom: 0;
   }
+
   .ignore-waves {
     position: relative;
     display: block;
@@ -91,15 +102,5 @@
   .parallax > use:nth-child(4) {
     animation-delay: -5s;
     animation-duration: 16s;
-  }
-
-  @keyframes move-forever {
-    0% {
-      transform: translate3d(-90px, 0, 0);
-    }
-
-    100% {
-      transform: translate3d(85px, 0, 0);
-    }
   }
 </style>

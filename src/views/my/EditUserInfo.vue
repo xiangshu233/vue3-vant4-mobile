@@ -167,9 +167,11 @@
     width: 140px;
     height: 140px;
   }
+
   .cover {
     width: 170px;
     height: 100px;
+
     :deep(.van-image__img) {
       border-radius: 10px !important;
     }

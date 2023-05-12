@@ -24,6 +24,7 @@
   :deep(.van-field__left-icon) {
     display: flex;
   }
+
   :deep(.van-field__right-icon) {
     display: flex;
   }

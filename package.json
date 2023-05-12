@@ -1,7 +1,7 @@
 {
   "name": "vue3-vant4-mobile",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "xiangshu233",
     "email": "xiangshu233@outlook.com",
@@ -19,8 +19,9 @@
     "preview": "vite preview",
     "clean:cache": "rimraf node_modules/.cache/ && rimraf node_modules/.vite",
     "clean:lib": "rimraf node_modules",
+    "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,vue}\"",
     "lint:lint-staged": "lint-staged",
-    "lint:eslint": "eslint \"{src}/**/*.{vue,ts,tsx}\" --fix",
+    "lint:eslint": "eslint \"./src/**/*.{vue,ts,tsx}\" --fix",
     "lint:prettier": "prettier --write --loglevel warn \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
     "lint:stylelint": "stylelint --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
     "prepare": "husky install"
@@ -103,9 +104,9 @@
     "pnpm": ">=7"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
+    "*.{js,jsx,ts,tsx,vue}": [
+      "npm run lint",
+      "git add"
     ],
     "{!(package)*.json,*.code-snippets,.!(browserslist)*rc}": [
       "prettier --write--parser json"

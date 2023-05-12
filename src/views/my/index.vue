@@ -100,6 +100,7 @@
   .my-bg {
     clip-path: inset(0 -55% 0 -55% round 0 0 100% 100%);
     background-size: cover;
+
     &::after {
       content: '';
       position: absolute;
@@ -111,12 +112,15 @@
       opacity: 0.9;
     }
   }
+
   .van-cell {
     align-items: center;
     background: transparent;
+
     &:active {
       background-color: var(--van-cell-active-color);
     }
+
     .xicon {
       margin-right: 10px;
     }

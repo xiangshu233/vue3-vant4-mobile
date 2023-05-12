@@ -48,16 +48,16 @@
   import { useGlobSetting } from '@/hooks/setting';
   import { useRouter } from 'vue-router';
 
-  import { updateDarkSign } from '@/theme';
+  // import { updateDarkSign } from '@/theme';
 
-  const getDarkMode = computed({
-    get: () => designStore.getDarkMode === 'dark',
-    set: (value) => {
-      const darkMode = value ? 'dark' : 'light';
-      updateDarkSign(darkMode);
-      designStore.setDarkMode(darkMode);
-    },
-  });
+  // const getDarkMode = computed({
+  //   get: () => designStore.getDarkMode === 'dark',
+  //   set: (value) => {
+  //     const darkMode = value ? 'dark' : 'light';
+  //     updateDarkSign(darkMode);
+  //     designStore.setDarkMode(darkMode);
+  //   },
+  // });
 
   const designStore = useDesignSettingStore();
   const globSetting = useGlobSetting();
@@ -92,11 +92,13 @@
     min-height: 50vh;
     max-width: 45vh;
     min-width: 30vh;
+
     .wel-top {
       display: flex;
       align-items: center;
       flex-direction: column;
     }
+
     .wel-bottom {
       display: flex;
       align-items: center;
