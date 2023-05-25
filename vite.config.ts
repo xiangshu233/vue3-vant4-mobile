@@ -69,8 +69,9 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
 
     esbuild: {
       // 使用 esbuild 压缩 剔除 console.log
-      pure: VITE_DROP_CONSOLE ? ['console.log', 'debugger'] : [],
+      // pure: VITE_DROP_CONSOLE ? ['console.log', 'debugger'] : [],
       // minify: true, // minify: true, 等于 minify: 'esbuild',
+      drop: VITE_DROP_CONSOLE ? ['debugger', 'console'] : [],
     },
 
     build: {

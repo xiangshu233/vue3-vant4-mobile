@@ -12,6 +12,7 @@
     "bootstrap": "pnpm install",
     "serve": "npm run dev",
     "dev": "vite",
+    "build:pre": "cross-env NODE_ENV=pre vite build -m pre && esno ./build/script/postBuild.ts",
     "build": "cross-env NODE_ENV=production vite build  && esno ./build/script/postBuild.ts",
     "build:no-cache": "pnpm clean:cache && npm run build",
     "report": "cross-env REPORT=true npm run build",
