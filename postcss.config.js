@@ -14,9 +14,10 @@ const autoprefixer = require('autoprefixer');
 const viewport = require('postcss-mobile-forever');
 
 const baseViewportOpts = {
-  rootSelector: '#app', // 根元素选择器，用于设置桌面端和横屏时的居中样式
+  appSelector: '#app', // 根元素选择器，用于设置桌面端和横屏时的居中样式
   viewportWidth: 750, // 设计稿的视口宽度，可传递函数动态生成视图宽度
   unitPrecision: 3, // 单位转换后保留的精度（很多时候无法整除）
+  maxDisplayWidth: 600, // 桌面端最大展示宽度
   propList: [
     '*',
     // '!font-size'
@@ -29,10 +30,8 @@ const baseViewportOpts = {
   valueBlackList: ['1px solid'],
   // exclude: [/node_modules/], // 忽略某些文件夹下的文件或特定文件
   // include: [/src/], // 如果设置了include，那将只有匹配到的文件才会被转换
-  border: true, // 为桌面端和横屏视图添加边框
-  disableDesktop: false, // 关闭桌面端适配
-  disableLandscape: false, // 关闭横屏适配
   mobileUnit: 'vw', // 指定需要转换成的视口单位，建议使用 vw
+  rootContainingBlockSelectorList: ["van-popup--bottom"], // 指定包含块是根包含块的选择器，这种选择器的定位通常是 `fixed`，但是选择器内没有 `position: fixed`
 };
 
 module.exports = {
