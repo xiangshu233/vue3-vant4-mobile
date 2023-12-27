@@ -10,6 +10,11 @@
  * 改用postcss-px-to-viewport-8-plugin替代
  */
 
+// FIXME: 升级 vite5 后控制台警告：The CJS build of Vite's Node API is deprecated.
+// 将 "type": "module" 添加到 package.json 后，
+// 所有*.js文件现在都解释为 ESM，并且需要使用 ESM 语法。您可以使用扩展名重命名文件.cjs来继续使用 CJS。
+// require 是cjs 语法
+
 const autoprefixer = require('autoprefixer');
 const viewport = require('postcss-mobile-forever');
 
@@ -21,7 +26,8 @@ const baseViewportOpts = {
   propList: [
     '*',
     // '!font-size'
-  ], // 能转化为vw的属性列表，!font-size表示font-size后面的单位不会被转换
+  ],
+  // 能转化为vw的属性列表，!font-size表示font-size后面的单位不会被转换
   // 指定不转换为视口单位的类，可以自定义，可以无限添加，建议定义一至两个通用的类名
   // 需要忽略的CSS选择器，不会转为视口单位，使用原有的px等单位。
   // 下面配置表示类名中含有'keep-px'以及'.ignore'类都不会被转换
