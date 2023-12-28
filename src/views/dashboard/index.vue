@@ -21,11 +21,15 @@
   </div>
 </template>
 
-<script setup lang="ts" name="DashboardPage">
+<script setup lang="ts">
   import { computed } from 'vue';
   import { useDesignSettingStore } from '@/store/modules/designSetting';
   import SvgIcon from '@/components/SvgIcon.vue';
   import { useGlobSetting } from '@/hooks/setting';
+
+  defineOptions({
+    name: 'DashboardPage',
+  });
 
   const designStore = useDesignSettingStore();
   const globSetting = useGlobSetting();
