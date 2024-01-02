@@ -9,6 +9,7 @@ import pkg from './package.json';
 import { format } from 'date-fns';
 const { dependencies, devDependencies, name, version } = pkg;
 
+// 当使用文件系统路径的别名时，请始终使用绝对路径。相对路径的别名值会原封不动地被使用，因此无法被正常解析。
 // path.resolve () 方法用于将一系列路径段解析为绝对路径。它通过处理从右到左的路径序列来工作，在每个路径之前添加，直到创建绝对路径。
 function pathResolve(dir: string) {
   return resolve(process.cwd(), '.', dir);
@@ -69,7 +70,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
 
     esbuild: {
       // 使用 esbuild 压缩 剔除 console.log
-      pure: VITE_DROP_CONSOLE ? ['console.log', 'debugger'] : [],
+      drop: VITE_DROP_CONSOLE ? ['debugger', 'console'] : [],
       // minify: true, // minify: true, 等于 minify: 'esbuild',
     },
 
@@ -111,8 +112,16 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
 
     server: {
       host: true,
-      port: VITE_PORT,
+      // 服务启动时是否自动打开浏览器
+      open: true,
+      // 服务端口号
+      port: Number(VITE_PORT),
       proxy: createProxy(VITE_PROXY),
+      // 预热文件以降低启动期间的初始页面加载时长
+      warmup: {
+        // 预热的客户端文件：首页、views、 components
+        clientFiles: ['./index.html', './src/{views,components}/*'],
+      },
       // proxy: {
       //     '/api': {
       //         target: '',
@@ -122,11 +131,12 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       // }
     },
 
-    optimizeDeps: {
-      include: [],
-      // 打包时强制排除的依赖项
-      exclude: [],
-    },
+    // 有需要再打开，否则 既不优化 也不排除
+    // optimizeDeps: {
+    //   include: [],
+    //   // 打包时强制排除的依赖项
+    //   exclude: [],
+    // },
 
     // 加载插件
     plugins: createVitePlugins(viteEnv, isBuild, prodMock),
