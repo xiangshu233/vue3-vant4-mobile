@@ -15,6 +15,10 @@
 
 <h1 align="center">vue3-vant4-mobile</h1>
 
+## 重要提醒
+
+⚠️⚠️⚠️ feature 分支正在升级相关依赖，内容尚不稳定，建议使用 main 分支
+
 ## 介绍
 
 👋👋👋 Vue3 Vant4 Mobile 使用了最新的 `Vue3.2`、`Vite3`、`Vant4`、`Pinia2`、`TypeScript`、`WindiCSS` 等主流技术开发，集成 `Dark Mode`（暗黑）模式和系统主题色，并且持久化保存，集成 `Mock` 数据，顺便写了个 登录/注册/找回密码 页面（包括逻辑），你只需要替换你的 API 即可，顺便写了个包含 `NavBar`、`TabBar` 的 Layout，顺便集成了 `Axios`、`useECharts`、`IconSvg`，顺便集成了代码规范检查工具 `Eslint`、`Prettier`、`Stylelint`。顺便全页面均可以 `<keep-alive>`，顺便......好吧没有了。现在，你可以在此之上直接开发你的业务代码！希望你能喜欢。🥳🥳🥳
@@ -31,7 +35,6 @@
 		<td><img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022092022.png" width="400" alt="我的（我的信息页面）" /></td>
 	</tr>
 </table>
-
 
 <details>
 <summary>展开预览暗黑模式下的界面截图。</summary>
@@ -51,7 +54,7 @@
 
 ## 线上预览
 
-预览链接：*[https://vvmobile.xiangshu233.cn/](https://vvmobile.xiangshu233.cn/)*
+预览链接：_[https://vvmobile.xiangshu233.cn/](https://vvmobile.xiangshu233.cn/)_
 
 账号：admin，密码：123456
 
