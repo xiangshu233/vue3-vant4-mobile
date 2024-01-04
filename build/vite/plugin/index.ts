@@ -1,9 +1,7 @@
 import type { PluginOption } from 'vite';
 import Components from 'unplugin-vue-components/vite';
 import { VantResolver } from 'unplugin-vue-components/resolvers';
-
 import vue from '@vitejs/plugin-vue';
-import vueSetupExtend from 'vite-plugin-vue-setup-extend';
 import WindiCSS from 'vite-plugin-windicss';
 
 import { configHtmlPlugin } from './html';
@@ -29,8 +27,6 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean, prodMock: 
   const vitePlugins: (PluginOption | PluginOption[])[] = [
     // have to
     vue(),
-    // support name https://github.com/vbenjs/vite-plugin-vue-setup-extend
-    vueSetupExtend(),
     // 按需引入VantUi且自动创建组件声明
     Components({
       dts: true,
