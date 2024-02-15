@@ -5,7 +5,7 @@
       class="my-card shadow-xl relative -top-150px mx-40px rounded-2xl flex flex-col items-center pb-20px"
     >
       <van-image
-        class="border-4 !absolute -top-90px h-170px w-170px"
+        class="border-4 border-solid !absolute -top-90px h-170px w-170px"
         round
         fit="cover"
         :src="avatar"
@@ -100,6 +100,7 @@
   .my-bg {
     clip-path: inset(0 -55% 0 -55% round 0 0 100% 100%);
     background-size: cover;
+
     &::after {
       content: '';
       position: absolute;
@@ -111,12 +112,15 @@
       opacity: 0.9;
     }
   }
+
   .van-cell {
     align-items: center;
     background: transparent;
+
     &:active {
       background-color: var(--van-cell-active-color);
     }
+
     .xicon {
       margin-right: 10px;
     }

@@ -1,6 +1,9 @@
 import 'virtual:uno.css';
 import 'vant/es/toast/style';
 import 'vant/es/dialog/style';
+import '@unocss/reset/tailwind.css';
+import '@unocss/reset/tailwind-compat.css';
+
 // Register icon sprite
 import 'virtual:svg-icons-register';
 import { createApp } from 'vue';

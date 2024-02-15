@@ -8,6 +8,9 @@ dependencies:
   '@types/lodash-es':
     specifier: ^4.17.12
     version: 4.17.12
+  '@unocss/reset':
+    specifier: ^0.58.5
+    version: 0.58.5
   '@vicons/antd':
     specifier: ^0.12.0
     version: 0.12.0
@@ -79,9 +82,6 @@ devDependencies:
   '@typescript-eslint/parser':
     specifier: ^6.16.0
     version: 6.16.0(eslint@8.56.0)(typescript@5.3.3)
-  '@unocss/preset-rem-to-px':
-    specifier: ^0.58.4
-    version: 0.58.5
   '@unocss/transformer-directives':
     specifier: ^0.58.4
     version: 0.58.5
@@ -1750,12 +1750,6 @@ packages:
       '@unocss/rule-utils': 0.58.5
     dev: true
 
-  /@unocss/preset-rem-to-px@0.58.5:
-    resolution: {integrity: sha512-gM1jy/HoUS/HeiuOt5u+fAAWT/PPLqfC8eWGRrtqm22zKOq0Ea/Lp8Jh+BApc1cGby2xw6lwiFJRbFbiPaFoNw==}
-    dependencies:
-      '@unocss/core': 0.58.5
-    dev: true
-
   /@unocss/preset-tagify@0.58.5:
     resolution: {integrity: sha512-UB9IXi8vA/SzmmRLMWR7bzeBpxpiRo7y9xk3ruvDddYlsyiwIeDIMwG23YtcA6q41FDQvkrmvTxUEH9LFlv6aA==}
     dependencies:
@@ -1795,7 +1789,6 @@ packages:
 
   /@unocss/reset@0.58.5:
     resolution: {integrity: sha512-2wMrkCj3SSb5hrx9TKs5jZa34QIRkHv9FotbJutAPo7o8hx+XXn56ogzdoUrcFPJZJUx2R2nyOVbSlGMIjtFtw==}
-    dev: true
 
   /@unocss/rule-utils@0.58.5:
     resolution: {integrity: sha512-w0sGJoeUGwMWLVFLEE9PDiv/fQcQqZnTIIQLYNCjTdqXDRlwTp9ACW0h47x/hAAIXdOtEOOBuTfjGD79GznUmA==}
