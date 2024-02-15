@@ -21,7 +21,7 @@
 
 ## 介绍
 
-👋👋👋 Vue3 Vant4 Mobile 使用了最新的 `Vue3.2`、`Vite3`、`Vant4`、`Pinia2`、`TypeScript`、`WindiCSS` 等主流技术开发，集成 `Dark Mode`（暗黑）模式和系统主题色，并且持久化保存，集成 `Mock` 数据，顺便写了个 登录/注册/找回密码 页面（包括逻辑），你只需要替换你的 API 即可，顺便写了个包含 `NavBar`、`TabBar` 的 Layout，顺便集成了 `Axios`、`useECharts`、`IconSvg`，顺便集成了代码规范检查工具 `Eslint`、`Prettier`、`Stylelint`。顺便全页面均可以 `<keep-alive>`，顺便......好吧没有了。现在，你可以在此之上直接开发你的业务代码！希望你能喜欢。🥳🥳🥳
+👋👋👋 Vue3 Vant4 Mobile 使用了最新的 `Vue3.2`、`Vite3`、`Vant4`、`Pinia2`、`TypeScript`、`UnoCSS` 等主流技术开发，集成 `Dark Mode`（暗黑）模式和系统主题色，并且持久化保存，集成 `Mock` 数据，顺便写了个 登录/注册/找回密码 页面（包括逻辑），你只需要替换你的 API 即可，顺便写了个包含 `NavBar`、`TabBar` 的 Layout，顺便集成了 `Axios`、`useECharts`、`IconSvg`，顺便集成了代码规范检查工具 `Eslint`、`Prettier`、`Stylelint`。顺便全页面均可以 `<keep-alive>`，顺便......好吧没有了。现在，你可以在此之上直接开发你的业务代码！希望你能喜欢。🥳🥳🥳
 
 ## 截图预览
 
@@ -78,7 +78,7 @@
 - [xicons](https://www.xicons.org/#/) - 本项目推荐图标库，当然你也可以使用 `IconSVg`
 - [postcss-mobile-forever](https://github.com/wswmsword/postcss-mobile-forever) - 了解手机端 `px` 转 `viewport` 插件的作用
 - [Lodash-es](https://www.lodashjs.com/) - `JS`高性能工具库
-- [WindiCSS](https://cn.windicss.org/guide/) - 原子化 `CSS`，熟悉 `WindiCSS` 基本使用
+- [UnoCSS](https://unocss.dev/) - 原子化 `CSS`，熟悉 `UnoCSS` 基本使用
 - [Mock.js](https://github.com/nuysoft/Mock) - 了解 `Mockjs` 基本语法
 - [ES6+](http://es6.ruanyifeng.com/) - 熟悉 `ES6` 基本语法
 
@@ -93,7 +93,7 @@
 
 如果你使用的 IDE 是 [VS Code](https://code.visualstudio.com/)（推荐）的话，可以安装以下工具来提高开发效率及代码格式化
 
-- [WindiCSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=voorjaar.windicss-intellisense) - WindiCSS 提示插件
+- [UnoCSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=antfu.unocss) - UnoCSS 提示插件
 - [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) - Vue 开发必备
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - 脚本代码检查
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - 代码格式化
