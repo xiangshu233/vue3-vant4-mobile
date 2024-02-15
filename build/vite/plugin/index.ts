@@ -35,7 +35,7 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean, prodMock: 
     }),
   ];
 
-  // vite-plugin-windicss
+  // UnoCSS
   vitePlugins.push(UnoCSS());
 
   // 加载 html 插件 vite-plugin-html

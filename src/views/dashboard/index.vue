@@ -40,7 +40,7 @@
     return [
       {
         title: '💡 最新技术栈',
-        details: '基于Vue3、Vant4、Vite、TypeScript、windiCss等最新技术栈开发',
+        details: '基于Vue3、Vant4、Vite、TypeScript、UnoCSS等最新技术栈开发',
       },
       {
         title: '⚡️ 轻量快速的热重载',
