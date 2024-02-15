@@ -2,7 +2,7 @@ import type { PluginOption } from 'vite';
 import Components from 'unplugin-vue-components/vite';
 import { VantResolver } from 'unplugin-vue-components/resolvers';
 import vue from '@vitejs/plugin-vue';
-import WindiCSS from 'vite-plugin-windicss';
+import UnoCSS from 'unocss/vite';
 
 import { configHtmlPlugin } from './html';
 import { configMockPlugin } from './mock';
@@ -36,7 +36,7 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean, prodMock: 
   ];
 
   // vite-plugin-windicss
-  vitePlugins.push(WindiCSS());
+  vitePlugins.push(UnoCSS());
 
   // 加载 html 插件 vite-plugin-html
   vitePlugins.push(configHtmlPlugin(viteEnv, isBuild));

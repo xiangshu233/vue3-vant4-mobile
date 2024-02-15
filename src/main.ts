@@ -1,4 +1,4 @@
-import 'virtual:windi.css';
+import 'virtual:uno.css';
 import 'vant/es/toast/style';
 import 'vant/es/dialog/style';
 // Register icon sprite

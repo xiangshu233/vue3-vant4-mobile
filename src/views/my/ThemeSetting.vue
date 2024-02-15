@@ -14,9 +14,9 @@
         <span
           h="70px"
           w="70px"
+          items-center
           border="2 rounded-md border-white"
           flex="~"
-          align="items-center"
           justify="center"
           v-for="(item, index) in designStore.appThemeList"
           :key="index"
