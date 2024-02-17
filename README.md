@@ -14,13 +14,13 @@
 
 <h1 align="center">vue3-vant4-mobile</h1>
 
-## 重要提醒
-
-⚠️⚠️⚠️ feature 分支正在升级相关依赖，内容尚不稳定，建议使用 main 分支
-
 ## 介绍
 
-👋👋👋 Vue3 Vant4 Mobile 使用了最新的 `Vue3.2`、`Vite3`、`Vant4`、`Pinia2`、`TypeScript`、`UnoCSS` 等主流技术开发，集成 `Dark Mode`（暗黑）模式和系统主题色，并且持久化保存，集成 `Mock` 数据，顺便写了个 登录/注册/找回密码 页面（包括逻辑），你只需要替换你的 API 即可，顺便写了个包含 `NavBar`、`TabBar` 的 Layout，顺便集成了 `Axios`、`useECharts`、`IconSvg`，顺便集成了代码规范检查工具 `Eslint`、`Prettier`、`Stylelint`。顺便全页面均可以 `<keep-alive>`，顺便......好吧没有了。现在，你可以在此之上直接开发你的业务代码！希望你能喜欢。🥳🥳🥳
+👋👋👋 Vue3 Vant4 Mobile 使用了最新的 `Vue3.2`、`Vite3`、`Vant4`、`Pinia2`、`TypeScript`、`UnoCSS` 等主流技术开发，集成 `Dark Mode`（暗黑）模式和系统主题色，并且持久化保存，集成 `Mock` 数据，顺便写了登录/注册/找回密码 页面（包括逻辑），只需替换你的 API 即可，另外页面均可以 `<keep-alive>`，随便写了个包含 `NavBar`、`TabBar` 的 Layout，集成了 `Axios`、`useECharts`、`IconSvg`。
+
+项目使用了 [antfu](https://github.com/antfu) 大佬的 [antfu/eslint-config](https://github.com/antfu/eslint-config) 作为代码规范检查工具，摆脱繁琐无聊的 Eslint 配置，配合 `cz-git`、 `lint-staged`、`simple-git-hooks`可对暂存区代码提交校验，代码风格不合格可打断提交，保证多人协作开发时上游 Git 库的干净。
+
+现在你可以在此之上直接开发你的业务代码！希望你能喜欢！
 
 ## 截图预览
 
@@ -83,22 +83,26 @@
 
 ## 环境准备
 
-本地环境需要安装 [pnpm7.x](https://www.pnpm.cn/)、[Node.js](http://nodejs.org/) 和 [Git](https://git-scm.com/)
+本地环境需要安装 [Pnpm](https://www.pnpm.cn/)、[Node.js](http://nodejs.org/) 和 [Git](https://git-scm.com/)
 
-- 必须使用[pnpm7.x](https://www.pnpm.cn/)，否则依赖可能安装不上。
-- [Node.js](http://nodejs.org/) 版本要求`12.x`以上，且不能为`13.x`版本，这里推荐 `15.x` 及以上。
+- 必须使用 [pnpm>=8.6.10](https://www.pnpm.cn/)，否则依赖可能安装不上。
+- [Node.js](http://nodejs.org/) 版本要求`18.x`以上，且不能为`13.x`版本，这里推荐 ` ^20.9.0 || >=21.1.0`。
 
 ## VS Code 配套插件
 
 如果你使用的 IDE 是 [VS Code](https://code.visualstudio.com/)（推荐）的话，可以安装以下工具来提高开发效率及代码格式化
 
-- [UnoCSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=antfu.unocss) - UnoCSS 提示插件
+- [UnoCSS](https://marketplace.visualstudio.com/items?itemName=antfu.unocss) - UnoCSS 提示插件
 - [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) - Vue 开发必备
+- [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) - 用于 TypeScript 服务器的 Vue 插件
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - 脚本代码检查
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - 代码格式化
-- [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) - CSS 格式化
 - [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv) - `.env` 文件 高亮
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) - 更好的错误定位
+- [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) - 不同 IDE 维护一致的编码样式
+- [File Nesting Updater](https://marketplace.visualstudio.com/items?itemName=antfu.file-nesting) - 使用 VS Code 的文件嵌套功能使文件树更干净的配置
+- [Pretty TypeScript Errors](https://marketplace.visualstudio.com/items?itemName=antfu.file-nesting) - 使 VSCode 中的 TypeScript 错误更漂亮、更易于理解
+- [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree) - 在树视图中显示 TODO、FIXME 等注释标签
+- [Trailing Spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces) - 突出显示尾随空格并立即将其删除
 
 ## 使用
 
@@ -138,6 +142,12 @@ pnpm build
 - `wip` 开发中
 
 ### 提交校验
+
+关于前端工程化 **配置构建代码检查工作流** 不了解的可以看下面这两篇文章了解下
+
+[前端工程化配置(上) 构建代码检查工作流](https://xiangshu233.cn/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%8A%EF%BC%89%20%E6%9E%84%E5%BB%BA%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5%E5%B7%A5%E4%BD%9C%E6%B5%81/)
+
+[前端工程化配置(下) 规范仓库提交记录 commitlint + commitizen + cz-git + 配置](https://xiangshu233.cn/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%8B%EF%BC%89%20%E8%A7%84%E8%8C%83%E4%BB%93%E5%BA%93%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/)
 
 代码首次拉下来 `pnpm install` 后 需要执行以下命令来更新 `git hooks`
 
