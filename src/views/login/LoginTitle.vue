@@ -1,20 +1,20 @@
 <template>
   <div class="flex flex-col items-center justify-center">
-    <div class="logo my-35px enter-y">
+    <div class="logo enter-y my-35px">
       <SvgIcon class="!h-250px !w-250px" name="logo" />
     </div>
-    <div class="mb-80px text-darkBlue dark:text-garyWhite text-45px font-black enter-y">
+    <div class="text-darkBlue dark:text-garyWhite enter-y mb-80px text-45px font-black">
       {{ title }}
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-  import { useGlobSetting } from '@/hooks/setting';
+import { useGlobSetting } from '@/hooks/setting'
 
-  const globSetting = useGlobSetting();
+const globSetting = useGlobSetting()
 
-  const { title } = globSetting;
+const { title } = globSetting
 </script>
 
 <style scoped lang="less"></style>

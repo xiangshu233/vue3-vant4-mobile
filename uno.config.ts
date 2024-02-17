@@ -6,10 +6,10 @@ import {
   presetTypography,
   presetUno,
   presetWebFonts,
-} from 'unocss';
+} from 'unocss'
 
-import transformerVariantGroup from '@unocss/transformer-variant-group';
-import transformerDirectives from '@unocss/transformer-directives';
+import transformerVariantGroup from '@unocss/transformer-variant-group'
+import transformerDirectives from '@unocss/transformer-directives'
 
 export default defineConfig({
   // ...UnoCSS options
@@ -20,7 +20,7 @@ export default defineConfig({
     // 图标预设: https://unocss.dev/presets/icons
     presetIcons({
       extraProperties: {
-        display: 'inline-block',
+        'display': 'inline-block',
         'vertical-align': 'middle',
         // ...
       },
@@ -61,4 +61,4 @@ export default defineConfig({
     'text-overflow': 'overflow-hidden whitespace-nowrap text-ellipsis', // 文本溢出显示省略号
     'text-break': 'whitespace-normal break-all break-words', // 文本溢出换行
   },
-});
+})

@@ -1,18 +1,22 @@
 <template>
   <div>
-    <div :style="getUserCoverBg" class="my-bg h-550px -z-19"> </div>
+    <div :style="getUserCoverBg" class="my-bg h-550px -z-19" />
     <div
-      class="my-card shadow-xl relative -top-150px mx-40px rounded-2xl flex flex-col items-center pb-20px"
+      class="my-card relative mx-40px flex flex-col items-center rounded-2xl pb-20px shadow-xl -top-150px"
     >
       <van-image
-        class="border-4 border-solid !absolute -top-90px h-170px w-170px"
+        class="h-170px w-170px border-4 border-solid !absolute -top-90px"
         round
         fit="cover"
         :src="avatar"
       />
-      <div class="flex flex-col items-center mt-90px">
-        <p class="font-black text-40px mb-20px">{{ nickname }}</p>
-        <p class="text-30px px-36px">{{ sign }}</p>
+      <div class="mt-90px flex flex-col items-center">
+        <p class="mb-20px text-40px font-black">
+          {{ nickname }}
+        </p>
+        <p class="px-36px text-30px">
+          {{ sign }}
+        </p>
       </div>
       <van-divider class="w-full" />
 
@@ -57,8 +61,8 @@
       </van-cell>
 
       <van-action-sheet
-        teleport="body"
         v-model:show="showLogoutAction"
+        teleport="body"
         :actions="logoutActions"
         cancel-text="取消"
         description="确认退出登录吗"
@@ -69,60 +73,61 @@
 </template>
 
 <script lang="ts" setup>
-  import { computed, ref } from 'vue';
-  import { Icon } from '@vicons/utils';
-  import { IdcardFilled } from '@vicons/antd';
-  import { Person, ColorPalette, DocumentText, LogOut } from '@vicons/ionicons5';
-  import { useUserStore } from '@/store/modules/user';
-  import { showToast } from 'vant';
+import { computed, ref } from 'vue'
+import { Icon } from '@vicons/utils'
+import { IdcardFilled } from '@vicons/antd'
+import { ColorPalette, DocumentText, LogOut, Person } from '@vicons/ionicons5'
+import { showToast } from 'vant'
+import { useUserStore } from '@/store/modules/user'
 
-  const userStore = useUserStore();
-  const showLogoutAction = ref(false);
+const userStore = useUserStore()
+const showLogoutAction = ref(false)
 
-  const { nickname, avatar, cover, sign } = userStore.getUserInfo;
+const { nickname, avatar, cover, sign } = userStore.getUserInfo
 
-  const logoutActions = [
-    {
-      name: '退出登录',
-      color: '#ee0a24',
-      callback: () => {
-        userStore.Logout();
-        showToast('退出成功');
-      },
+const logoutActions = [
+  {
+    name: '退出登录',
+    color: '#ee0a24',
+    callback: () => {
+      userStore.Logout()
+      showToast('退出成功')
     },
-  ];
+  },
+]
 
-  const getUserCoverBg = computed(() => {
-    return { backgroundImage: `url(${cover ? cover : avatar})` };
-  });
+const getUserCoverBg = computed(() => {
+  return { backgroundImage: `url(${cover || avatar})` }
+})
 </script>
+
 <style lang="less" scoped>
   .my-bg {
-    clip-path: inset(0 -55% 0 -55% round 0 0 100% 100%);
-    background-size: cover;
+  clip-path: inset(0 -55% 0 -55% round 0 0 100% 100%);
+  background-size: cover;
 
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: linear-gradient(180deg, rgba(0, 0, 0, 0), #000);
-      opacity: 0.9;
-    }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0), #000);
+    opacity: 0.9;
+  }
+}
+
+.van-cell {
+  align-items: center;
+  background: transparent;
+
+  &:active {
+    background-color: var(--van-cell-active-color);
   }
 
-  .van-cell {
-    align-items: center;
-    background: transparent;
-
-    &:active {
-      background-color: var(--van-cell-active-color);
-    }
-
-    .xicon {
-      margin-right: 10px;
-    }
+  .xicon {
+    margin-right: 10px;
   }
+}
 </style>

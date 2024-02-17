@@ -1,24 +1,25 @@
-import { addClass, removeClass, hasClass } from '@/utils/domUtils';
+import { addClass, hasClass, removeClass } from '@/utils/domUtils'
 
 /**
  * html 根标签上挂载 暗/亮 属性标识
  */
 export function updateDarkSign(mode: 'light' | 'dark') {
-  const htmlRoot = document.getElementById('htmlRoot');
+  const htmlRoot = document.getElementById('htmlRoot')
   if (!htmlRoot) {
-    return;
+    return
   }
-  const hasDarkClass = hasClass(htmlRoot, 'dark');
+  const hasDarkClass = hasClass(htmlRoot, 'dark')
 
   if (mode === 'dark') {
-    htmlRoot.setAttribute('data-theme', 'dark');
+    htmlRoot.setAttribute('data-theme', 'dark')
     if (!hasDarkClass) {
-      addClass(htmlRoot, 'dark');
+      addClass(htmlRoot, 'dark')
     }
-  } else {
-    htmlRoot.setAttribute('data-theme', 'light');
+  }
+  else {
+    htmlRoot.setAttribute('data-theme', 'light')
     if (hasDarkClass) {
-      removeClass(htmlRoot, 'dark');
+      removeClass(htmlRoot, 'dark')
     }
   }
 }

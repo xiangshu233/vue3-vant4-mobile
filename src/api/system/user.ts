@@ -1,9 +1,9 @@
-import { http } from '@/utils/http/axios';
+import { http } from '@/utils/http/axios'
 
 export interface BasicResponseModel<T = any> {
-  code: number;
-  message: string;
-  result: T;
+  code: number
+  message: string
+  result: T
 }
 
 /**
@@ -18,8 +18,8 @@ export function login(params: any) {
     },
     {
       isTransformResponse: false,
-    }
-  );
+    },
+  )
 }
 
 /**
@@ -29,7 +29,7 @@ export function getUserInfo() {
   return http.request({
     url: '/getUserInfo',
     method: 'get',
-  });
+  })
 }
 
 /**
@@ -39,7 +39,7 @@ export function doLogout() {
   return http.request({
     url: '/logout',
     method: 'POST',
-  });
+  })
 }
 
 /**
@@ -54,6 +54,6 @@ export function changePassword(params: any, uid: any) {
     },
     {
       isTransformResponse: false,
-    }
-  );
+    },
+  )
 }

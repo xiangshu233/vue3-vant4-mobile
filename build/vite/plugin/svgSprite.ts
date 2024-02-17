@@ -3,8 +3,8 @@
  * https://github.com/anncwb/vite-plugin-svg-icons
  */
 
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
-import path from 'path';
+import path from 'node:path'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
 export function configSvgIconsPlugin(isBuild: boolean) {
   // 指定需要缓存的图标文件夹
@@ -14,6 +14,6 @@ export function configSvgIconsPlugin(isBuild: boolean) {
     svgoOptions: isBuild,
     // 指定symbolId格式
     symbolId: 'icon-[dir]-[name]',
-  });
-  return svgIconsPlugin;
+  })
+  return svgIconsPlugin
 }

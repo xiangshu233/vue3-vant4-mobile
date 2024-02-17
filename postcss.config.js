@@ -15,8 +15,8 @@
 // 所有*.js文件现在都解释为 ESM，并且需要使用 ESM 语法。您可以使用扩展名重命名文件.cjs来继续使用 CJS。
 // require 是cjs 语法
 
-const autoprefixer = require('autoprefixer');
-const viewport = require('postcss-mobile-forever');
+import autoprefixer from 'autoprefixer'
+import viewport from 'postcss-mobile-forever'
 
 const baseViewportOpts = {
   appSelector: '#app', // 根元素选择器，用于设置桌面端和横屏时的居中样式
@@ -37,16 +37,16 @@ const baseViewportOpts = {
   // exclude: [/node_modules/], // 忽略某些文件夹下的文件或特定文件
   // include: [/src/], // 如果设置了include，那将只有匹配到的文件才会被转换
   mobileUnit: 'vw', // 指定需要转换成的视口单位，建议使用 vw
-  rootContainingBlockSelectorList: ["van-popup--bottom"], // 指定包含块是根包含块的选择器，这种选择器的定位通常是 `fixed`，但是选择器内没有 `position: fixed`
-};
+  rootContainingBlockSelectorList: ['van-popup--bottom'], // 指定包含块是根包含块的选择器，这种选择器的定位通常是 `fixed`，但是选择器内没有 `position: fixed`
+}
 
-module.exports = {
+export default {
   plugins: [
     autoprefixer(),
     viewport({
       ...baseViewportOpts,
       // 只将 vant 转为 350 设计稿的 viewport，其它样式的视图宽度为 750
-      viewportWidth: (file) => (file.includes('node_modules/vant/') ? 375 : 750),
+      viewportWidth: file => (file.includes('node_modules/vant/') ? 375 : 750),
     }),
   ],
-};
+}

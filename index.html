@@ -1,27 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-cmn-Hans" id="htmlRoot" class>
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      <%= title %>
-    </title>
+    <title><%= title %></title>
   </head>
   <body>
     <div id="app">
       <script>
-        (() => {
-          let htmlRoot = document.getElementById('htmlRoot');
+        ;(() => {
+          let htmlRoot = document.getElementById('htmlRoot')
           const appDesignSetting = window.localStorage.getItem('DESIGN-SETTING')
-          let darkMode = appDesignSetting && JSON.parse(appDesignSetting).darkMode
+          let darkMode =
+            appDesignSetting && JSON.parse(appDesignSetting).darkMode
           if (htmlRoot && darkMode) {
-            htmlRoot.setAttribute('data-theme', darkMode);
-            darkMode = htmlRoot = null;
+            htmlRoot.setAttribute('data-theme', darkMode)
+            darkMode = htmlRoot = null
           } else {
-            htmlRoot.setAttribute('data-theme', 'light');
+            htmlRoot.setAttribute('data-theme', 'light')
           }
-        })();
+        })()
       </script>
       <style>
         body {
@@ -38,14 +37,14 @@
           align-items: center;
           flex-direction: column;
         }
-        .first-loading-wrap>h1 {
-          font-size: 128px
+        .first-loading-wrap > h1 {
+          font-size: 128px;
         }
         .first-loading-wrap .loading-wrap {
           padding: 98px;
           display: flex;
           justify-content: center;
-          align-items: center
+          align-items: center;
         }
         .dot {
           animation: antRotate 1.2s infinite linear;
@@ -55,7 +54,7 @@
           font-size: 52px;
           width: 52px;
           height: 52px;
-          box-sizing: border-box
+          box-sizing: border-box;
         }
         .dot i {
           width: 24px;
@@ -64,53 +63,53 @@
           display: block;
           background-color: #1890ff;
           border-radius: 100%;
-          transform: scale(.75);
+          transform: scale(0.75);
           transform-origin: 50% 50%;
-          opacity: .3;
-          animation: antSpinMove 1s infinite linear alternate
+          opacity: 0.3;
+          animation: antSpinMove 1s infinite linear alternate;
         }
         .dot i:nth-child(1) {
           top: 0;
-          left: 0
+          left: 0;
         }
         .dot i:nth-child(2) {
           top: 0;
           right: 0;
-          -webkit-animation-delay: .4s;
-          animation-delay: .4s
+          -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
         }
         .dot i:nth-child(3) {
           right: 0;
           bottom: 0;
-          -webkit-animation-delay: .8s;
-          animation-delay: .8s
+          -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
         }
         .dot i:nth-child(4) {
           bottom: 0;
           left: 0;
           -webkit-animation-delay: 1.2s;
-          animation-delay: 1.2s
+          animation-delay: 1.2s;
         }
         @keyframes antRotate {
           to {
             -webkit-transform: rotate(405deg);
-            transform: rotate(405deg)
+            transform: rotate(405deg);
           }
         }
         @-webkit-keyframes antRotate {
           to {
             -webkit-transform: rotate(405deg);
-            transform: rotate(405deg)
+            transform: rotate(405deg);
           }
         }
         @keyframes antSpinMove {
           to {
-            opacity: 1
+            opacity: 1;
           }
         }
         @-webkit-keyframes antSpinMove {
           to {
-            opacity: 1
+            opacity: 1;
           }
         }
       </style>
