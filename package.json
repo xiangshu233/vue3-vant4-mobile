@@ -1,12 +1,17 @@
 {
   "name": "vue3-vant4-mobile",
-  "private": true,
-  "version": "0.0.2",
   "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@8.6.10",
   "author": {
     "name": "xiangshu233",
     "email": "xiangshu233@outlook.com",
     "url": "https://github.com/xiangshu233"
+  },
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0",
+    "pnpm": ">=8.6.10"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
@@ -20,11 +25,9 @@
     "preview": "vite preview",
     "clean:cache": "rimraf node_modules/.cache/ && rimraf node_modules/.vite",
     "clean:lib": "rimraf node_modules",
-    "lint:lint-staged": "lint-staged",
-    "lint:eslint": "eslint \"{src}/**/*.{vue,ts,tsx}\" --fix",
-    "lint:prettier": "prettier --write --loglevel warn \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
-    "lint:stylelint": "stylelint --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
-    "prepare": "husky install"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:lint-staged": "lint-staged"
   },
   "dependencies": {
     "@types/lodash-es": "^4.17.12",
@@ -46,30 +49,25 @@
     "vue-router": "4.2.5"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^2.6.3",
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
     "@types/fs-extra": "^11.0.4",
     "@types/mockjs": "^1.0.10",
     "@types/node": "^20.10.5",
     "@types/qs": "^6.9.11",
-    "@typescript-eslint/eslint-plugin": "^6.16.0",
-    "@typescript-eslint/parser": "^6.16.0",
+    "@unocss/eslint-plugin": "^0.58.4",
     "@unocss/transformer-directives": "^0.58.4",
     "@unocss/transformer-variant-group": "^0.58.4",
     "@vitejs/plugin-vue": "^5.0.0",
-    "@vue/eslint-config-typescript": "^12.0.0",
     "autoprefixer": "^10.4.16",
     "cross-env": "^7.0.3",
     "cz-git": "^1.8.0",
     "dotenv": "^16.3.1",
     "eslint": "^8.56.0",
-    "eslint-config-prettier": "^8.10.0",
-    "eslint-define-config": "^1.24.1",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-vue": "^9.19.2",
+    "eslint-plugin-format": "^0.1.0",
     "esno": "^0.16.3",
     "fs-extra": "^11.2.0",
-    "husky": "^8.0.3",
     "less": "^4.2.0",
     "lint-staged": "^15.2.0",
     "only-allow": "^1.2.1",
@@ -78,16 +76,18 @@
     "postcss-html": "^1.5.0",
     "postcss-less": "^6.0.0",
     "postcss-mobile-forever": "^4.0.0",
-    "prettier": "^2.8.8",
+    "prettier": "^3.2.4",
     "rimraf": "^3.0.2",
     "rollup": "^4.9.1",
     "rollup-plugin-visualizer": "^5.11.0",
-    "stylelint": "^14.16.1",
-    "stylelint-config-prettier": "^9.0.5",
-    "stylelint-config-recommended": "^9.0.0",
+    "simple-git-hooks": "^2.9.0",
+    "stylelint": "^16.2.0",
+    "stylelint-config-recommended": "^14.0.0",
     "stylelint-config-recommended-vue": "^1.5.0",
-    "stylelint-config-standard": "^27.0.0",
-    "stylelint-order": "^5.0.0",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-config-standard-less": "^3.0.1",
+    "stylelint-order": "^6.0.4",
+    "stylelint-prettier": "^5.0.0",
     "typescript": "^5.3.3",
     "unocss": "^0.58.5",
     "unplugin-vue-components": "^0.26.0",
@@ -96,36 +96,16 @@
     "vite-plugin-html": "^3.2.1",
     "vite-plugin-mock": "^2.9.8",
     "vite-plugin-svg-icons": "^2.0.1",
-    "vue-eslint-parser": "^9.3.2",
     "vue-tsc": "^1.8.27"
   },
-  "engines": {
-    "node": ">=15",
-    "pnpm": ">=7"
+
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged",
+    "commit-msg": "npx --no-install commitlint --edit $1"
   },
+
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "{!(package)*.json,*.code-snippets,.!(browserslist)*rc}": [
-      "prettier --write--parser json"
-    ],
-    "package.json": [
-      "prettier --write"
-    ],
-    "*.vue": [
-      "eslint --fix",
-      "prettier --write",
-      "stylelint --fix"
-    ],
-    "*.{scss,less,styl,html}": [
-      "stylelint --fix",
-      "prettier --write"
-    ],
-    "*.md": [
-      "prettier --write"
-    ]
+    "*": "eslint --fix"
   },
   "config": {
     "commitizen": {

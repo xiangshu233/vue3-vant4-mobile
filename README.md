@@ -117,7 +117,7 @@ pnpm dev
 pnpm build
 ```
 
-## Git 贡献提交规范
+## Git 提交规范
 
 ### 提交规范
 
