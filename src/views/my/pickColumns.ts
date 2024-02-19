@@ -1,12 +1,12 @@
 export interface FormColumns {
-  text: string;
-  value: number;
+  text: string
+  value: number
 }
 
 export const genderColumns: FormColumns[] = [
   { text: '男', value: 0 },
   { text: '女', value: 1 },
-];
+]
 
 export const industryColumns: FormColumns[] = [
   { text: '不展示', value: 0 },
@@ -27,4 +27,4 @@ export const industryColumns: FormColumns[] = [
   { text: '媒体/广告/公关', value: 15 },
   { text: '体育/健身', value: 16 },
   { text: '企事业单位', value: 17 },
-];
+]

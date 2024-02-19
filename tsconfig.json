@@ -1,26 +1,26 @@
 {
   "compilerOptions": {
     "target": "ESNext",
+    "jsx": "preserve",
+    "lib": ["ESNext", "DOM"],
     "useDefineForClassFields": true,
-    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
     "module": "ESNext",
     "moduleResolution": "Node",
-    "strict": true,
-    "sourceMap": true,
-    "jsx": "preserve",
-    "baseUrl": ".",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "lib": ["ESNext", "DOM"],
-    "types": ["vite/client"],
-    "typeRoots": ["./node_modules/@types/", "./types"],
-    "noImplicitAny": false,
-    "skipLibCheck": true,
     "paths": {
       "@/*": ["src/*"],
       "#/*": ["types/*"]
-    }
+    },
+    "resolveJsonModule": true,
+    "typeRoots": ["./node_modules/@types/", "./types"],
+    "types": ["vite/client"],
+    "strict": true,
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*.ts",
