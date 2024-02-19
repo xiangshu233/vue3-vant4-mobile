@@ -1,4 +1,3 @@
-/* eslint-disable ts/no-duplicate-enum-values */
 export enum PageEnum {
   // 登录
   BASE_LOGIN = '/login',

@@ -1,18 +1,18 @@
-import { computed } from 'vue'
-import { useDesignSettingStore } from '@/store/modules/designSetting'
+import { computed } from 'vue';
+import { useDesignSettingStore } from '@/store/modules/designSetting';
 
 export function useDesignSetting() {
-  const designStore = useDesignSettingStore()
+  const designStore = useDesignSettingStore();
 
-  const getDarkMode = computed(() => designStore.darkMode)
+  const getDarkMode = computed(() => designStore.darkMode);
 
-  const getAppTheme = computed(() => designStore.appTheme)
+  const getAppTheme = computed(() => designStore.appTheme);
 
-  const getAppThemeList = computed(() => designStore.appThemeList)
+  const getAppThemeList = computed(() => designStore.appThemeList);
 
-  const getIsPageAnimate = computed(() => designStore.isPageAnimate)
+  const getIsPageAnimate = computed(() => designStore.isPageAnimate);
 
-  const getPageAnimateType = computed(() => designStore.pageAnimateType)
+  const getPageAnimateType = computed(() => designStore.pageAnimateType);
 
   return {
     getDarkMode,
@@ -20,5 +20,5 @@ export function useDesignSetting() {
     getAppThemeList,
     getIsPageAnimate,
     getPageAnimateType,
-  }
+  };
 }

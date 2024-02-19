@@ -1,14 +1,16 @@
-import type { PluginOption } from 'vite'
-import Components from 'unplugin-vue-components/vite'
-import { VantResolver } from 'unplugin-vue-components/resolvers'
-import vue from '@vitejs/plugin-vue'
-import UnoCSS from 'unocss/vite'
+import type { PluginOption } from 'vite';
+import Components from 'unplugin-vue-components/vite';
+import { VantResolver } from 'unplugin-vue-components/resolvers';
 
-import { configHtmlPlugin } from './html'
-import { configMockPlugin } from './mock'
-import { configCompressPlugin } from './compress'
-import { configVisualizerConfig } from './visualizer'
-import { configSvgIconsPlugin } from './svgSprite'
+import vue from '@vitejs/plugin-vue';
+import vueSetupExtend from 'vite-plugin-vue-setup-extend';
+import WindiCSS from 'vite-plugin-windicss';
+
+import { configHtmlPlugin } from './html';
+import { configMockPlugin } from './mock';
+import { configCompressPlugin } from './compress';
+import { configVisualizerConfig } from './visualizer';
+import { configSvgIconsPlugin } from './svgSprite';
 
 /**
  * 配置 vite 插件
@@ -22,41 +24,43 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean, prodMock: 
   // 如果你需要多种形式，你可以用','来分隔
 
   // VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE 打包使用压缩时是否删除原始文件，默认为 false
-  const { VITE_USE_MOCK, VITE_BUILD_COMPRESS, VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE } = viteEnv
+  const { VITE_USE_MOCK, VITE_BUILD_COMPRESS, VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE } = viteEnv;
 
   const vitePlugins: (PluginOption | PluginOption[])[] = [
     // have to
     vue(),
+    // support name https://github.com/vbenjs/vite-plugin-vue-setup-extend
+    vueSetupExtend(),
     // 按需引入VantUi且自动创建组件声明
     Components({
       dts: true,
       resolvers: [VantResolver()],
       types: [],
     }),
-  ]
+  ];
 
-  // UnoCSS
-  vitePlugins.push(UnoCSS())
+  // vite-plugin-windicss
+  vitePlugins.push(WindiCSS());
 
   // 加载 html 插件 vite-plugin-html
-  vitePlugins.push(configHtmlPlugin(viteEnv, isBuild))
+  vitePlugins.push(configHtmlPlugin(viteEnv, isBuild));
 
   // rollup-plugin-visualizer
-  vitePlugins.push(configVisualizerConfig())
+  vitePlugins.push(configVisualizerConfig());
 
   // vite-plugin-mock
-  VITE_USE_MOCK && vitePlugins.push(configMockPlugin(isBuild, prodMock))
+  VITE_USE_MOCK && vitePlugins.push(configMockPlugin(isBuild, prodMock));
 
   // vite-plugin-svg-icons
-  vitePlugins.push(configSvgIconsPlugin(isBuild))
+  vitePlugins.push(configSvgIconsPlugin(isBuild));
 
   if (isBuild) {
     // rollup-plugin-gzip
     // 加载 gzip 打包
     vitePlugins.push(
-      configCompressPlugin(VITE_BUILD_COMPRESS, VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE),
-    )
+      configCompressPlugin(VITE_BUILD_COMPRESS, VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE)
+    );
   }
 
-  return vitePlugins
+  return vitePlugins;
 }

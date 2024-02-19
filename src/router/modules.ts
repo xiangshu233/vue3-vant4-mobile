@@ -1,6 +1,6 @@
-import type { RouteRecordRaw } from 'vue-router'
+import { RouteRecordRaw } from 'vue-router';
 
-const Layout = () => import('@/layout/index.vue')
+const Layout = () => import('@/layout/index.vue');
 
 const routeModuleList: Array<RouteRecordRaw> = [
   {
@@ -121,6 +121,6 @@ const routeModuleList: Array<RouteRecordRaw> = [
     },
     component: () => import('@/views/my/ThemeSetting.vue'),
   },
-]
+];
 
-export default routeModuleList
+export default routeModuleList;

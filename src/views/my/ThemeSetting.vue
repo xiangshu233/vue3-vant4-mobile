@@ -12,14 +12,14 @@
     <div flex="~" justify="center">
       <div grid="~ cols-8 gap-2">
         <span
-          v-for="(item, index) in designStore.appThemeList"
-          :key="index"
           h="70px"
           w="70px"
-          items-center
           border="2 rounded-md border-white"
           flex="~"
+          align="items-center"
           justify="center"
+          v-for="(item, index) in designStore.appThemeList"
+          :key="index"
           :style="{ 'background-color': item }"
           @click="togTheme(item)"
         >
@@ -38,7 +38,6 @@
     </van-cell>
 
     <van-field
-      v-model="animateState.text"
       label="动画类型"
       readonly
       :disabled="!designStore.isPageAnimate"
@@ -47,6 +46,7 @@
       input-align="right"
       :center="true"
       :border="false"
+      v-model="animateState.text"
       @click="openAnimatePick"
     />
     <van-popup v-model:show="animateState.showPicker" position="bottom" round>
@@ -61,50 +61,48 @@
 </template>
 
 <script setup lang="ts">
-import { computed, reactive } from 'vue'
-import { Icon } from '@vicons/utils'
-import { CheckOutlined } from '@vicons/antd'
-import NavBar from './components/NavBar.vue'
-import { updateDarkSign } from '@/theme'
-import { useDesignSettingStore } from '@/store/modules/designSetting'
-import { animates as animateOptions } from '@/settings/animateSetting'
+  import { computed, reactive } from 'vue';
+  import { Icon } from '@vicons/utils';
+  import { updateDarkSign } from '@/theme';
+  import { CheckOutlined } from '@vicons/antd';
+  import { useDesignSettingStore } from '@/store/modules/designSetting';
+  import { animates as animateOptions } from '@/settings/animateSetting';
+  import NavBar from './components/NavBar.vue';
 
-const designStore = useDesignSettingStore()
+  const designStore = useDesignSettingStore();
 
-const getDarkMode = computed({
-  get: () => designStore.getDarkMode === 'dark',
-  set: (value) => {
-    const darkMode = value ? 'dark' : 'light'
-    updateDarkSign(darkMode)
-    designStore.setDarkMode(darkMode)
-  },
-})
+  const getDarkMode = computed({
+    get: () => designStore.getDarkMode === 'dark',
+    set: (value) => {
+      const darkMode = value ? 'dark' : 'light';
+      updateDarkSign(darkMode);
+      designStore.setDarkMode(darkMode);
+    },
+  });
 
-function togTheme(color: string) {
-  designStore.appTheme = color
-}
-
-const findCurrentAnimateType = animateOptions.find(
-  item => item.value === designStore.pageAnimateType,
-)
-
-const animateState = reactive({
-  text: findCurrentAnimateType?.text,
-  value: [designStore.pageAnimateType],
-  showPicker: false,
-})
-
-function openAnimatePick() {
-  if (designStore.isPageAnimate) {
-    animateState.showPicker = true
+  function togTheme(color: string) {
+    designStore.appTheme = color;
   }
-}
 
-function handleSaveAnimateType({ selectedOptions }) {
-  animateState.text = selectedOptions[0].text
-  designStore.setPageAnimateType(selectedOptions[0].value)
-  animateState.showPicker = false
-}
+  const findCurrentAnimateType = animateOptions.find(
+    (item) => item.value === designStore.pageAnimateType
+  );
+
+  const animateState = reactive({
+    text: findCurrentAnimateType?.text,
+    value: [designStore.pageAnimateType],
+    showPicker: false,
+  });
+
+  const openAnimatePick = () => {
+    if (designStore.isPageAnimate) animateState.showPicker = true;
+  };
+
+  const handleSaveAnimateType = ({ selectedOptions }) => {
+    animateState.text = selectedOptions[0].text;
+    designStore.setPageAnimateType(selectedOptions[0].value);
+    animateState.showPicker = false;
+  };
 </script>
 
 <style scoped lang="less"></style>

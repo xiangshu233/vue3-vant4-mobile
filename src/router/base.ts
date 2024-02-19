@@ -1,7 +1,7 @@
-import type { RouteRecordRaw } from 'vue-router'
-import { PageEnum } from '@/enums/pageEnum'
+import { RouteRecordRaw } from 'vue-router';
+import { PageEnum } from '@/enums/pageEnum';
 
-const Layout = () => import('@/layout/index.vue')
+const Layout = () => import('@/layout/index.vue');
 
 // 404 on a page
 export const ErrorPageRoute: RouteRecordRaw = {
@@ -23,7 +23,7 @@ export const ErrorPageRoute: RouteRecordRaw = {
       },
     },
   ],
-}
+};
 
 export const RootRoute: RouteRecordRaw = {
   path: '/',
@@ -32,7 +32,7 @@ export const RootRoute: RouteRecordRaw = {
   meta: {
     title: 'Root',
   },
-}
+};
 
 export const LoginRoute: RouteRecordRaw = {
   path: '/login',
@@ -41,4 +41,4 @@ export const LoginRoute: RouteRecordRaw = {
   meta: {
     title: '登录',
   },
-}
+};

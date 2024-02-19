@@ -2,15 +2,15 @@
 
 export interface DesignSettingState {
   // 系统主题
-  darkMode: 'light' | 'dark'
+  darkMode: 'light' | 'dark';
   // 系统风格
-  appTheme: string
+  appTheme: string;
   // 系统内置风格
-  appThemeList: string[]
+  appThemeList: string[];
   // 是否开启路由动画
-  isPageAnimate: boolean
+  isPageAnimate: boolean;
   // 路由动画类型
-  pageAnimateType: string
+  pageAnimateType: string;
 }
 
 export const appThemeList: string[] = [
@@ -33,19 +33,19 @@ export const appThemeList: string[] = [
   '#FB9300',
   '#FC5404',
   '#8675ff',
-]
+];
 
 const setting: DesignSettingState = {
-  // 深色主题
+  //深色主题
   darkMode: 'light',
-  // 系统主题色
+  //系统主题色
   appTheme: '#5d9dfe',
-  // 系统内置主题色列表
+  //系统内置主题色列表
   appThemeList,
-  // 是否开启路由动画
+  //是否开启路由动画
   isPageAnimate: true,
-  // 路由动画类型
+  //路由动画类型
   pageAnimateType: 'zoom-fade',
-}
+};
 
-export default setting
+export default setting;

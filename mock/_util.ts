@@ -1,5 +1,5 @@
-import Mock from 'mockjs'
-import { ResultEnum } from '@/enums/httpEnum'
+import Mock from 'mockjs';
+import { ResultEnum } from '@/enums/httpEnum';
 
 export function resultSuccess<T = Recordable>(result: T, { message = 'ok' } = {}) {
   return Mock.mock({
@@ -7,16 +7,16 @@ export function resultSuccess<T = Recordable>(result: T, { message = 'ok' } = {}
     result,
     message,
     type: 'success',
-  })
+  });
 }
 
 export function resultPageSuccess<T = any>(
   page: number,
   pageSize: number,
   list: T[],
-  { message = 'ok' } = {},
+  { message = 'ok' } = {}
 ) {
-  const pageData = pagination(page, pageSize, list)
+  const pageData = pagination(page, pageSize, list);
 
   return {
     ...resultSuccess({
@@ -26,46 +26,46 @@ export function resultPageSuccess<T = any>(
       list: pageData,
     }),
     message,
-  }
+  };
 }
 
 export function resultError(
   message = 'Request failed',
-  { code = ResultEnum.ERROR, result = null } = {},
+  { code = ResultEnum.ERROR, result = null } = {}
 ) {
   return {
     code,
     result,
     message,
     type: 'error',
-  }
+  };
 }
 
 export function pagination<T = any>(pageNo: number, pageSize: number, array: T[]): T[] {
-  const offset = (pageNo - 1) * Number(pageSize)
-  const ret
-    = offset + Number(pageSize) >= array.length
+  const offset = (pageNo - 1) * Number(pageSize);
+  const ret =
+    offset + Number(pageSize) >= array.length
       ? array.slice(offset, array.length)
-      : array.slice(offset, offset + Number(pageSize))
-  return ret
+      : array.slice(offset, offset + Number(pageSize));
+  return ret;
 }
 
 /**
- * @param {number} times 回调函数需要执行的次数
+ * @param {Number} times 回调函数需要执行的次数
  * @param {Function} callback 回调函数
  */
 export function doCustomTimes(times: number, callback: any) {
-  let i = -1
+  let i = -1;
   while (++i < times) {
-    callback(i)
+    callback(i);
   }
 }
 
 export interface requestParams {
-  method: string
-  body: any
-  headers?: { authorization?: string }
-  query: any
+  method: string;
+  body: any;
+  headers?: { authorization?: string };
+  query: any;
 }
 
 /**
@@ -73,5 +73,5 @@ export interface requestParams {
  *
  */
 export function getRequestToken({ headers }: requestParams): string | undefined {
-  return headers?.authorization
+  return headers?.authorization;
 }

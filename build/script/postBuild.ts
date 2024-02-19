@@ -1,24 +1,23 @@
 // #!/usr/bin/env node
 
-import colors from 'picocolors'
+import { runBuildConfig } from './buildConf';
+import colors from 'picocolors';
 
-import pkg from '../../package.json'
-import { runBuildConfig } from './buildConf'
+import pkg from '../../package.json';
 
-export async function runBuild() {
+export const runBuild = async () => {
   try {
-    const argvList = process.argv.splice(2)
+    const argvList = process.argv.splice(2);
 
     // Generate configuration file
     if (!argvList.includes('disabled-config')) {
-      await runBuildConfig()
+      await runBuildConfig();
     }
 
-    console.log(`✨ ${colors.cyan(`[${pkg.name}]`)} - build successfully!`)
+    console.log(`✨ ${colors.cyan(`[${pkg.name}]`)}` + ' - build successfully!');
+  } catch (error) {
+    console.log(colors.red('vite build error:\n' + error));
+    process.exit(1);
   }
-  catch (error) {
-    console.log(colors.red(`vite build error:\n${error}`))
-    process.exit(1)
-  }
-}
-runBuild()
+};
+runBuild();

@@ -1,7 +1,6 @@
-import type { MockMethod } from 'vite-plugin-mock'
-import type { requestParams } from '../_util'
-import { getRequestToken, resultError, resultSuccess } from '../_util'
-import { ResultEnum } from '@/enums/httpEnum'
+import { MockMethod } from 'vite-plugin-mock';
+import { getRequestToken, requestParams, resultError, resultSuccess } from '../_util';
+import { ResultEnum } from '@/enums/httpEnum';
 
 const fakeUserList = [
   {
@@ -33,7 +32,7 @@ const fakeUserList = [
     phone: '18822137893',
     token: 'fakeToken2',
   },
-]
+];
 
 export default [
   {
@@ -41,21 +40,21 @@ export default [
     timeout: 1000,
     method: 'post',
     response: ({ body }) => {
-      const { username, password } = body
+      const { username, password } = body;
       const checkUser = fakeUserList.find(
-        item => item.username === username && password === item.password,
-      )
+        (item) => item.username === username && password === item.password
+      );
       if (!checkUser) {
-        return resultError('帐号或密码不正确')
+        return resultError('帐号或密码不正确');
       }
-      const { userId, username: _username, token, realname, sign } = checkUser
+      const { userId, username: _username, token, realname, sign } = checkUser;
       return resultSuccess({
         userId,
         username: _username,
         token,
         realname,
         sign,
-      })
+      });
     },
   },
   {
@@ -63,17 +62,15 @@ export default [
     timeout: 1000,
     method: 'get',
     response: (request: requestParams) => {
-      const token = getRequestToken(request)
-      if (!token) {
-        return resultError('无效令牌')
-      }
-      const checkUser = fakeUserList.find(item => item.token === token)
+      const token = getRequestToken(request);
+      if (!token) return resultError('无效令牌');
+      const checkUser = fakeUserList.find((item) => item.token === token);
       if (!checkUser) {
         return resultError('没有获取到对应的用户信息', {
           code: ResultEnum.TOKEN_EXPIRED,
-        })
+        });
       }
-      return resultSuccess(checkUser)
+      return resultSuccess(checkUser);
     },
   },
   {
@@ -81,15 +78,13 @@ export default [
     timeout: 1000,
     method: 'post',
     response: (request: requestParams) => {
-      const token = getRequestToken(request)
-      if (!token) {
-        return resultError('无效令牌')
-      }
-      const checkUser = fakeUserList.find(item => item.token === token)
+      const token = getRequestToken(request);
+      if (!token) return resultError('无效令牌');
+      const checkUser = fakeUserList.find((item) => item.token === token);
       if (!checkUser) {
-        return resultError('无效令牌')
+        return resultError('无效令牌');
       }
-      return resultSuccess(undefined, { message: '令牌已被销毁' })
+      return resultSuccess(undefined, { message: '令牌已被销毁' });
     },
   },
-] as MockMethod[]
+] as MockMethod[];

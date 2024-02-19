@@ -1,33 +1,31 @@
-import type { AxiosRequestConfig, Canceler } from 'axios'
-import axios from 'axios'
+import axios, { AxiosRequestConfig, Canceler } from 'axios';
 
-import qs from 'qs'
+import qs from 'qs';
 
-import { isFunction } from '@/utils/is/index'
+import { isFunction } from '@/utils/is/index';
 
 // 声明一个 Map 用于存储每个请求的标识 和 取消函数
-let pendingMap = new Map<string, Canceler>()
+let pendingMap = new Map<string, Canceler>();
 
-export function getPendingUrl(config: AxiosRequestConfig) {
-  return [config.method, config.url, qs.stringify(config.data), qs.stringify(config.params)].join('&')
-}
+export const getPendingUrl = (config: AxiosRequestConfig) =>
+  [config.method, config.url, qs.stringify(config.data), qs.stringify(config.params)].join('&');
 
 export class AxiosCanceler {
   /**
    * 添加请求
-   * @param {object} config
+   * @param {Object} config
    */
   addPending(config: AxiosRequestConfig) {
-    this.removePending(config)
-    const url = getPendingUrl(config)
-    config.cancelToken
-      = config.cancelToken
-      || new axios.CancelToken((cancel) => {
+    this.removePending(config);
+    const url = getPendingUrl(config);
+    config.cancelToken =
+      config.cancelToken ||
+      new axios.CancelToken((cancel) => {
         if (!pendingMap.has(url)) {
           // 如果 pending 中不存在当前请求，则添加进去
-          pendingMap.set(url, cancel)
+          pendingMap.set(url, cancel);
         }
-      })
+      });
   }
 
   /**
@@ -35,23 +33,23 @@ export class AxiosCanceler {
    */
   removeAllPending() {
     pendingMap.forEach((cancel) => {
-      cancel && isFunction(cancel) && cancel()
-    })
-    pendingMap.clear()
+      cancel && isFunction(cancel) && cancel();
+    });
+    pendingMap.clear();
   }
 
   /**
    * 移除请求
-   * @param {object} config
+   * @param {Object} config
    */
   removePending(config: AxiosRequestConfig) {
-    const url = getPendingUrl(config)
+    const url = getPendingUrl(config);
 
     if (pendingMap.has(url)) {
       // 如果在 pending 中存在当前请求标识，需要取消当前请求，并且移除
-      const cancel = pendingMap.get(url)
-      cancel && cancel(url)
-      pendingMap.delete(url)
+      const cancel = pendingMap.get(url);
+      cancel && cancel(url);
+      pendingMap.delete(url);
     }
   }
 
@@ -59,6 +57,6 @@ export class AxiosCanceler {
    * @description: 重置
    */
   reset(): void {
-    pendingMap = new Map<string, Canceler>()
+    pendingMap = new Map<string, Canceler>();
   }
 }

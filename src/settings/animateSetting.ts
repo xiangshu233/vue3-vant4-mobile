@@ -5,4 +5,4 @@ export const animates = [
   { value: 'fade', text: '消退' },
   { value: 'fade-bottom', text: '底部消退' },
   { value: 'fade-scale', text: '缩放消退' },
-]
+];

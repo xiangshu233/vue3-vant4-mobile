@@ -9,17 +9,16 @@
  *  ==>www.baidu.com?a=3&b=4
  */
 export function setObjToUrlParams(baseUrl: string, obj: object): string {
-  let parameters = ''
-  let url = ''
+  let parameters = '';
+  let url = '';
   for (const key in obj) {
-    parameters += `${key}=${encodeURIComponent(obj[key])}&`
+    parameters += key + '=' + encodeURIComponent(obj[key]) + '&';
   }
-  parameters = parameters.replace(/&$/, '')
+  parameters = parameters.replace(/&$/, '');
   if (/\?$/.test(baseUrl)) {
-    url = baseUrl + parameters
+    url = baseUrl + parameters;
+  } else {
+    url = baseUrl.replace(/\/?$/, '?') + parameters;
   }
-  else {
-    url = baseUrl.replace(/\/?$/, '?') + parameters
-  }
-  return url
+  return url;
 }

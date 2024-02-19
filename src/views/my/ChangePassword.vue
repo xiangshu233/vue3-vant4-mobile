@@ -1,12 +1,12 @@
 <template>
   <div>
     <NavBar />
-    <p>修改登录密码页面</p>
+    修改登录密码页面
   </div>
 </template>
 
 <script setup lang="ts">
-import NavBar from './components/NavBar.vue'
+  import NavBar from './components/NavBar.vue';
 </script>
 
 <style scoped></style>
