@@ -19,7 +19,10 @@ export default defineConfig({
     // 模板使用 viewport 作为移动端适配方案，unocss 默认单位为 rem
     // 所以需要转成 px，然后由 postcss 把 px 转成 vw/vh，完成适配
     // https://unocss.dev/presets/rem-to-px
-    presetRemToPx(),
+    presetRemToPx({
+      // default
+      baseFontSize: 16,
+    }),
 
     // 图标预设: https://unocss.dev/presets/icons
     presetIcons({
