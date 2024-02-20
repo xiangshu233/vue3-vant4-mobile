@@ -5,12 +5,12 @@
       class="my-card relative mx-6 flex flex-col items-center rounded-2xl pb-2 shadow-xl -top-18"
     >
       <van-image
-        class="fixed h-22 w-22 border-2 border-solid -top-10"
+        class="h-22 w-22 border-2 border-solid !absolute -top-10"
         round
         fit="cover"
         :src="avatar"
       />
-      <div class="flex flex-col items-center -mt-10">
+      <div class="mt-14 flex flex-col items-center">
         <p class="mb-2 text-5 font-black">
           {{ nickname }}
         </p>
