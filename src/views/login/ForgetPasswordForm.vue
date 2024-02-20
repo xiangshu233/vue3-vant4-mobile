@@ -47,9 +47,6 @@
         </van-button>
       </template>
     </van-field>
-    <van-button type="success">
-      成功按钮
-    </van-button>
     <van-button
       class="enter-y !mb-4 !rounded-md"
       type="primary"
