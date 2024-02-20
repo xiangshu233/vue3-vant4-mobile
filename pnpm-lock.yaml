@@ -82,6 +82,9 @@ devDependencies:
   '@unocss/eslint-plugin':
     specifier: ^0.58.4
     version: 0.58.5(eslint@8.56.0)(typescript@5.3.3)
+  '@unocss/preset-rem-to-px':
+    specifier: ^0.58.5
+    version: 0.58.5
   '@unocss/transformer-directives':
     specifier: ^0.58.4
     version: 0.58.5
@@ -2066,6 +2069,12 @@ packages:
       '@unocss/core': 0.58.5
       '@unocss/extractor-arbitrary-variants': 0.58.5
       '@unocss/rule-utils': 0.58.5
+    dev: true
+
+  /@unocss/preset-rem-to-px@0.58.5:
+    resolution: {integrity: sha512-gM1jy/HoUS/HeiuOt5u+fAAWT/PPLqfC8eWGRrtqm22zKOq0Ea/Lp8Jh+BApc1cGby2xw6lwiFJRbFbiPaFoNw==}
+    dependencies:
+      '@unocss/core': 0.58.5
     dev: true
 
   /@unocss/preset-tagify@0.58.5:

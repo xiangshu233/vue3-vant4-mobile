@@ -2,13 +2,13 @@
   <div>
     <NavBar>
       <template #right>
-        <span class="text-32px" @click="handleNickname">保存</span>
+        <span @click="handleNickname">保存</span>
       </template>
     </NavBar>
     <van-form ref="formRef">
       <van-field
         v-model="formValue.nickname"
-        class="mt-20px"
+        class="mt-4"
         name="nickname"
         placeholder="请输入昵称（2-12字）"
         :rules="[
@@ -20,7 +20,7 @@
       />
     </van-form>
 
-    <div class="note px-30px">
+    <div class="note p-6">
       <p>昵称支持2-12个中文字符或3-24个英文字符，</p>
       <p>符号仅支持”-“和”_“和”.“以及“·”</p>
     </div>
@@ -82,9 +82,7 @@ onMounted(() => {
 </script>
 
 <style scoped lang="less">
-  .note {
-  margin-top: 15px;
-  font-size: 25px;
+.note {
   color: var(--van-text-color-2);
 }
 </style>

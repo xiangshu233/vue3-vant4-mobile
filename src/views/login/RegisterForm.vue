@@ -1,6 +1,6 @@
 <template>
   <van-form v-if="getShow" ref="formRef" class="flex flex-col" @submit="handleRegister">
-    <van-cell-group inset class="enter-y !mx-0 !mb-60px">
+    <van-cell-group inset class="enter-y !mx-0 !mb-10">
       <van-field
         v-model="formData.username"
         class="enter-y items-center !rounded-md"
@@ -111,7 +111,7 @@
     </van-cell-group>
 
     <van-button
-      class="enter-y !mb-25px !rounded-md"
+      class="enter-y !mb-4 !rounded-md"
       type="primary"
       block
       native-type="submit"
@@ -121,7 +121,7 @@
     </van-button>
 
     <van-button
-      class="enter-y !mb-150px !rounded-md"
+      class="enter-y !rounded-md"
       plain
       type="primary"
       block

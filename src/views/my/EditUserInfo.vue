@@ -13,7 +13,11 @@
     >
       <template #input>
         <UploaderImage>
-          <van-image class="avatar" round fit="cover" :src="avatar" />
+          <van-image
+            class="h-16 w-16"
+            round fit="cover"
+            :src="avatar"
+          />
         </UploaderImage>
       </template>
     </van-field>
@@ -65,7 +69,11 @@
     >
       <template #input>
         <UploaderImage>
-          <van-image class="cover" fit="cover" :src="cover ? cover : avatar" />
+          <van-image
+            class="cover h-15 w-25"
+            fit="cover"
+            :src="cover ? cover : avatar"
+          />
         </UploaderImage>
       </template>
     </van-field>
@@ -121,10 +129,8 @@ const showIndustryPicker = ref(false)
 const state = reactive({
   nickname: '',
   sign: '',
-  // the field v-model
   genderText: '',
   industryText: '',
-  // the pick v-model
   industryValues: [0],
   genderValues: [0],
 })
@@ -165,13 +171,7 @@ onMounted(() => {
 </script>
 
 <style scoped lang="less">
-  .avatar {
-  width: 140px;
-  height: 140px;
-}
 .cover {
-  width: 170px;
-  height: 100px;
   :deep(.van-image__img) {
     border-radius: 10px !important;
   }

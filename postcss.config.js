@@ -20,7 +20,7 @@ import viewport from 'postcss-mobile-forever'
 
 const baseViewportOpts = {
   appSelector: '#app', // 根元素选择器，用于设置桌面端和横屏时的居中样式
-  viewportWidth: 750, // 设计稿的视口宽度，可传递函数动态生成视图宽度
+  viewportWidth: 375, // 设计稿的视口宽度，可传递函数动态生成视图宽度
   unitPrecision: 3, // 单位转换后保留的精度（很多时候无法整除）
   maxDisplayWidth: 600, // 桌面端最大展示宽度
   propList: [
@@ -45,8 +45,8 @@ export default {
     autoprefixer(),
     viewport({
       ...baseViewportOpts,
-      // 只将 vant 转为 350 设计稿的 viewport，其它样式的视图宽度为 750
-      viewportWidth: file => (file.includes('node_modules/vant/') ? 375 : 750),
+      // 只将 vant 转为 375 设计稿的 viewport，其它样式的视图宽度为 750
+      // viewportWidth: file => (file.includes('node_modules/vant/') ? 375 : 750),
     }),
   ],
 }

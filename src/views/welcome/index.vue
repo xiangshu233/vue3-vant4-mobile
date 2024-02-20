@@ -11,7 +11,7 @@
           <SvgIcon :size="130" name="logo" />
         </div>
         <div
-          class="text-darkBlue dark:text-garyWhite enter-y mb-4 mt-12 text-center text-2xl font-black"
+          class="enter-y text-darkBlue dark:text-garyWhite mb-4 mt-12 text-center text-2xl font-black"
         >
           欢迎来到 {{ title }}
         </div>

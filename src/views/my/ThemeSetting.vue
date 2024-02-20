@@ -14,17 +14,17 @@
         <span
           v-for="(item, index) in designStore.appThemeList"
           :key="index"
-          h="70px"
-          w="70px"
+          h="9"
+          w="9"
           items-center
-          border="2 rounded-md border-white"
+          border="2 rounded-md"
           flex="~"
           justify="center"
           :style="{ 'background-color': item }"
           @click="togTheme(item)"
         >
           <Icon v-if="item === designStore.appTheme">
-            <CheckOutlined h="!60px" w="!60px" text="white" />
+            <CheckOutlined text="white" />
           </Icon>
         </span>
       </div>

@@ -152,7 +152,6 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       // }
     },
 
-    // 有需要再打开，否则 既不优化 也不排除
     optimizeDeps: {
       /**
        * 依赖预构建，vite 启动时会将下面 include 里的模块，编译成 esm 格式并缓存到 node_modules/.vite 文件夹，
@@ -172,7 +171,9 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       ],
       // 打包时强制排除的依赖项
       exclude: [
-
+        // https://www.mulingyuer.com/archives/928/
+        'vant',
+        '@vant/use',
       ],
     },
 

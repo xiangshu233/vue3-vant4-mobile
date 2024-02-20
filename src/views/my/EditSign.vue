@@ -2,7 +2,7 @@
   <div>
     <NavBar>
       <template #right>
-        <span class="text-32px" @click="handleNickname">保存</span>
+        <span @click="handleNickname">保存</span>
       </template>
     </NavBar>
     <van-form ref="formRef">
@@ -16,7 +16,7 @@
         label="签名"
         type="textarea"
         maxlength="70"
-        placeholder="介绍一下你自己"
+        placeholder="随知修行乃当务之急，然怠惰度日至今"
         show-word-limit
       />
     </van-form>
@@ -65,9 +65,5 @@ onMounted(() => {
 </script>
 
 <style scoped lang="less">
-  .note {
-  margin-top: 15px;
-  font-size: 25px;
-  color: var(--van-text-color-2);
-}
+
 </style>

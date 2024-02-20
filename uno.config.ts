@@ -1,4 +1,3 @@
-// uno.config.ts
 import {
   defineConfig,
   presetAttributify,
@@ -7,7 +6,7 @@ import {
   presetUno,
   presetWebFonts,
 } from 'unocss'
-
+import presetRemToPx from '@unocss/preset-rem-to-px'
 import transformerVariantGroup from '@unocss/transformer-variant-group'
 import transformerDirectives from '@unocss/transformer-directives'
 
@@ -16,6 +15,11 @@ export default defineConfig({
   presets: [
     // 此预设尝试提供流行的实用程序优先框架的通用超集，包括 Tailwind CSS、Windi CSS、Bootstrap、Tachyons 等
     presetUno(),
+
+    // 模板使用 viewport 作为移动端适配方案，unocss 默认单位为 rem
+    // 所以需要转成 px，然后由 postcss 把 px 转成 vw/vh，完成适配
+    // https://unocss.dev/presets/rem-to-px
+    presetRemToPx(),
 
     // 图标预设: https://unocss.dev/presets/icons
     presetIcons({

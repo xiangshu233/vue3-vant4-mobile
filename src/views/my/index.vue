@@ -1,20 +1,20 @@
 <template>
   <div>
-    <div :style="getUserCoverBg" class="my-bg h-550px -z-19" />
+    <div :style="getUserCoverBg" class="my-bg h-70" />
     <div
-      class="my-card relative mx-40px flex flex-col items-center rounded-2xl pb-20px shadow-xl -top-150px"
+      class="my-card relative mx-6 flex flex-col items-center rounded-2xl pb-2 shadow-xl -top-18"
     >
       <van-image
-        class="h-170px w-170px border-4 border-solid !absolute -top-90px"
+        class="fixed h-22 w-22 border-2 border-solid -top-10"
         round
         fit="cover"
         :src="avatar"
       />
-      <div class="mt-90px flex flex-col items-center">
-        <p class="mb-20px text-40px font-black">
+      <div class="flex flex-col items-center -mt-10">
+        <p class="mb-2 text-5 font-black">
           {{ nickname }}
         </p>
-        <p class="px-36px text-30px">
+        <p class="text-4">
           {{ sign }}
         </p>
       </div>

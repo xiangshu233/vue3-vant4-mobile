@@ -2,7 +2,7 @@
   <van-form v-if="getShow" ref="formRef" class="flex flex-col items-center" @submit="handleReset">
     <van-field
       v-model="formData.username"
-      class="enter-y mb-25px items-center !rounded-md"
+      class="enter-y mb-4 items-center !rounded-md"
       name="username"
       placeholder="用户名"
       :rules="getFormRules.username"
@@ -16,7 +16,7 @@
 
     <van-field
       v-model="formData.mobile"
-      class="enter-y mb-25px items-center !rounded-md"
+      class="enter-y mb-4 items-center !rounded-md"
       name="password"
       placeholder="手机号码"
       :rules="getFormRules.mobile"
@@ -30,7 +30,7 @@
 
     <van-field
       v-model="formData.sms"
-      class="enter-y mb-70px items-center !rounded-md"
+      class="enter-y mb-10 items-center !rounded-md"
       center
       clearable
       placeholder="请输入短信验证码"
@@ -47,9 +47,11 @@
         </van-button>
       </template>
     </van-field>
-
+    <van-button type="success">
+      成功按钮
+    </van-button>
     <van-button
-      class="enter-y !mb-25px !rounded-md"
+      class="enter-y !mb-4 !rounded-md"
       type="primary"
       block
       native-type="submit"
@@ -59,7 +61,7 @@
     </van-button>
 
     <van-button
-      class="enter-y !mb-150px !rounded-md"
+      class="enter-y !rounded-md"
       plain
       type="primary"
       block

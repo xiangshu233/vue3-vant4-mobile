@@ -2,7 +2,7 @@
   <van-form v-if="getShow" ref="formRef" class="flex flex-col items-center" @submit="handleSubmit">
     <van-field
       v-model="formData.username"
-      class="enter-y mb-25px items-center !rounded-md"
+      class="enter-y mb-4 items-center !rounded-md"
       name="username"
       placeholder="用户名"
       :rules="getFormRules.username"
@@ -15,7 +15,7 @@
     </van-field>
     <van-field
       v-model="formData.password"
-      class="enter-y mb-25px items-center !rounded-md"
+      class="enter-y mb-4 items-center !rounded-md"
       :type="switchPassType ? 'password' : 'text'"
       name="password"
       placeholder="密码"
@@ -37,16 +37,16 @@
       </template>
     </van-field>
 
-    <div class="enter-y mb-100px w-full flex justify-between px-5px">
+    <div class="enter-y mb-10 w-full flex justify-between px-5px">
       <div class="flex items-center">
-        <van-switch v-model="rememberMe" class="mr-8px !text-30px" />
-        <span class="!text-25px">记住我</span>
+        <van-switch v-model="rememberMe" size="18px" class="mr-8px" />
+        <span>记住我</span>
       </div>
-      <a class="!text-25px" @click="setLoginState(LoginStateEnum.RESET_PASSWORD)">忘记密码?</a>
+      <a @click="setLoginState(LoginStateEnum.RESET_PASSWORD)">忘记密码?</a>
     </div>
 
     <van-button
-      class="enter-y !mb-25px !rounded-md"
+      class="enter-y !mb-4 !rounded-md"
       type="primary"
       block
       native-type="submit"
@@ -55,7 +55,7 @@
       登 录
     </van-button>
     <van-button
-      class="enter-y !mb-25 !rounded-md"
+      class="enter-y !rounded-md"
       plain
       type="primary"
       block
