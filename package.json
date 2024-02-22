@@ -1,7 +1,7 @@
 {
   "name": "vue3-vant4-mobile",
   "type": "module",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "packageManager": "pnpm@8.6.10",
   "author": {
