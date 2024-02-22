@@ -1,0 +1,32 @@
+# .github/workflows/release.yml
+
+name: Release
+
+# 生成 changelog 时需要写权限
+permissions:
+  contents: write
+
+on:
+  push:
+    tags:
+      - 'v*' # 当添加标签,并且标签以v开头时,执行下面的jobs
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v3
+        with:
+          # 指定 node 版本
+          node-version: 18.x
+
+        # 根据commit信息,生成changelog, 提交规范参考 约定式提交规范
+        # 只会添加 feat, fix 的提交到 changelog 中
+        # 此步骤需要 `GITHUB_TOKEN`
+      - run: npx changelogithub # or changelogithub@0.12 if ensure the stable result
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

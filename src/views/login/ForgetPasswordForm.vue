@@ -1,8 +1,8 @@
 <template>
-  <van-form ref="formRef" v-if="getShow" class="flex flex-col items-center" @submit="handleReset">
+  <van-form v-if="getShow" ref="formRef" class="flex flex-col items-center" @submit="handleReset">
     <van-field
-      class="enter-y items-center mb-25px !rounded-md"
       v-model="formData.username"
+      class="enter-y mb-4 items-center !rounded-md"
       name="username"
       placeholder="用户名"
       :rules="getFormRules.username"
@@ -15,8 +15,8 @@
     </van-field>
 
     <van-field
-      class="enter-y items-center mb-25px !rounded-md"
       v-model="formData.mobile"
+      class="enter-y mb-4 items-center !rounded-md"
       name="password"
       placeholder="手机号码"
       :rules="getFormRules.mobile"
@@ -29,8 +29,8 @@
     </van-field>
 
     <van-field
-      class="enter-y items-center mb-70px !rounded-md"
       v-model="formData.sms"
+      class="enter-y mb-10 items-center !rounded-md"
       center
       clearable
       placeholder="请输入短信验证码"
@@ -42,12 +42,13 @@
         </Icon>
       </template>
       <template #button>
-        <van-button size="small" type="primary">发送验证码</van-button>
+        <van-button size="small" type="primary">
+          发送验证码
+        </van-button>
       </template>
     </van-field>
-
     <van-button
-      class="enter-y !mb-25px !rounded-md"
+      class="enter-y !mb-4 !rounded-md"
       type="primary"
       block
       native-type="submit"
@@ -57,7 +58,7 @@
     </van-button>
 
     <van-button
-      class="enter-y !mb-150px !rounded-md"
+      class="enter-y !rounded-md"
       plain
       type="primary"
       block
@@ -69,39 +70,40 @@
 </template>
 
 <script setup lang="ts">
-  import { computed, reactive, ref, unref } from 'vue';
-  import type { FormInstance } from 'vant';
-  import { Icon } from '@vicons/utils';
-  import { UserOutlined, MobileOutlined, EditOutlined } from '@vicons/antd';
-  import { LoginStateEnum, useLoginState, useFormRules } from './useLogin';
+import { computed, reactive, ref, unref } from 'vue'
+import type { FormInstance } from 'vant'
+import { Icon } from '@vicons/utils'
+import { EditOutlined, MobileOutlined, UserOutlined } from '@vicons/antd'
+import { LoginStateEnum, useFormRules, useLoginState } from './useLogin'
 
-  const { handleBackLogin, getLoginState } = useLoginState();
-  const { getFormRules } = useFormRules();
-  const getShow = computed(() => unref(getLoginState) === LoginStateEnum.RESET_PASSWORD);
+const { handleBackLogin, getLoginState } = useLoginState()
+const { getFormRules } = useFormRules()
+const getShow = computed(() => unref(getLoginState) === LoginStateEnum.RESET_PASSWORD)
 
-  const loading = ref(false);
-  const formRef = ref<FormInstance>();
-  const formData = reactive({
-    username: '',
-    mobile: '',
-    sms: '',
-  });
+const loading = ref(false)
+const formRef = ref<FormInstance>()
+const formData = reactive({
+  username: '',
+  mobile: '',
+  sms: '',
+})
 
-  function handleReset() {
-    formRef.value
-      ?.validate()
-      .then(async () => {
-        try {
-          loading.value = true;
-          // do something
-        } finally {
-          loading.value = false;
-        }
-      })
-      .catch(() => {
-        console.error('验证失败');
-      });
-  }
+function handleReset() {
+  formRef.value
+    ?.validate()
+    .then(async () => {
+      try {
+        loading.value = true
+        // do something
+      }
+      finally {
+        loading.value = false
+      }
+    })
+    .catch(() => {
+      console.error('验证失败')
+    })
+}
 </script>
 
 <style scoped lang="less"></style>

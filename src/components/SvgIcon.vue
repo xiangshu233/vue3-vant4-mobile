@@ -5,44 +5,45 @@
 </template>
 
 <script lang="ts">
-  import type { CSSProperties } from 'vue';
-  import { defineComponent, computed } from 'vue';
+import type { CSSProperties } from 'vue'
+import { computed, defineComponent } from 'vue'
 
-  export default defineComponent({
-    name: 'SvgIcon',
-    props: {
-      prefix: {
-        type: String,
-        default: 'icon',
-      },
-      name: {
-        type: String,
-        required: true,
-      },
-      size: {
-        type: [Number, String],
-        default: 16,
-      },
-      color: {
-        type: String,
-        default: '#333',
-      },
+export default defineComponent({
+  name: 'SvgIcon',
+  props: {
+    prefix: {
+      type: String,
+      default: 'icon',
     },
-    setup(props) {
-      const symbolId = computed(() => `#${props.prefix}-${props.name}`);
-
-      const getStyle = computed((): CSSProperties => {
-        const { size } = props;
-        let s = `${size}`;
-        s = `${s.replace('px', '')}px`;
-        return {
-          width: s,
-          height: s,
-        };
-      });
-
-      return { symbolId, getStyle };
+    name: {
+      type: String,
+      required: true,
     },
-  });
+    size: {
+      type: [Number, String],
+      default: 16,
+    },
+    color: {
+      type: String,
+      default: '#333',
+    },
+  },
+  setup(props) {
+    const symbolId = computed(() => `#${props.prefix}-${props.name}`)
+
+    const getStyle = computed((): CSSProperties => {
+      const { size } = props
+      let s = `${size}`
+      s = `${s.replace('px', '')}px`
+      return {
+        width: s,
+        height: s,
+      }
+    })
+
+    return { symbolId, getStyle }
+  },
+})
 </script>
+
 <style scoped lang="less"></style>

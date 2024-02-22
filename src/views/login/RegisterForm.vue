@@ -1,9 +1,9 @@
 <template>
-  <van-form ref="formRef" v-if="getShow" class="flex flex-col" @submit="handleRegister">
-    <van-cell-group inset class="enter-y !mx-0 !mb-60px">
+  <van-form v-if="getShow" ref="formRef" class="flex flex-col" @submit="handleRegister">
+    <van-cell-group inset class="enter-y !mx-0 !mb-10">
       <van-field
-        class="enter-y items-center !rounded-md"
         v-model="formData.username"
+        class="enter-y items-center !rounded-md"
         name="username"
         placeholder="用户名"
         :rules="getFormRules.username"
@@ -16,8 +16,8 @@
       </van-field>
 
       <van-field
-        class="enter-y items-center !rounded-md"
         v-model="formData.mobile"
+        class="enter-y items-center !rounded-md"
         name="password"
         placeholder="手机号码"
         :rules="getFormRules.mobile"
@@ -30,8 +30,8 @@
       </van-field>
 
       <van-field
-        class="enter-y items-center !rounded-md"
         v-model="formData.sms"
+        class="enter-y items-center !rounded-md"
         center
         clearable
         placeholder="请输入短信验证码"
@@ -43,13 +43,15 @@
           </Icon>
         </template>
         <template #button>
-          <van-button size="small" type="primary">发送验证码</van-button>
+          <van-button size="small" type="primary">
+            发送验证码
+          </van-button>
         </template>
       </van-field>
 
       <van-field
-        class="enter-y items-center !rounded-md"
         v-model="formData.password"
+        class="enter-y items-center !rounded-md"
         :type="switchPassType ? 'password' : 'text'"
         name="password"
         placeholder="密码"
@@ -72,8 +74,8 @@
       </van-field>
 
       <van-field
-        class="enter-y items-center !rounded-md"
         v-model="formData.confirmPassword"
+        class="enter-y items-center !rounded-md"
         :type="switchConfirmPassType ? 'password' : 'text'"
         name="confirmPassword"
         placeholder="确认密码"
@@ -109,7 +111,7 @@
     </van-cell-group>
 
     <van-button
-      class="enter-y !mb-25px !rounded-md"
+      class="enter-y !mb-4 !rounded-md"
       type="primary"
       block
       native-type="submit"
@@ -119,7 +121,7 @@
     </van-button>
 
     <van-button
-      class="enter-y !mb-150px !rounded-md"
+      class="enter-y !rounded-md"
       plain
       type="primary"
       block
@@ -131,58 +133,59 @@
 </template>
 
 <script setup lang="ts">
-  import { computed, reactive, ref, unref } from 'vue';
-  import type { FormInstance } from 'vant';
-  import { Icon } from '@vicons/utils';
-  import {
-    UserOutlined,
-    MobileOutlined,
-    EditOutlined,
-    LockOutlined,
-    EyeOutlined,
-    EyeInvisibleOutlined,
-  } from '@vicons/antd';
-  import { LoginStateEnum, useLoginState, useFormRules } from './useLogin';
+import { computed, reactive, ref, unref } from 'vue'
+import type { FormInstance } from 'vant'
+import { Icon } from '@vicons/utils'
+import {
+  EditOutlined,
+  EyeInvisibleOutlined,
+  EyeOutlined,
+  LockOutlined,
+  MobileOutlined,
+  UserOutlined,
+} from '@vicons/antd'
+import { LoginStateEnum, useFormRules, useLoginState } from './useLogin'
 
-  const { handleBackLogin, getLoginState } = useLoginState();
-  const getShow = computed(() => unref(getLoginState) === LoginStateEnum.REGISTER);
+const { handleBackLogin, getLoginState } = useLoginState()
+const getShow = computed(() => unref(getLoginState) === LoginStateEnum.REGISTER)
 
-  const loading = ref(false);
-  const formRef = ref<FormInstance>();
+const loading = ref(false)
+const formRef = ref<FormInstance>()
 
-  const formData = reactive({
-    username: '',
-    mobile: '',
-    sms: '',
-    password: '',
-    confirmPassword: '',
-    policy: false,
-  });
+const formData = reactive({
+  username: '',
+  mobile: '',
+  sms: '',
+  password: '',
+  confirmPassword: '',
+  policy: false,
+})
 
-  const { getFormRules } = useFormRules(formData);
+const { getFormRules } = useFormRules(formData)
 
-  const switchPassType = ref(true);
-  const switchConfirmPassType = ref(true);
+const switchPassType = ref(true)
+const switchConfirmPassType = ref(true)
 
-  function handleRegister() {
-    formRef.value
-      ?.validate()
-      .then(async () => {
-        try {
-          loading.value = true;
-          // do something
+function handleRegister() {
+  formRef.value
+    ?.validate()
+    .then(async () => {
+      try {
+        loading.value = true
+        // do something
 
-          console.log('%c [  ]-167', 'font-size:13px; background:pink; color:#bf2c9f;');
-        } finally {
-          loading.value = false;
+        console.log('%c [  ]-167', 'font-size:13px; background:pink; color:#bf2c9f;')
+      }
+      finally {
+        loading.value = false
 
-          console.log('%c [  ]-171', 'font-size:13px; background:pink; color:#bf2c9f;');
-        }
-      })
-      .catch(() => {
-        console.error('验证失败');
-      });
-  }
+        console.log('%c [  ]-171', 'font-size:13px; background:pink; color:#bf2c9f;')
+      }
+    })
+    .catch(() => {
+      console.error('验证失败')
+    })
+}
 </script>
 
 <style scoped lang="less"></style>

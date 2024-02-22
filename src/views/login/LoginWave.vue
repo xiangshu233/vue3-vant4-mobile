@@ -1,5 +1,5 @@
 <template>
-  <div class="enter-y fixed bottom-0 w-full !-z-5 wave-wrapper">
+  <div class="enter-y wave-wrapper fixed bottom-0 w-full !-z-5">
     <svg
       class="ignore-waves"
       xmlns="http://www.w3.org/2000/svg"
@@ -45,61 +45,61 @@
 </template>
 
 <script setup lang="ts">
-  import { useDesignSettingStore } from '@/store/modules/designSetting';
-  import { hexToRgba } from '@/utils/index';
+import { useDesignSettingStore } from '@/store/modules/designSetting'
+import { hexToRgba } from '@/utils/index'
 
-  const designStore = useDesignSettingStore();
+const designStore = useDesignSettingStore()
 </script>
 
 <style scoped lang="less">
   .wave-wrapper {
-    position: fixed;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-  }
-  .ignore-waves {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 50px;
-    min-height: 40px;
-    max-height: 80px;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+.ignore-waves {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 50px;
+  min-height: 40px;
+  max-height: 80px;
+}
+
+/* Animation */
+.parallax > use {
+  animation: move-forever 12s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+  animation: move-forever 12s linear infinite;
+}
+
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 16s;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
   }
 
-  /* Animation */
-  .parallax > use {
-    animation: move-forever 12s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
-    animation: move-forever 12s linear infinite;
+  100% {
+    transform: translate3d(85px, 0, 0);
   }
-
-  .parallax > use:nth-child(1) {
-    animation-delay: -2s;
-    animation-duration: 7s;
-  }
-
-  .parallax > use:nth-child(2) {
-    animation-delay: -3s;
-    animation-duration: 10s;
-  }
-
-  .parallax > use:nth-child(3) {
-    animation-delay: -4s;
-    animation-duration: 13s;
-  }
-
-  .parallax > use:nth-child(4) {
-    animation-delay: -5s;
-    animation-duration: 16s;
-  }
-
-  @keyframes move-forever {
-    0% {
-      transform: translate3d(-90px, 0, 0);
-    }
-
-    100% {
-      transform: translate3d(85px, 0, 0);
-    }
-  }
+}
 </style>
