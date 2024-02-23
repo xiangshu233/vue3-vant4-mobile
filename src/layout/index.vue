@@ -17,7 +17,7 @@
         <component :is="Component" v-else :key="route.fullPath" />
       </template>
     </routerView>
-    <van-tabbar placeholder route fixed>
+    <van-tabbar route class="tabbar">
       <van-tabbar-item
         v-for="menu in getMenus"
         :key="menu.name"
@@ -55,4 +55,10 @@ const getMenus: ComputedRef<RouteRecordRaw[]> = computed(() =>
 const getShowHeader = computed(() => !currentRoute.meta.hiddenHeader)
 </script>
 
-<style scoped lang="less"></style>
+<style scoped lang="less">
+.tabbar {
+  bottom: 0;
+  width: 100%;
+  position: relative;
+}
+</style>
