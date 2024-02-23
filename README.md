@@ -74,8 +74,8 @@
 - [TypeScript](https://www.typescriptlang.org/) - 熟悉 `TypeScript` 基本语法
 - [Vue-Router-Next](https://router.vuejs.org/) - 熟悉 `Vue-Router`基本使用
 - [ECharts5](https://echarts.apache.org/handbook/zh/get-started/) - 熟悉 `Echarts` 基本使用
-- [xicons](https://www.xicons.org/#/) - 本项目推荐图标库，当然你也可以使用 `IconSVg`
-- [postcss-mobile-forever](https://github.com/wswmsword/postcss-mobile-forever) - 了解手机端 `px` 转 `viewport` 插件的作用
+- [Xicons](https://www.xicons.org/#/) - 本项目推荐图标库，当然你也可以使用 `IconSVg`
+- [Postcss-Mobile-Forever](https://github.com/wswmsword/postcss-mobile-forever) - 了解手机端 `px` 转 `viewport` 插件的作用
 - [Lodash-es](https://www.lodashjs.com/) - `JS`高性能工具库
 - [UnoCSS](https://unocss.dev/) - 原子化 `CSS`，熟悉 `UnoCSS` 基本使用
 - [Mock.js](https://github.com/nuysoft/Mock) - 了解 `Mockjs` 基本语法
@@ -103,6 +103,56 @@
 - [Pretty TypeScript Errors](https://marketplace.visualstudio.com/items?itemName=antfu.file-nesting) - 使 VSCode 中的 TypeScript 错误更漂亮、更易于理解
 - [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree) - 在树视图中显示 TODO、FIXME 等注释标签
 - [Trailing Spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces) - 突出显示尾随空格并立即将其删除
+
+## VS Code Eslint 支持（自动修复）
+
+安装 [VS Code ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+
+```jsonc
+{
+  // Enable the ESlint flat config support
+  "eslint.experimental.useFlatConfig": true,
+
+  // Disable the default formatter, use eslint instead
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+
+  // Auto fix
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+
+  // Silent the stylistic rules in you IDE, but still auto fix them
+  "eslint.rules.customizations": [
+    { "rule": "style/*", "severity": "off" },
+    { "rule": "format/*", "severity": "off" },
+    { "rule": "*-indent", "severity": "off" },
+    { "rule": "*-spacing", "severity": "off" },
+    { "rule": "*-spaces", "severity": "off" },
+    { "rule": "*-order", "severity": "off" },
+    { "rule": "*-dangle", "severity": "off" },
+    { "rule": "*-newline", "severity": "off" },
+    { "rule": "*quotes", "severity": "off" },
+    { "rule": "*semi", "severity": "off" }
+  ],
+
+  // Enable eslint for all supported languages
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml",
+    "toml"
+  ]
+}
+```
 
 ## 使用
 
@@ -143,44 +193,46 @@ pnpm build
 
 ### 提交校验
 
-关于前端工程化 **配置构建代码检查工作流** 不了解的可以看下面这两篇文章了解下
+> [!TIP]
+> 关于前端工程化 **配置构建代码检查工作流** 不了解的可以看下面这两篇文章了解下
+>
+> [前端工程化配置(上) 构建代码检查工作流](https://xiangshu233.cn/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%8A%EF%BC%89%20%E6%9E%84%E5%BB%BA%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5%E5%B7%A5%E4%BD%9C%E6%B5%81/)
+>
+> [前端工程化配置(下) 规范仓库提交记录 commitlint + commitizen + cz-git + 配置](https://xiangshu233.cn/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%8B%EF%BC%89%20%E8%A7%84%E8%8C%83%E4%BB%93%E5%BA%93%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/)
 
-[前端工程化配置(上) 构建代码检查工作流](https://xiangshu233.cn/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%8A%EF%BC%89%20%E6%9E%84%E5%BB%BA%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5%E5%B7%A5%E4%BD%9C%E6%B5%81/)
-
-[前端工程化配置(下) 规范仓库提交记录 commitlint + commitizen + cz-git + 配置](https://xiangshu233.cn/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%8B%EF%BC%89%20%E8%A7%84%E8%8C%83%E4%BB%93%E5%BA%93%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/)
-
-代码首次拉下来 `pnpm install` 后 需要执行以下命令来更新 `git hooks`
-
-```shell
-# Update ./git/hooks
-npx simple-git-hooks
-```
+> [!IMPORTANT]
+> 首次 clone 代码 `pnpm install` 后 需要执行以下命令来更新`git hooks`
+>
+> ```shell
+> # Update ./git/hooks
+> npx simple-git-hooks
+> ```
 
 本项目提交规范校验使用 [simple-git-hooks](https://github.com/toplenboren/simple-git-hooks) 作为 git hooks，使用 [cz-git](https://github.com/Zhengqbbb/cz-git) 作为 commitlint commitizen。
 
-代码要想使用 commitlint 规范提交需要在更改的文件 `git add` 后，控制台执行 `cz` 命令开启 cz-git CLI
-
-若想直接执行 `git commit` 需要满足上面提交规范才能通过校验，否则无法提交
+> [!IMPORTANT]
+> 更改的代码若想要使用 Commitlint 规范提交需要将文件（放入暂存区） `git add` 后，控制台执行 `cz` 命令开启 cz-git CLI
+> 。若想直接执行 `git commit` 需要满足上面提交规范才能通过校验，否则将会被 Git Hook 打断提交
 
 simple-git-hooks 和 husky 都是用于管理 Git 钩子（Git hooks）的工具，但它们有一些区别：
 
-1. simple-git-hooks:
-
-- 简介: simple-git-hooks 是一个轻量级的工具，用于管理和运行Git钩子。
-- 特点:
-  - 提供了简单的配置方式来定义和运行 Gi 钩子。
-  - 适合于小型项目或对 Git 钩子需求不复杂的项目。
-  - 相对较少的功能和配置选项。
-  - 使用场景: 适用于简单的项目或对 Git 钩子管理需求不高的情况。
-
-2. husky:
-
-- 简介: husky 是一个功能强大的工具，用于管理 Git 钩子，并且在项目中被广泛使用。
-- 特点:
-  - 提供了丰富的配置选项和灵活性，可以精细地控制 Git 钩子的行为。
-  - 支持在不同的 Git 钩子事件上运行自定义脚本。
-  - 可以与其他工具（如linters、测试框架等）集成，实现更复杂的工作流。
-  - 使用场景: 适用于需要灵活配置和管理 Git 钩子的项目，尤其是大型或复杂的项目。
+> simple-git-hooks:
+>
+> - 简介: simple-git-hooks 是一个轻量级的工具，用于管理和运行Git钩子。
+> - 特点:
+>   - 提供了简单的配置方式来定义和运行 Gi 钩子。
+>   - 适合于小型项目或对 Git 钩子需求不复杂的项目。
+>   - 相对较少的功能和配置选项。
+>   - 使用场景: 适用于简单的项目或对 Git 钩子管理需求不高的情况。
+>
+> husky:
+>
+> - 简介: husky 是一个功能强大的工具，用于管理 Git 钩子，并且在项目中被广泛使用。
+> - 特点:
+>   - 提供了丰富的配置选项和灵活性，可以精细地控制 Git 钩子的行为。
+>   - 支持在不同的 Git 钩子事件上运行自定义脚本。
+>   - 可以与其他工具（如linters、测试框架等）集成，实现更复杂的工作流。
+>   - 使用场景: 适用于需要灵活配置和管理 Git 钩子的项目，尤其是大型或复杂的项目。
 
 ```json
 // package.json
