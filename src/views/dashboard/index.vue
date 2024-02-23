@@ -49,7 +49,7 @@ const getSwipeText = computed(() => {
     },
     {
       title: '✨ 零配置 ESlint',
-      details: '使用 git hook 进行 lint commit，规范化提交',
+      details: '使用 Git Hook 进行 Lint Commit，规范化提交',
     },
     {
       title: '🌠 使用最新的 <script setup> 语法',
