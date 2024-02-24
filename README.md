@@ -108,6 +108,8 @@
 
 安装 [VS Code ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
+将以下设置添加到您的 `.vscode/settings.json` 中：
+
 ```jsonc
 {
   // Enable the ESlint flat config support
