@@ -170,7 +170,7 @@ devDependencies:
     specifier: ^0.5.1
     version: 0.5.1(vite@5.0.10)
   vite-plugin-html:
-    specifier: ^3.2.1
+    specifier: ^3.2.2
     version: 3.2.2(vite@5.0.10)
   vite-plugin-mock:
     specifier: ^2.9.8
