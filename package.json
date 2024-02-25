@@ -17,7 +17,7 @@
     "preinstall": "npx only-allow pnpm",
     "bootstrap": "pnpm install",
     "serve": "npm run dev",
-    "dev": "vite",
+    "dev": "cross-env VITE_CJS_IGNORE_WARNING=true vite dev",
     "dev:debugcjs": "cross-env VITE_CJS_TRACE=true vite dev",
     "build": "cross-env NODE_ENV=production vite build && esno ./build/script/postBuild.ts",
     "build:no-cache": "pnpm clean:cache && npm run build",
