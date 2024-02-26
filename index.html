@@ -9,25 +9,26 @@
   <body>
     <div id="app">
       <script>
-        const appDesignSetting = window.localStorage.getItem('DESIGN-SETTING')
+        const designSetting = JSON.parse(
+          window.localStorage.getItem('DESIGN-SETTING'),
+        )
+
         ;(() => {
           let htmlRoot = document.getElementById('htmlRoot')
-          let darkMode =
-            appDesignSetting && JSON.parse(appDesignSetting).darkMode
+          let darkMode = designSetting.darkMode
           if (htmlRoot && darkMode) {
             htmlRoot.setAttribute('data-theme', darkMode)
             darkMode = htmlRoot = null
           } else {
             htmlRoot.setAttribute('data-theme', 'light')
           }
-        })()
 
-        document.addEventListener('DOMContentLoaded', (event) => {
-          const elements = document.querySelectorAll('.dot-spin i')
-          elements.forEach((element) => {
-            element.style.background = JSON.parse(appDesignSetting).appTheme
-          })
-        })
+          // 设置主题色变量
+          document.documentElement.style.setProperty(
+            '--app-theme-color',
+            designSetting.appTheme,
+          )
+        })()
       </script>
       <style>
         body {
@@ -68,7 +69,7 @@
           height: 14px;
           position: absolute;
           display: block;
-          /* background-color: #1890ff; */
+          background: var(--app-theme-color);
           border-radius: 100%;
           transform: scale(0.75);
           transform-origin: 50% 50%;
