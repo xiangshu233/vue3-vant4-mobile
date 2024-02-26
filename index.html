@@ -9,9 +9,9 @@
   <body>
     <div id="app">
       <script>
+        const appDesignSetting = window.localStorage.getItem('DESIGN-SETTING')
         ;(() => {
           let htmlRoot = document.getElementById('htmlRoot')
-          const appDesignSetting = window.localStorage.getItem('DESIGN-SETTING')
           let darkMode =
             appDesignSetting && JSON.parse(appDesignSetting).darkMode
           if (htmlRoot && darkMode) {
@@ -21,6 +21,13 @@
             htmlRoot.setAttribute('data-theme', 'light')
           }
         })()
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+          const elements = document.querySelectorAll('.dot-spin i')
+          elements.forEach((element) => {
+            element.style.background = JSON.parse(appDesignSetting).appTheme
+          })
+        })
       </script>
       <style>
         body {
@@ -61,7 +68,7 @@
           height: 14px;
           position: absolute;
           display: block;
-          background-color: #1890ff;
+          /* background-color: #1890ff; */
           border-radius: 100%;
           transform: scale(0.75);
           transform-origin: 50% 50%;
