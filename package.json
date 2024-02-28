@@ -9,6 +9,14 @@
     "email": "xiangshu233@outlook.com",
     "url": "https://github.com/xiangshu233"
   },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiangshu233/vue3-vant4-mobile.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xiangshu233/vue3-vant4-mobile/issues"
+  },
   "engines": {
     "node": "^18.18.0 || ^20.9.0 || >=21.1.0",
     "pnpm": ">=8.6.10"
