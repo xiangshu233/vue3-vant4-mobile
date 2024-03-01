@@ -1,11 +1,11 @@
 import {
   defineConfig,
   presetAttributify,
-  presetIcons,
   presetTypography,
   presetUno,
   presetWebFonts,
 } from 'unocss'
+import presetIcons from '@unocss/preset-icons'
 import presetRemToPx from '@unocss/preset-rem-to-px'
 import transformerVariantGroup from '@unocss/transformer-variant-group'
 import transformerDirectives from '@unocss/transformer-directives'
@@ -26,10 +26,10 @@ export default defineConfig({
 
     // 图标预设: https://unocss.dev/presets/icons
     presetIcons({
+      cdn: 'https://esm.sh/',
       extraProperties: {
         'display': 'inline-block',
         'vertical-align': 'middle',
-        // ...
       },
     }),
 

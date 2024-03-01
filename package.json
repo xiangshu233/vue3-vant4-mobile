@@ -66,6 +66,7 @@
     "@types/node": "^20.10.5",
     "@types/qs": "^6.9.11",
     "@unocss/eslint-plugin": "^0.58.4",
+    "@unocss/preset-icons": "^0.58.5",
     "@unocss/preset-rem-to-px": "^0.58.5",
     "@unocss/transformer-directives": "^0.58.4",
     "@unocss/transformer-variant-group": "^0.58.4",
