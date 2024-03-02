@@ -81,7 +81,7 @@
 
       <van-field
         name="policy"
-        class="enter-y items-center px-1 !rounded-md"
+        class="enter-y items-center !rounded-md"
         :rules="getFormRules.policy"
       >
         <template #input>
