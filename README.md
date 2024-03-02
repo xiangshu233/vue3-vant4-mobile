@@ -14,6 +14,10 @@
 
 <h1 align="center">vue3-vant4-mobile</h1>
 
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/xiangshu233/vue3-vant4-mobile.svg?variant=adaptive)](https://starchart.cc/xiangshu233/vue3-vant4-mobile)
+
 ## 介绍
 
 👋👋👋 Vue3 Vant4 Mobile 使用了最新的 `Vue3.2`、`Vite3`、`Vant4`、`Pinia2`、`TypeScript`、`UnoCSS` 等主流技术开发，集成 `Dark Mode`（暗黑）模式和系统主题色，并且持久化保存，集成 `Mock` 数据，顺便写了登录/注册/找回密码 页面（包括逻辑），只需替换你的 API 即可，另外页面均可以 `<keep-alive>`，随便写了个包含 `NavBar`、`TabBar` 的 Layout，集成了 `Axios`、`useECharts`、`IconSvg`。
