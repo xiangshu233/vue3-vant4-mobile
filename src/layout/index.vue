@@ -23,9 +23,10 @@
         :key="menu.name"
         replace
         :to="menu.path"
-        :icon="(menu.meta?.icon as string)"
       >
-        {{ menu.meta?.title }}
+        <template #icon>
+          <i :class="menu.meta?.icon" />
+        </template>
       </van-tabbar-item>
     </van-tabbar>
   </div>

@@ -5,7 +5,6 @@
       <div class="text-darkBlue dark:text-garyWhite mb-4 mt-12 text-center text-2xl font-black">
         {{ title }}
       </div>
-
       <div class="mb-6 mt-4 w-full">
         <van-swipe class="h-30" :autoplay="3000" :indicator-color="designStore.appTheme">
           <van-swipe-item

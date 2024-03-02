@@ -8,9 +8,7 @@
       :rules="getFormRules.username"
     >
       <template #left-icon>
-        <Icon>
-          <UserOutlined />
-        </Icon>
+        <i class="i-ph:user-bold mr-2 text-lg" />
       </template>
     </van-field>
     <van-field
@@ -23,17 +21,11 @@
       @click-right-icon="switchPassType = !switchPassType"
     >
       <template #left-icon>
-        <Icon>
-          <LockOutlined />
-        </Icon>
+        <i class="i-iconamoon:lock-bold mr-2 text-lg" />
       </template>
       <template #right-icon>
-        <Icon v-if="switchPassType">
-          <EyeInvisibleOutlined />
-        </Icon>
-        <Icon v-else>
-          <EyeOutlined />
-        </Icon>
+        <i v-if="switchPassType" class="i-mdi:eye-outline mr-2 text-lg" />
+        <i v-else class="i-mdi:eye-off mr-2 text-lg" />
       </template>
     </van-field>
 
@@ -71,8 +63,6 @@ import { computed, onMounted, reactive, ref, unref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { showFailToast, showLoadingToast, showSuccessToast } from 'vant'
 import type { FormInstance } from 'vant'
-import { Icon } from '@vicons/utils'
-import { EyeInvisibleOutlined, EyeOutlined, LockOutlined, UserOutlined } from '@vicons/antd'
 import { LoginStateEnum, useFormRules, useLoginState } from './useLogin'
 import { useUserStore } from '@/store/modules/user'
 import { ResultEnum } from '@/enums/httpEnum'

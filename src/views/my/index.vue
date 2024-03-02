@@ -22,41 +22,31 @@
 
       <van-cell :border="false" title="个人信息" is-link to="/editUserInfo">
         <template #icon>
-          <Icon>
-            <IdcardFilled />
-          </Icon>
+          <i class="i-mingcute:idcard-fill mr-2 text-xl" />
         </template>
       </van-cell>
 
       <van-cell :border="false" title="账号与安全" is-link to="/accountSetting">
         <template #icon>
-          <Icon>
-            <Person />
-          </Icon>
+          <i class="i-material-symbols:account-box mr-2 text-xl" />
         </template>
       </van-cell>
 
       <van-cell :border="false" title="主题设置" is-link to="/themeSetting">
         <template #icon>
-          <Icon>
-            <ColorPalette />
-          </Icon>
+          <i class="i-material-symbols:palette mr-2 text-xl" />
         </template>
       </van-cell>
 
       <van-cell :border="false" title="隐私政策" is-link>
         <template #icon>
-          <Icon>
-            <DocumentText />
-          </Icon>
+          <i class="i-material-symbols:list-alt-rounded mr-2 text-xl" />
         </template>
       </van-cell>
 
       <van-cell :border="false" title="退出登录" is-link @click="showLogoutAction = true">
         <template #icon>
-          <Icon>
-            <LogOut />
-          </Icon>
+          <i class="i-solar:logout-3-bold mr-2 text-xl" />
         </template>
       </van-cell>
 
@@ -74,9 +64,6 @@
 
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
-import { Icon } from '@vicons/utils'
-import { IdcardFilled } from '@vicons/antd'
-import { ColorPalette, DocumentText, LogOut, Person } from '@vicons/ionicons5'
 import { showToast } from 'vant'
 import { useUserStore } from '@/store/modules/user'
 
@@ -102,7 +89,7 @@ const getUserCoverBg = computed(() => {
 </script>
 
 <style lang="less" scoped>
-  .my-bg {
+.my-bg {
   clip-path: inset(0 -55% 0 -55% round 0 0 100% 100%);
   background-size: cover;
 
@@ -124,10 +111,6 @@ const getUserCoverBg = computed(() => {
 
   &:active {
     background-color: var(--van-cell-active-color);
-  }
-
-  .xicon {
-    margin-right: 10px;
   }
 }
 </style>

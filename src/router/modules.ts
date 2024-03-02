@@ -10,7 +10,7 @@ const routeModuleList: Array<RouteRecordRaw> = [
     component: Layout,
     meta: {
       title: '主控台',
-      icon: 'wap-home',
+      icon: 'i-simple-icons:atlassian',
     },
     children: [
       {
@@ -29,8 +29,8 @@ const routeModuleList: Array<RouteRecordRaw> = [
     redirect: '/message/index',
     component: Layout,
     meta: {
-      title: '消息',
-      icon: 'chat',
+      title: '图表',
+      icon: 'i-simple-icons:soundcharts',
     },
     children: [
       {
@@ -50,7 +50,7 @@ const routeModuleList: Array<RouteRecordRaw> = [
     component: Layout,
     meta: {
       title: '我的',
-      icon: 'manager',
+      icon: 'i-simple-icons:docsify',
     },
     children: [
       {

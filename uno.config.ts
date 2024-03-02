@@ -26,7 +26,7 @@ export default defineConfig({
 
     // 图标预设: https://unocss.dev/presets/icons
     presetIcons({
-      cdn: 'https://esm.sh/',
+      // cdn: 'https://esm.sh/',
       extraProperties: {
         'display': 'inline-block',
         'vertical-align': 'middle',
@@ -68,4 +68,15 @@ export default defineConfig({
     'text-overflow': 'overflow-hidden whitespace-nowrap text-ellipsis', // 文本溢出显示省略号
     'text-break': 'whitespace-normal break-all break-words', // 文本溢出换行
   },
+
+  // 由于 UnoCSS 在构建时工作，这意味着只会生成静态呈现的 icon 并将其发送到你的组件中
+  // 通过模板字符串 :class="menu.meta?.icon" 来动态生成 CSS 类名。
+  // 这个类名是在运行时计算的，UnoCSS 在构建时无法知道 menu.meta?.icon 的具体值，
+  // 因此无法生成对应的 CSS。为了解决这个问题，你可以使用 UnoCSS 的 safelist 选项来指定一些始终需要生成的 CSS 类。
+  // https://unocss.dev/guide/advanced#safelist
+  safelist: [
+    'i-simple-icons:atlassian',
+    'i-simple-icons:soundcharts',
+    'i-simple-icons:docsify',
+  ],
 })

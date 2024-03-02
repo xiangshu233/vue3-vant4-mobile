@@ -8,9 +8,7 @@
       :rules="getFormRules.username"
     >
       <template #left-icon>
-        <Icon>
-          <UserOutlined />
-        </Icon>
+        <i class="i-ph:user-bold mr-2 text-lg" />
       </template>
     </van-field>
 
@@ -22,9 +20,7 @@
       :rules="getFormRules.mobile"
     >
       <template #left-icon>
-        <Icon>
-          <MobileOutlined />
-        </Icon>
+        <i class="i-ic:twotone-smartphone mr-2 text-lg" />
       </template>
     </van-field>
 
@@ -37,9 +33,7 @@
       :rules="getFormRules.sms"
     >
       <template #left-icon>
-        <Icon>
-          <EditOutlined />
-        </Icon>
+        <i class="i-material-symbols:edit-square-outline-rounded mr-2 text-lg" />
       </template>
       <template #button>
         <van-button size="small" type="primary">
@@ -72,8 +66,6 @@
 <script setup lang="ts">
 import { computed, reactive, ref, unref } from 'vue'
 import type { FormInstance } from 'vant'
-import { Icon } from '@vicons/utils'
-import { EditOutlined, MobileOutlined, UserOutlined } from '@vicons/antd'
 import { LoginStateEnum, useFormRules, useLoginState } from './useLogin'
 
 const { handleBackLogin, getLoginState } = useLoginState()
