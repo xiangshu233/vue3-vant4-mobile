@@ -24,7 +24,7 @@
           @click="togTheme(item)"
         >
           <Icon v-if="item === designStore.appTheme">
-            <CheckOutlined text="white" />
+            <i class="i-ic:sharp-check" text-2xl />
           </Icon>
         </span>
       </div>
@@ -62,8 +62,6 @@
 
 <script setup lang="ts">
 import { computed, reactive } from 'vue'
-import { Icon } from '@vicons/utils'
-import { CheckOutlined } from '@vicons/antd'
 import NavBar from './components/NavBar.vue'
 import { updateDarkSign } from '@/theme'
 import { useDesignSettingStore } from '@/store/modules/designSetting'

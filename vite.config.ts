@@ -166,8 +166,6 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
         'pinia',
         'lodash-es',
         'axios',
-        '@vicons/antd',
-        '@vicons/ionicons5',
       ],
       // 打包时强制排除的依赖项
       exclude: [

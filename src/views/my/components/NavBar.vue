@@ -4,9 +4,7 @@
       {{ getTitle }}
     </template>
     <template #left>
-      <Icon>
-        <ChevronBack />
-      </Icon>
+      <i class="i-ic:sharp-arrow-back-ios" text-xl />
     </template>
     <template #right>
       <slot name="right" />
@@ -15,8 +13,6 @@
 </template>
 
 <script setup lang="ts">
-import { Icon } from '@vicons/utils'
-import { ChevronBack } from '@vicons/ionicons5'
 import { useRoute, useRouter } from 'vue-router'
 import { computed } from 'vue'
 
@@ -26,4 +22,5 @@ const currentRoute = useRoute()
 const getTitle = computed(() => currentRoute.meta.title as string)
 </script>
 
-<style scoped lang="less"></style>
+<style scoped lang="less">
+</style>
