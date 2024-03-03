@@ -1,8 +1,7 @@
 <template>
   <div class="h-screen flex flex-col items-center justify-center p-60px">
     <div class="wel-box w-full flex flex-col items-center justify-between">
-      <!-- <SvgIcon class="logo" :size="130" name="logo" /> -->
-      <Logo class="!h-30 !w-30" name="logo" />
+      <Logo class="!h-30 !w-30" />
       <div class="text-darkBlue dark:text-garyWhite mb-4 mt-12 text-center text-2xl font-black">
         {{ title }}
       </div>
