@@ -23,9 +23,10 @@
           :style="{ 'background-color': item }"
           @click="togTheme(item)"
         >
-          <Icon v-if="item === designStore.appTheme">
-            <i class="i-ic:sharp-check" text-2xl />
-          </Icon>
+          <i
+            v-show="item === designStore.appTheme"
+            class="i-ic:sharp-check" text-2xl text-white
+          />
         </span>
       </div>
     </div>
