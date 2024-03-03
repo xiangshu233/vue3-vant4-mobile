@@ -46,7 +46,7 @@
 
 <script setup lang="ts">
 import { useDesignSettingStore } from '@/store/modules/designSetting'
-import { hexToRgba } from '@/utils/index'
+import { hexToRgba } from '@/utils'
 
 const designStore = useDesignSettingStore()
 </script>

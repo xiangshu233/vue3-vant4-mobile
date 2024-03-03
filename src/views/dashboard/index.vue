@@ -1,7 +1,8 @@
 <template>
   <div class="h-screen flex flex-col items-center justify-center p-60px">
     <div class="wel-box w-full flex flex-col items-center justify-between">
-      <SvgIcon class="logo" :size="130" name="logo" />
+      <!-- <SvgIcon class="logo" :size="130" name="logo" /> -->
+      <Logo class="!h-30 !w-30" name="logo" />
       <div class="text-darkBlue dark:text-garyWhite mb-4 mt-12 text-center text-2xl font-black">
         {{ title }}
       </div>
@@ -28,8 +29,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useDesignSettingStore } from '@/store/modules/designSetting'
-import SvgIcon from '@/components/SvgIcon.vue'
 import { useGlobSetting } from '@/hooks/setting'
+import Logo from '@/components/Logo.vue'
 
 defineOptions({
   name: 'DashboardPage',
