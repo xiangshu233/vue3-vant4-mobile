@@ -9,24 +9,19 @@
   <body>
     <div id="app">
       <script>
-        const designSetting = JSON.parse(
-          window.localStorage.getItem('DESIGN-SETTING'),
-        )
-
         ;(() => {
+          const { darkMode, appTheme = '#5d9dfe' } =
+            JSON.parse(window.localStorage.getItem('DESIGN-SETTING')) || {}
+
           let htmlRoot = document.getElementById('htmlRoot')
-          let darkMode = designSetting.darkMode
-          if (htmlRoot && darkMode) {
-            htmlRoot.setAttribute('data-theme', darkMode)
-            darkMode = htmlRoot = null
-          } else {
-            htmlRoot.setAttribute('data-theme', 'light')
+          if (htmlRoot) {
+            htmlRoot.setAttribute('data-theme', darkMode || 'light')
           }
 
           // 设置主题色变量
           document.documentElement.style.setProperty(
             '--app-theme-color',
-            designSetting.appTheme,
+            appTheme,
           )
         })()
       </script>
