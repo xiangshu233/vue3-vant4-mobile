@@ -1,10 +1,14 @@
 import type { Router } from 'vue-router'
 import { isNavigationFailure } from 'vue-router'
+import NProgress from 'nprogress'
 import { useRouteStoreWidthOut } from '@/store/modules/route'
 import { useUserStoreWidthOut } from '@/store/modules/user'
 import { ACCESS_TOKEN } from '@/store/mutation-types'
 import { storage } from '@/utils/Storage'
 import { PageEnum } from '@/enums/pageEnum'
+import 'nprogress/nprogress.css'
+
+NProgress.configure({ parent: '#app' })
 
 const LOGIN_PATH = PageEnum.BASE_LOGIN
 
@@ -14,7 +18,7 @@ export function createRouterGuards(router: Router) {
   router.beforeEach(async (to, from, next) => {
     // to: 即将要进入的目标
     // from: 当前导航正要离开的路由
-
+    NProgress.start()
     const userStore = useUserStoreWidthOut()
 
     if (from.path === LOGIN_PATH && to.name === PageEnum.ERROR_PAGE_NAME) {
@@ -83,6 +87,7 @@ export function createRouterGuards(router: Router) {
       }
     }
     routeStore.setKeepAliveComponents(keepAliveComponents)
+    NProgress.done()
   })
 
   router.onError((error) => {
