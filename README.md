@@ -78,12 +78,35 @@
 - [TypeScript](https://www.typescriptlang.org/) - 熟悉 `TypeScript` 基本语法
 - [Vue-Router-Next](https://router.vuejs.org/) - 熟悉 `Vue-Router`基本使用
 - [ECharts5](https://echarts.apache.org/handbook/zh/get-started/) - 熟悉 `Echarts` 基本使用
-- [Xicons](https://www.xicons.org/#/) - 本项目推荐图标库，当然你也可以使用 `IconSVg`
+- [Iconify](https://icones.js.org/) - 本项目推荐图标库，当然你也可以使用 `IconSvg`
 - [Postcss-Mobile-Forever](https://github.com/wswmsword/postcss-mobile-forever) - 了解手机端 `px` 转 `viewport` 插件的作用
 - [Lodash-es](https://www.lodashjs.com/) - `JS`高性能工具库
 - [UnoCSS](https://unocss.dev/) - 原子化 `CSS`，熟悉 `UnoCSS` 基本使用
 - [Mock.js](https://github.com/nuysoft/Mock) - 了解 `Mockjs` 基本语法
 - [ES6+](http://es6.ruanyifeng.com/) - 熟悉 `ES6` 基本语法
+
+## 关于 Icon 的使用
+
+项目使用 `unocss` 的 `icon` [预设](https://unocss.dev/presets/icons) 作为系统 Icon
+
+请遵循以下约定使用图标
+
+- `<prefix><collection>-<icon>`
+- `<prefix><collection>:<icon>`
+
+```html
+<!-- A basic anchor icon from Phosphor icons -->
+<div class="i-ph-anchor-simple-thin" />
+<!-- An orange alarm from Material Design Icons -->
+<div class="i:mdi:alarm" />
+```
+
+点击这里获取所有[可用的图标](https://icones.js.org/)，找到想要的图标后点击复制 icon name 到 class 里即可
+
+> [!WARNING]
+> 记得加 `i-xxx` 前缀，从 icones 复制的 icon name 是没有 `i-` 前缀的
+>
+> 更多详细使用请看 https://unocss.dev/presets/icons#icons-preset
 
 ## 环境准备
 
