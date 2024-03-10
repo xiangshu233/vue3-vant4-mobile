@@ -78,5 +78,6 @@ export default defineConfig({
     'i-simple-icons:atlassian',
     'i-simple-icons:soundcharts',
     'i-simple-icons:docsify',
+    'i-material-symbols:award-star',
   ],
 })

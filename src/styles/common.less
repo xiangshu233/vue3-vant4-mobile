@@ -10,7 +10,7 @@ html {
   position: relative;
 }
 
-[data-theme='dark'] {
+html.dark {
   &,
   * {
     color-scheme: dark !important;
@@ -22,7 +22,7 @@ html {
   }
 }
 
-[data-theme='light'] {
+html.light {
   &,
   * {
     color-scheme: light !important;
@@ -69,7 +69,6 @@ a:active {
   color: rgb(#0000, 0.7);
 }
 
-/* stylelint-disable-next-line no-duplicate-selectors */
 a:active,
 a:hover {
   outline: 0;
@@ -93,24 +92,16 @@ a:hover {
   transform: scale(1.03);
 }
 
-.xicon {
-  font-size: 18px;
-
-  svg {
-    width: 100% !important;
-    height: 100% !important;
+html.light {
+  .my-card {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 70%);
   }
 }
 
-.my-card {
-  backdrop-filter: blur(10px);
-  /* stylelint-disable-next-line color-function-notation */
-  background: rgba(255, 255, 255, 70%);
-}
-
-html[data-theme='dark'] {
+html.dark {
   .my-card {
-    /* stylelint-disable-next-line color-function-notation */
+    backdrop-filter: blur(10px);
     background: rgba(30, 30, 30, 70%);
   }
 }

@@ -2,11 +2,13 @@
   <div>
     <NavBar />
     <van-divider>主题模式</van-divider>
-    <van-cell center title="暗黑模式">
-      <template #right-icon>
-        <van-switch v-model="getDarkMode" />
-      </template>
-    </van-cell>
+    <van-cell-group inset>
+      <van-cell center title="暗黑模式">
+        <template #right-icon>
+          <van-switch v-model="getDarkMode" size="22" />
+        </template>
+      </van-cell>
+    </van-cell-group>
 
     <van-divider>系统主题色</van-divider>
     <div flex="~" justify="center">
@@ -14,8 +16,8 @@
         <span
           v-for="(item, index) in designStore.appThemeList"
           :key="index"
-          h="9"
-          w="9"
+          h="8"
+          w="8"
           items-center
           border="2 rounded-md"
           flex="~"
@@ -32,24 +34,28 @@
     </div>
 
     <van-divider>页面切换动画</van-divider>
-    <van-cell center title="开启动画">
-      <template #right-icon>
-        <van-switch v-model="designStore.isPageAnimate" />
-      </template>
-    </van-cell>
+    <van-cell-group inset>
+      <van-cell center title="开启动画">
+        <template #right-icon>
+          <van-switch v-model="designStore.isPageAnimate" size="22" />
+        </template>
+      </van-cell>
+      <van-cell center title="动画类型">
+        <van-field
+          v-model="animateState.text"
+          readonly
+          class="!p-0"
+          :disabled="!designStore.isPageAnimate"
+          is-link
+          label-class="font-bold"
+          input-align="right"
+          :center="true"
+          :border="false"
+          @click="openAnimatePick"
+        />
+      </van-cell>
+    </van-cell-group>
 
-    <van-field
-      v-model="animateState.text"
-      label="动画类型"
-      readonly
-      :disabled="!designStore.isPageAnimate"
-      is-link
-      label-class="font-bold"
-      input-align="right"
-      :center="true"
-      :border="false"
-      @click="openAnimatePick"
-    />
     <van-popup v-model:show="animateState.showPicker" position="bottom" round>
       <van-picker
         v-model="animateState.value"
@@ -63,19 +69,25 @@
 
 <script setup lang="ts">
 import { computed, reactive } from 'vue'
+import { useDark, useToggle } from '@vueuse/core'
 import NavBar from './components/NavBar.vue'
-import { updateDarkSign } from '@/theme'
 import { useDesignSettingStore } from '@/store/modules/designSetting'
 import { animates as animateOptions } from '@/settings/animateSetting'
 
 const designStore = useDesignSettingStore()
 
+const isDark = useDark({
+  valueDark: 'dark',
+  valueLight: 'light',
+})
+
+const toggleDark = useToggle(isDark)
+
 const getDarkMode = computed({
-  get: () => designStore.getDarkMode === 'dark',
-  set: (value) => {
-    const darkMode = value ? 'dark' : 'light'
-    updateDarkSign(darkMode)
-    designStore.setDarkMode(darkMode)
+  get: () => isDark.value,
+  set: () => {
+    toggleDark()
+    designStore.setDarkMode(isDark.value ? 'dark' : 'light')
   },
 })
 

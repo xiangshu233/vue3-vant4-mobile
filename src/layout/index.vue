@@ -27,6 +27,7 @@
         <template #icon>
           <i :class="menu.meta?.icon" />
         </template>
+        {{ menu.meta?.title }}
       </van-tabbar-item>
     </van-tabbar>
   </div>

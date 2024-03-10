@@ -11,7 +11,6 @@ import 'virtual:svg-icons-register'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router, { setupRouter } from './router'
-import { updateDarkSign } from './theme'
 import { setupStore } from '@/store'
 
 async function bootstrap() {
@@ -23,11 +22,6 @@ async function bootstrap() {
   await router.isReady()
   // 路由准备就绪后挂载APP实例
   app.mount('#app', true)
-
-  // 根节点挂载 dark 标识
-  const appDesignSetting = window.localStorage.getItem('DESIGN-SETTING')
-  const darkMode = appDesignSetting && JSON.parse(appDesignSetting).darkMode
-  updateDarkSign(darkMode)
 }
 
 void bootstrap()

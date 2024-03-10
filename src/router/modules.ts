@@ -44,6 +44,26 @@ const routeModuleList: Array<RouteRecordRaw> = [
     ],
   },
   {
+    path: '/example',
+    name: 'Example',
+    redirect: '/example/index',
+    component: Layout,
+    meta: {
+      title: '示例',
+      icon: 'i-material-symbols:award-star',
+    },
+    children: [
+      {
+        path: 'index',
+        name: 'ExamplePage',
+        meta: {
+          keepAlive: false,
+        },
+        component: () => import('@/views/example/index.vue'),
+      },
+    ],
+  },
+  {
     path: '/my',
     name: 'My',
     redirect: '/my/index',

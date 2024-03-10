@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-cmn-Hans" id="htmlRoot" class>
+<html lang="zh-cmn-Hans" id="htmlRoot">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
@@ -10,12 +10,12 @@
     <div id="app">
       <script>
         ;(() => {
-          const { darkMode, appTheme = '#5d9dfe' } =
+          const { darkMode = 'dark', appTheme = '#5d9dfe' } =
             JSON.parse(window.localStorage.getItem('DESIGN-SETTING')) || {}
 
           let htmlRoot = document.getElementById('htmlRoot')
           if (htmlRoot) {
-            htmlRoot.setAttribute('data-theme', darkMode || 'light')
+            htmlRoot.classList.add(darkMode)
           }
 
           // 设置主题色变量
@@ -29,7 +29,7 @@
         body {
           margin: 0;
         }
-        html[data-theme='dark'] .first-loading-wrap {
+        html.dark .first-loading-wrap {
           background-color: #101014;
         }
         .first-loading-wrap {
