@@ -115,7 +115,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed, reactive, ref, unref } from 'vue'
 import type { FormInstance } from 'vant'
 
 import { LoginStateEnum, useFormRules, useLoginState } from './useLogin'

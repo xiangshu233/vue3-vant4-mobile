@@ -63,7 +63,6 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, ref } from 'vue'
 import { showToast } from 'vant'
 import { useUserStore } from '@/store/modules/user'
 

@@ -68,7 +68,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed, reactive } from 'vue'
 import { useDark, useToggle } from '@vueuse/core'
 import NavBar from './components/NavBar.vue'
 import { useDesignSettingStore } from '@/store/modules/designSetting'

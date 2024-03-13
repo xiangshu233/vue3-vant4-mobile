@@ -14,7 +14,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import { useDark, useToggle } from '@vueuse/core'
 import { useDesignSettingStore } from '@/store/modules/designSetting'
 

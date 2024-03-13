@@ -5,8 +5,6 @@
 </template>
 
 <script setup lang="ts">
-import type { Ref } from 'vue'
-import { onMounted, ref } from 'vue'
 import type { EChartsOption } from 'echarts'
 import { useECharts } from '@/hooks/web/useECharts'
 

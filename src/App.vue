@@ -13,8 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, unref } from 'vue'
-import { darken, lighten } from '@/utils/index'
+import { darken, lighten } from '@/utils'
 import { useRouteStore } from '@/store/modules/route'
 import { useDesignSetting } from '@/hooks/setting/useDesignSetting'
 

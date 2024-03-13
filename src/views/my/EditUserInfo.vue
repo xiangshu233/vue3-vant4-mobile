@@ -112,7 +112,6 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, reactive, ref } from 'vue'
 import { showToast } from 'vant'
 import NavBar from './components/NavBar.vue'
 import UploaderImage from './components/UploaderImage.vue'

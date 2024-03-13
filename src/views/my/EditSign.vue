@@ -24,7 +24,6 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, reactive, ref } from 'vue'
 import type { FormInstance } from 'vant'
 import { showToast } from 'vant'
 import NavBar from './components/NavBar.vue'

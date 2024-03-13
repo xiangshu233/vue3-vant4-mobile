@@ -59,8 +59,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, reactive, ref, unref } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
 import { showFailToast, showLoadingToast, showSuccessToast } from 'vant'
 import type { FormInstance } from 'vant'
 import { LoginStateEnum, useFormRules, useLoginState } from './useLogin'

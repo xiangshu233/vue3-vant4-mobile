@@ -26,7 +26,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
 import { useDesignSettingStore } from '@/store/modules/designSetting'
 import { useGlobSetting } from '@/hooks/setting'
 import Logo from '@/components/Logo.vue'
