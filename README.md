@@ -20,7 +20,7 @@
 
 ## 介绍
 
-👋👋👋 Vue3 Vant4 Mobile 使用了最新的 `Vue3.2`、`Vite3`、`Vant4`、`Pinia2`、`TypeScript`、`UnoCSS` 等主流技术开发，集成 `Dark Mode`（暗黑）模式和系统主题色，并且持久化保存，集成 `Mock` 数据，顺便写了登录/注册/找回密码 页面（包括逻辑），只需替换你的 API 即可，另外页面均可以 `<keep-alive>`，随便写了个包含 `NavBar`、`TabBar` 的 Layout，集成了 `Axios`、`useECharts`、`IconSvg`。
+👋👋👋 Vue3 Vant4 Mobile 使用了最新的 `Vue3.4`、`Vite5`、`Vant4`、`Pinia`、`TypeScript`、`UnoCSS` 等主流技术开发，集成 `Dark Mode`（暗黑）模式和系统主题色，并且持久化保存，集成 `Mock` 数据，顺便写了登录/注册/找回密码 页面（包括逻辑），只需替换你的 API 即可，另外页面均可以 `<keep-alive>`，随便写了个包含 `NavBar`、`TabBar` 的 Layout，集成了 `Axios`、`useECharts`、`IconSvg`。
 
 项目使用了 [antfu](https://github.com/antfu) 大佬的 [antfu/eslint-config](https://github.com/antfu/eslint-config) 作为代码规范检查工具，摆脱繁琐无聊的 Eslint 配置，配合 `cz-git`、 `lint-staged`、`simple-git-hooks`可对暂存区代码提交校验，代码风格不合格可打断提交，保证多人协作开发时上游 Git 库的干净。
 
@@ -31,25 +31,25 @@
 <table>
   <tr>
     <td><img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022091917.png" width="400" alt="登录页面" /></td>
-    <td><img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022092004.png" width="400" alt="主控台页(首页）" /></td>
+    <td><img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2023/12/202403172041924.png" width="400" alt="主控台页(首页）" /></td>
   </tr>
   <tr>
-    <td><img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022092015.png" width="400" alt="消息页（图标页）" /></td>
-    <td><img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022092022.png" width="400" alt="我的（我的信息页面）" /></td>
+    <td><img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2023/12/202403172042123.png" width="400" alt="消息页（图标页）" /></td>
+    <td><img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2023/12/202403172042858.png" width="400" alt="我的（我的信息页面）" /></td>
   </tr>
 </table>
 
 <details>
-<summary>展开预览暗黑模式下的界面截图。</summary>
+<summary>展开预览暗黑模式下的界面截图</summary>
 
 <table>
   <tr>
-    <td><img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022092052.png" width="400" alt="登录页面（暗黑模式）" /></td>
-    <td><img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022092140.png" width="400" alt="主控台页（暗黑模式）" /></td>
+    <td><img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2023/12/202403172036432.png" width="400" alt="登录页面（暗黑模式）" /></td>
+    <td><img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2023/12/202403172038413.png" width="400" alt="主控台页（暗黑模式）" /></td>
   </tr>
   <tr>
-    <td><img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221022092224.png" width="400" alt="我的页面（暗黑模式）" /></td>
-    <td><img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2022/10/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20221023152559.png" width="400" alt="主题设置页面（暗黑模式）" /></td>
+    <td><img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2023/12/202403172039913.png" width="400" alt="我的页面（暗黑模式）" /></td>
+    <td><img src="https://fastly.jsdelivr.net/gh/xiangshu233/blogAssets/2023/12/202403172040019.png" width="400" alt="主题设置页面（暗黑模式）" /></td>
   </tr>
 </table>
 
