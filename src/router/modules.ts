@@ -99,9 +99,9 @@ const routeModuleList: Array<RouteRecordRaw> = [
     path: '/editNickname',
     name: 'EditNickname',
     meta: {
-      title: '修改昵称',
+      title: '修改昵称(该页面已缓存)',
       innerPage: true,
-      keepAlive: false,
+      keepAlive: true,
     },
     component: () => import('@/views/my/EditNickname.vue'),
   },

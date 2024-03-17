@@ -9,6 +9,9 @@
           <van-switch v-model="checked" size="22" @click="toggle()" />
         </template>
       </van-cell>
+      <template v-for="item in menuItems" :key="item.route">
+        <van-cell :title="item.title" :to="item.route" is-link />
+      </template>
     </van-cell-group>
   </div>
 </template>
@@ -32,6 +35,11 @@ function toggle() {
   toggleDark()
   designStore.setDarkMode(isDark.value ? 'dark' : 'light')
 }
+
+const menuItems = [
+  { title: '🐗 keep-alive', route: '/editNickname' },
+  { title: '🦘 404 页演示', route: '/404' },
+]
 </script>
 
 <style scoped lang="less">
