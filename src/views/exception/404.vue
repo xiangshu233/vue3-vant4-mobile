@@ -4,9 +4,9 @@
       <img src="~@/assets/icons/exception/404.svg" alt="">
     </div>
     <div class="text-center">
-      <h1 class="text-base text-gray-500">
+      <p class="m-4 text-base">
         抱歉，你访问的页面不存在
-      </h1>
+      </p>
       <van-button type="primary" @click="goHome">
         回到首页
       </van-button>
