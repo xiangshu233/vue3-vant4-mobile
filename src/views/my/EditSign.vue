@@ -2,7 +2,7 @@
   <div>
     <NavBar>
       <template #right>
-        <span @click="handleNickname">保存</span>
+        <span @click="handleNickname">{{ $t('common.saveText') }}</span>
       </template>
     </NavBar>
     <van-form ref="formRef">
@@ -13,7 +13,7 @@
         clearable
         rows="4"
         autosize
-        label="签名"
+        :label="$t('routes.my.sign')"
         type="textarea"
         maxlength="70"
         placeholder="随知修行乃当务之急，然怠惰度日至今"
@@ -24,6 +24,7 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, reactive, ref } from 'vue'
 import type { FormInstance } from 'vant'
 import { showToast } from 'vant'
 import NavBar from './components/NavBar.vue'

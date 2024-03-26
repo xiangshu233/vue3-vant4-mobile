@@ -1,10 +1,12 @@
 <template>
-  <div class="my-card m-40px rounded-2xl p-30px shadow-xl">
+  <div class="my-card m-10px mt-20px rounded-2xl p-10px shadow-xl">
     <div ref="chartRef" :style="{ height: '350px' }" />
   </div>
 </template>
 
 <script setup lang="ts">
+import type { Ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import type { EChartsOption } from 'echarts'
 import { useECharts } from '@/hooks/web/useECharts'
 

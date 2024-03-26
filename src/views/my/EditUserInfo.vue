@@ -1,9 +1,9 @@
 <template>
   <div>
     <NavBar />
-    <van-divider>基本信息</van-divider>
+    <van-divider>{{ $t('routes.my.basicInfo') }}</van-divider>
     <van-field
-      label="头像"
+      :label="$t('routes.my.avatar')"
       label-class="font-bold"
       input-align="right"
       :center="true"
@@ -24,7 +24,7 @@
 
     <van-field
       v-model="state.nickname"
-      label="昵称"
+      :label="$t('routes.my.nickname')"
       readonly
       label-class="font-bold"
       input-align="right"
@@ -36,7 +36,7 @@
 
     <van-field
       v-model="state.genderText"
-      label="性别"
+      :label="$t('routes.my.gender')"
       readonly
       label-class="font-bold"
       input-align="right"
@@ -48,7 +48,7 @@
 
     <van-field
       v-model="state.sign"
-      label="签名"
+      :label="$t('routes.my.sign')"
       readonly
       label-class="font-bold"
       input-align="right"
@@ -59,7 +59,7 @@
     />
 
     <van-field
-      label="主页封面"
+      :label="$t('routes.my.cover')"
       label-class="font-bold"
       input-align="right"
       :center="true"
@@ -80,7 +80,7 @@
 
     <van-field
       v-model="state.industryText"
-      label="行业"
+      :label="$t('routes.my.trade')"
       readonly
       label-class="font-bold"
       input-align="right"
@@ -97,7 +97,11 @@
         :columns="genderColumns"
         @confirm="handleGender"
         @cancel="showGenderPicker = false"
-      />
+      >
+        <template #option="item">
+          {{ $t(item.text) }}
+        </template>
+      </van-picker>
     </van-popup>
 
     <van-popup v-model:show="showIndustryPicker" position="bottom" round>
@@ -106,18 +110,26 @@
         :columns="industryColumns"
         @confirm="handleIndustry"
         @cancel="showIndustryPicker = false"
-      />
+      >
+        <template #option="item">
+          {{ $t(item.text) }}
+        </template>
+      </van-picker>
     </van-popup>
   </div>
 </template>
 
 <script setup lang="ts">
+import { onMounted, reactive, ref } from 'vue'
 import { showToast } from 'vant'
+import { useI18n } from 'vue-i18n'
 import NavBar from './components/NavBar.vue'
 import UploaderImage from './components/UploaderImage.vue'
 import type { FormColumns } from './pickColumns'
 import { genderColumns, industryColumns } from './pickColumns'
 import { useUserStore } from '@/store/modules/user'
+
+const { t } = useI18n()
 
 const userStore = useUserStore()
 const { avatar, gender, industry, cover } = userStore.getUserInfo
@@ -135,21 +147,21 @@ const state = reactive({
 })
 
 function handleGender({ selectedOptions }) {
-  state.genderText = selectedOptions[0].text
+  state.genderText = t(selectedOptions[0].text)
   showToast(JSON.stringify(selectedOptions))
   // do something
   showGenderPicker.value = false
 }
 
 function handleIndustry({ selectedOptions }) {
-  state.industryText = selectedOptions[0].text
+  state.industryText = t(selectedOptions[0].text)
   showToast(JSON.stringify(selectedOptions))
   // do something
   showIndustryPicker.value = false
 }
 
 function getFromText(columns: FormColumns[], value = 0) {
-  return columns.find(item => item.value === value)?.text
+  return t(columns.find(item => item.value === value)?.text as string)
 }
 
 function initState() {

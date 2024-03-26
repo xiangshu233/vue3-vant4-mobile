@@ -1,15 +1,15 @@
 <template>
   <div class="page-container flex flex-col justify-center">
     <div class="text-center">
-      <img src="~@/assets/icons/exception/404.svg" alt="">
+      <img src="~@/assets/icons/exception/403.svg" alt="">
     </div>
     <div class="text-center">
       <h1 class="text-base text-gray-500">
-        抱歉，你访问的页面不存在
+        抱歉，你无权访问该页面
       </h1>
-      <van-button type="primary" @click="goHome">
+      <n-button type="info" @click="goHome">
         回到首页
-      </van-button>
+      </n-button>
     </div>
   </div>
 </template>
@@ -25,7 +25,10 @@ function goHome() {
 
 <style lang="less" scoped>
   .page-container {
-  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  padding: 50px 0;
+  height: 100vh;
 
   .text-center {
     h1 {

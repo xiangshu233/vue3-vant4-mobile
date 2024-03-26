@@ -3,7 +3,7 @@
     <NavBar />
     <van-field
       v-model="username"
-      label="用户名"
+      :label="$t('routes.my.username')"
       readonly
       label-class="font-bold"
       input-align="right"
@@ -12,7 +12,7 @@
     />
     <van-field
       v-model="afterPhone"
-      label="手机号"
+      :label="$t('routes.my.phone')"
       readonly
       is-link
       label-class="font-bold"
@@ -21,7 +21,7 @@
       :border="false"
     />
     <van-field
-      label="修改登录密码"
+      :label="$t('routes.my.changePassword')"
       readonly
       label-class="font-bold"
       input-align="right"
@@ -34,6 +34,7 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import NavBar from './components/NavBar.vue'
 import { useUserStore } from '@/store/modules/user'
 

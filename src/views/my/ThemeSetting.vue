@@ -1,16 +1,16 @@
 <template>
   <div>
     <NavBar />
-    <van-divider>主题模式</van-divider>
+    <van-divider>{{ $t('layout.setting.darkMode') }}</van-divider>
     <van-cell-group inset>
-      <van-cell center title="暗黑模式">
+      <van-cell center :title="$t('layout.setting.diabloMode')">
         <template #right-icon>
           <van-switch v-model="getDarkMode" size="22" />
         </template>
       </van-cell>
     </van-cell-group>
 
-    <van-divider>系统主题色</van-divider>
+    <van-divider>{{ $t('layout.setting.systemThemeColors') }}</van-divider>
     <div flex="~" justify="center">
       <div grid="~ cols-8 gap-2">
         <span
@@ -33,14 +33,14 @@
       </div>
     </div>
 
-    <van-divider>页面切换动画</van-divider>
+    <van-divider>{{ $t('layout.setting.pageAnimationSwitch') }}</van-divider>
     <van-cell-group inset>
-      <van-cell center title="开启动画">
+      <van-cell center :title="$t('layout.setting.switchAnimation')">
         <template #right-icon>
           <van-switch v-model="designStore.isPageAnimate" size="22" />
         </template>
       </van-cell>
-      <van-cell center title="动画类型">
+      <van-cell center :title="$t('layout.setting.animationType')">
         <van-field
           v-model="animateState.text"
           readonly
@@ -68,6 +68,7 @@
 </template>
 
 <script setup lang="ts">
+import { computed, reactive } from 'vue'
 import { useDark, useToggle } from '@vueuse/core'
 import NavBar from './components/NavBar.vue'
 import { useDesignSettingStore } from '@/store/modules/designSetting'

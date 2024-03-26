@@ -5,7 +5,7 @@
         v-model="formData.username"
         class="enter-y items-center !rounded-md"
         name="username"
-        placeholder="用户名"
+        :placeholder="$t('routes.my.username')"
         :rules="getFormRules.username"
       >
         <template #left-icon>
@@ -17,7 +17,7 @@
         v-model="formData.mobile"
         class="enter-y items-center !rounded-md"
         name="password"
-        placeholder="手机号码"
+        :placeholder="$t('routes.my.phone')"
         :rules="getFormRules.mobile"
       >
         <template #left-icon>
@@ -30,7 +30,7 @@
         class="enter-y items-center !rounded-md"
         center
         clearable
-        placeholder="请输入短信验证码"
+        :placeholder="$t('routes.basic.code')"
         :rules="getFormRules.sms"
       >
         <template #left-icon>
@@ -38,7 +38,7 @@
         </template>
         <template #button>
           <van-button size="small" type="primary">
-            发送验证码
+            {{ $t('routes.basic.sendCode') }}
           </van-button>
         </template>
       </van-field>
@@ -48,7 +48,7 @@
         class="enter-y items-center !rounded-md"
         :type="switchPassType ? 'password' : 'text'"
         name="password"
-        placeholder="密码"
+        :placeholder="$t('routes.my.password')"
         :rules="getFormRules.password"
         @click-right-icon="switchPassType = !switchPassType"
       >
@@ -66,7 +66,7 @@
         class="enter-y items-center !rounded-md"
         :type="switchConfirmPassType ? 'password' : 'text'"
         name="confirmPassword"
-        placeholder="确认密码"
+        :placeholder="$t('routes.my.confirmpassword')"
         :rules="getFormRules.confirmPassword"
         @click-right-icon="switchConfirmPassType = !switchConfirmPassType"
       >
@@ -86,7 +86,7 @@
       >
         <template #input>
           <van-checkbox v-model="formData.policy" icon-size="14px" shape="square">
-            我同意 xxx 隐私政策
+            {{ $t('routes.basic.policy') }}
           </van-checkbox>
         </template>
       </van-field>
@@ -99,7 +99,7 @@
       native-type="submit"
       :loading="loading"
     >
-      注 册
+      {{ $t('routes.basic.register') }}
     </van-button>
 
     <van-button
@@ -109,12 +109,13 @@
       block
       @click="handleBackLogin"
     >
-      返 回
+      {{ $t('common.back') }}
     </van-button>
   </van-form>
 </template>
 
 <script setup lang="ts">
+import { computed, reactive, ref, unref } from 'vue'
 import type { FormInstance } from 'vant'
 
 import { LoginStateEnum, useFormRules, useLoginState } from './useLogin'
