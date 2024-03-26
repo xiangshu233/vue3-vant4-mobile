@@ -4,7 +4,7 @@
       v-model="formData.username"
       class="enter-y mb-4 items-center !rounded-md"
       name="username"
-      placeholder="用户名"
+      :placeholder="$t('routes.my.username')"
       :rules="getFormRules.username"
     >
       <template #left-icon>
@@ -16,7 +16,7 @@
       v-model="formData.mobile"
       class="enter-y mb-4 items-center !rounded-md"
       name="password"
-      placeholder="手机号码"
+      :placeholder="$t('routes.my.phone')"
       :rules="getFormRules.mobile"
     >
       <template #left-icon>
@@ -29,7 +29,7 @@
       class="enter-y mb-10 items-center !rounded-md"
       center
       clearable
-      placeholder="请输入短信验证码"
+      :placeholder="$t('routes.basic.code')"
       :rules="getFormRules.sms"
     >
       <template #left-icon>
@@ -37,7 +37,7 @@
       </template>
       <template #button>
         <van-button size="small" type="primary">
-          发送验证码
+          {{ $t('routes.basic.sendCode') }}
         </van-button>
       </template>
     </van-field>
@@ -48,7 +48,7 @@
       native-type="submit"
       :loading="loading"
     >
-      重 置
+      {{ $t('common.resetText') }}
     </van-button>
 
     <van-button
@@ -58,12 +58,13 @@
       block
       @click="handleBackLogin"
     >
-      返 回
+      {{ $t('common.back') }}
     </van-button>
   </van-form>
 </template>
 
 <script setup lang="ts">
+import { computed, reactive, ref, unref } from 'vue'
 import type { FormInstance } from 'vant'
 import { LoginStateEnum, useFormRules, useLoginState } from './useLogin'
 

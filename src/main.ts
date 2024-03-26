@@ -14,6 +14,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router, { setupRouter } from './router'
 import { setupStore } from '@/store'
+import { setupI18n } from '@/locales'
 
 async function bootstrap() {
   const app = createApp(App)
@@ -21,6 +22,7 @@ async function bootstrap() {
   setupStore(app)
   // 挂载路由
   setupRouter(app)
+  await setupI18n(app)
   await router.isReady()
   // 路由准备就绪后挂载APP实例
   app.mount('#app', true)

@@ -4,7 +4,7 @@
       v-model="formData.username"
       class="enter-y mb-4 items-center !rounded-md"
       name="username"
-      placeholder="用户名"
+      :placeholder="$t('routes.my.username')"
       :rules="getFormRules.username"
     >
       <template #left-icon>
@@ -16,7 +16,7 @@
       class="enter-y mb-4 items-center !rounded-md"
       :type="switchPassType ? 'password' : 'text'"
       name="password"
-      placeholder="密码"
+      :placeholder="$t('routes.my.password')"
       :rules="getFormRules.password"
       @click-right-icon="switchPassType = !switchPassType"
     >
@@ -32,9 +32,9 @@
     <div class="enter-y mb-10 w-full flex justify-between px-5px">
       <div class="flex items-center">
         <van-switch v-model="rememberMe" size="18px" class="mr-8px" />
-        <span>记住我</span>
+        <span>{{ $t('routes.basic.rememberMe') }}</span>
       </div>
-      <a @click="setLoginState(LoginStateEnum.RESET_PASSWORD)">忘记密码?</a>
+      <a @click="setLoginState(LoginStateEnum.RESET_PASSWORD)">{{ $t('routes.basic.forgetPassword') }}?</a>
     </div>
 
     <van-button
@@ -44,7 +44,7 @@
       native-type="submit"
       :loading="loading"
     >
-      登 录
+      {{ $t('routes.basic.login') }}
     </van-button>
     <van-button
       class="enter-y !rounded-md"
@@ -53,12 +53,14 @@
       block
       @click="setLoginState(LoginStateEnum.REGISTER)"
     >
-      注 册
+      {{ $t('routes.basic.register') }}
     </van-button>
   </van-form>
 </template>
 
 <script setup lang="ts">
+import { computed, onMounted, reactive, ref, unref } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import { showFailToast, showLoadingToast, showSuccessToast } from 'vant'
 import type { FormInstance } from 'vant'
 import { LoginStateEnum, useFormRules, useLoginState } from './useLogin'

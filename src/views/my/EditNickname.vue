@@ -2,7 +2,7 @@
   <div>
     <NavBar>
       <template #right>
-        <span @click="handleNickname">保存</span>
+        <span @click="handleNickname">{{ $t('common.saveText') }}</span>
       </template>
     </NavBar>
     <van-form ref="formRef">
@@ -28,6 +28,7 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, reactive, ref } from 'vue'
 import type { FormInstance } from 'vant'
 import { showToast } from 'vant'
 import NavBar from './components/NavBar.vue'

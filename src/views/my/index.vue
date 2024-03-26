@@ -2,7 +2,7 @@
   <div>
     <div :style="getUserCoverBg" class="my-bg h-70" />
     <div
-      class="my-card relative mx-6 flex flex-col items-center rounded-2xl pb-2 shadow-xl -top-18"
+      class="my-card relative mx-6 flex flex-col items-center rounded-2xl pb-3 shadow-xl -top-18"
     >
       <van-image
         class="h-22 w-22 border-2 border-solid !absolute -top-10"
@@ -20,31 +20,31 @@
       </div>
       <van-divider class="w-full" />
 
-      <van-cell :border="false" title="个人信息" is-link to="/editUserInfo">
+      <van-cell :border="false" :title="$t('routes.my.settings')" is-link to="/editUserInfo">
         <template #icon>
           <i class="i-mingcute:idcard-fill mr-2 text-xl" />
         </template>
       </van-cell>
 
-      <van-cell :border="false" title="账号与安全" is-link to="/accountSetting">
+      <van-cell :border="false" :title="$t('routes.my.accountSetting')" is-link to="/accountSetting">
         <template #icon>
           <i class="i-material-symbols:account-box mr-2 text-xl" />
         </template>
       </van-cell>
 
-      <van-cell :border="false" title="主题设置" is-link to="/themeSetting">
+      <van-cell :border="false" :title="$t('layout.setting.sysTheme')" is-link to="/themeSetting">
         <template #icon>
           <i class="i-material-symbols:palette mr-2 text-xl" />
         </template>
       </van-cell>
 
-      <van-cell :border="false" title="隐私政策" is-link>
+      <van-cell :border="false" :title="$t('routes.my.privacy')" is-link>
         <template #icon>
           <i class="i-material-symbols:list-alt-rounded mr-2 text-xl" />
         </template>
       </van-cell>
 
-      <van-cell :border="false" title="退出登录" is-link @click="showLogoutAction = true">
+      <van-cell :border="false" :title="$t('routes.my.logonout')" is-link @click="showLogoutAction = true">
         <template #icon>
           <i class="i-solar:logout-3-bold mr-2 text-xl" />
         </template>
@@ -54,8 +54,8 @@
         v-model:show="showLogoutAction"
         teleport="body"
         :actions="logoutActions"
-        cancel-text="取消"
-        description="确认退出登录吗"
+        :cancel-text="$t('common.cancelText')"
+        :description="$t('routes.my.confirmLogout')"
         close-on-click-action
       />
     </div>
@@ -63,21 +63,25 @@
 </template>
 
 <script lang="ts" setup>
+import { computed, ref } from 'vue'
 import { showToast } from 'vant'
+import { useI18n } from 'vue-i18n'
 import { useUserStore } from '@/store/modules/user'
 
+const { t } = useI18n()
 const userStore = useUserStore()
+
 const showLogoutAction = ref(false)
 
 const { nickname, avatar, cover, sign } = userStore.getUserInfo
 
 const logoutActions = [
   {
-    name: '退出登录',
+    name: t('routes.my.logout'),
     color: '#ee0a24',
     callback: () => {
       userStore.Logout()
-      showToast('退出成功')
+      showToast(t('routes.my.logoutSuccess'))
     },
   },
 ]

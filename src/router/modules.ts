@@ -1,4 +1,5 @@
 import type { RouteRecordRaw } from 'vue-router'
+import { t } from '@/hooks/useI18n'
 
 const Layout = () => import('@/layout/index.vue')
 
@@ -9,7 +10,7 @@ const routeModuleList: Array<RouteRecordRaw> = [
     redirect: '/dashboard/index',
     component: Layout,
     meta: {
-      title: '主控台',
+      title: t('layout.footer.home'),
       icon: 'i-simple-icons:atlassian',
     },
     children: [
@@ -29,7 +30,7 @@ const routeModuleList: Array<RouteRecordRaw> = [
     redirect: '/message/index',
     component: Layout,
     meta: {
-      title: '图表',
+      title: t('layout.footer.chart'),
       icon: 'i-simple-icons:soundcharts',
     },
     children: [
@@ -49,7 +50,7 @@ const routeModuleList: Array<RouteRecordRaw> = [
     redirect: '/example/index',
     component: Layout,
     meta: {
-      title: '示例',
+      title: t('layout.footer.example'),
       icon: 'i-material-symbols:award-star',
     },
     children: [
@@ -69,7 +70,7 @@ const routeModuleList: Array<RouteRecordRaw> = [
     redirect: '/my/index',
     component: Layout,
     meta: {
-      title: '我的',
+      title: t('layout.footer.my'),
       icon: 'i-simple-icons:docsify',
     },
     children: [
@@ -90,7 +91,7 @@ const routeModuleList: Array<RouteRecordRaw> = [
     path: '/editUserInfo',
     name: 'EditUserInfo',
     meta: {
-      title: '编辑个人信息',
+      title: t('routes.my.editUserInfo'),
       innerPage: true,
     },
     component: () => import('@/views/my/EditUserInfo.vue'),
@@ -99,9 +100,9 @@ const routeModuleList: Array<RouteRecordRaw> = [
     path: '/editNickname',
     name: 'EditNickname',
     meta: {
-      title: '修改昵称(该页面已缓存)',
+      title: t('routes.my.editNickname'),
       innerPage: true,
-      keepAlive: true,
+      keepAlive: false,
     },
     component: () => import('@/views/my/EditNickname.vue'),
   },
@@ -109,7 +110,7 @@ const routeModuleList: Array<RouteRecordRaw> = [
     path: '/editSign',
     name: 'EditSign',
     meta: {
-      title: '修改签名',
+      title: t('routes.my.editSignature'),
       innerPage: true,
     },
     component: () => import('@/views/my/EditSign.vue'),
@@ -118,7 +119,7 @@ const routeModuleList: Array<RouteRecordRaw> = [
     path: '/accountSetting',
     name: 'AccountSetting',
     meta: {
-      title: '账号与安全',
+      title: t('routes.my.accountSetting'),
       innerPage: true,
     },
     component: () => import('@/views/my/AccountSetting.vue'),
@@ -127,7 +128,7 @@ const routeModuleList: Array<RouteRecordRaw> = [
     path: '/changePassword',
     name: 'ChangePassword',
     meta: {
-      title: '修改登录密码',
+      title: t('routes.my.changePassword'),
       innerPage: true,
     },
     component: () => import('@/views/my/ChangePassword.vue'),
@@ -136,7 +137,7 @@ const routeModuleList: Array<RouteRecordRaw> = [
     path: '/themeSetting',
     name: 'ThemeSetting',
     meta: {
-      title: '主题设置',
+      title: t('layout.setting.sysTheme'),
       innerPage: true,
     },
     component: () => import('@/views/my/ThemeSetting.vue'),

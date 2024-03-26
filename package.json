@@ -53,6 +53,7 @@
     "qs": "^6.11.2",
     "vant": "^4.8.1",
     "vue": "^3.3.13",
+    "vue-i18n": "^9.10.1",
     "vue-router": "4.2.5"
   },
   "devDependencies": {

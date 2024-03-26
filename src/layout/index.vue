@@ -1,7 +1,11 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
   <div class="h-screen flex flex-col">
-    <van-nav-bar v-if="getShowHeader" placeholder fixed :title="getTitle" />
+    <van-nav-bar v-if="getShowHeader" placeholder fixed>
+      <template #title>
+        <TitleI18n :title="getTitle" />
+      </template>
+    </van-nav-bar>
     <routerView class="flex-1 overflow-x-hidden">
       <template #default="{ Component, route }">
         <!--
@@ -27,7 +31,7 @@
         <template #icon>
           <i :class="menu.meta?.icon" />
         </template>
-        {{ menu.meta?.title }}
+        <TitleI18n :title="menu.meta?.title" />
       </van-tabbar-item>
     </van-tabbar>
   </div>
@@ -39,6 +43,7 @@ import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
 import { useRouteStore } from '@/store/modules/route'
+import { TitleI18n } from '@/components/title-i18n'
 
 const routeStore = useRouteStore()
 // 需要缓存的路由组件
