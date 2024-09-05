@@ -112,8 +112,8 @@
 
 本地环境需要安装 [Pnpm](https://www.pnpm.cn/)、[Node.js](http://nodejs.org/) 和 [Git](https://git-scm.com/)
 
-- 必须使用 [pnpm>=8.6.10](https://www.pnpm.cn/)，否则依赖可能安装不上。
-- [Node.js](http://nodejs.org/) 版本要求`18.x`以上，且不能为`13.x`版本，这里推荐 ` ^20.9.0 || >=21.1.0`。
+- 推荐使用 [pnpm>=8.15.4](https://www.pnpm.cn/)，否则依赖可能安装不上，打包报错等问题。
+- [Node.js](http://nodejs.org/) 版本要求`20.x`以上，这里推荐 `^20.9.0 || >=21.7.1`
 
 ## VS Code 配套插件
 
@@ -240,7 +240,13 @@ pnpm build
 本项目提交规范校验使用 [simple-git-hooks](https://github.com/toplenboren/simple-git-hooks) 作为 git hooks，使用 [cz-git](https://github.com/Zhengqbbb/cz-git) 作为 commitlint commitizen。
 
 > [!IMPORTANT]
-> 更改的代码若想要使用 Commitlint 规范提交需要将文件（放入暂存区） `git add` 后，控制台执行 `cz` 命令开启 cz-git CLI
+>
+> ```shell
+> # Global install commitizen CLI
+> npm install -g commitizen
+> ```
+>
+> 先全局安装 `commitizen` ，之后更改的代码若想要使用 Commitlint 规范提交需要将文件（放入暂存区） `git add` 后，控制台执行 `cz` 命令开启 cz-git CLI
 > 。若想直接执行 `git commit` 需要满足上面提交规范才能通过校验，否则将会被 Git Hook 打断提交
 
 simple-git-hooks 和 husky 都是用于管理 Git 钩子（Git hooks）的工具，但它们有一些区别：

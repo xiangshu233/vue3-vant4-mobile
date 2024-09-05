@@ -3,7 +3,7 @@
   "type": "module",
   "version": "2.1.0",
   "private": true,
-  "packageManager": "pnpm@8.6.10",
+  "packageManager": "pnpm@9.8.0",
   "author": {
     "name": "xiangshu233",
     "email": "xiangshu233@outlook.com",
@@ -18,8 +18,8 @@
     "url": "https://github.com/xiangshu233/vue3-vant4-mobile/issues"
   },
   "engines": {
-    "node": "^18.18.0 || ^20.9.0 || >=21.1.0",
-    "pnpm": ">=8.6.10"
+    "node": "^20.9.0 || >=21.7.1",
+    "pnpm": ">=8.15.4"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
