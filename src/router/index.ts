@@ -4,14 +4,14 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import { createRouterGuards } from './router-guards'
 import routeModuleList from './modules'
 import { ErrorPageRoute, LoginRoute, RootRoute } from '@/router/base'
-import { useRouteStoreWidthOut } from '@/store/modules/route'
+import { useRouteStoreWithOut } from '@/store/modules/route'
 
 // 菜单
 
 // 普通路由
 export const constantRouter: RouteRecordRaw[] = [LoginRoute, RootRoute, ErrorPageRoute]
 
-const routeStore = useRouteStoreWidthOut()
+const routeStore = useRouteStoreWithOut()
 
 routeStore.setMenus(routeModuleList)
 routeStore.setRouters(constantRouter.concat(routeModuleList))
