@@ -1,8 +1,8 @@
 import type { Router } from 'vue-router'
 import { isNavigationFailure } from 'vue-router'
 import NProgress from 'nprogress'
-import { useRouteStoreWidthOut } from '@/store/modules/route'
-import { useUserStoreWidthOut } from '@/store/modules/user'
+import { useRouteStoreWithOut } from '@/store/modules/route'
+import { useUserStoreWithOut } from '@/store/modules/user'
 import { ACCESS_TOKEN } from '@/store/mutation-types'
 import { storage } from '@/utils/Storage'
 import { PageEnum } from '@/enums/pageEnum'
@@ -19,7 +19,7 @@ export function createRouterGuards(router: Router) {
     // to: 即将要进入的目标
     // from: 当前导航正要离开的路由
     NProgress.start()
-    const userStore = useUserStoreWidthOut()
+    const userStore = useUserStoreWithOut()
 
     if (from.path === LOGIN_PATH && to.name === PageEnum.ERROR_PAGE_NAME) {
       next(PageEnum.BASE_HOME)
@@ -63,7 +63,7 @@ export function createRouterGuards(router: Router) {
       console.warn('failed navigation', failure)
     }
 
-    const routeStore = useRouteStoreWidthOut()
+    const routeStore = useRouteStoreWithOut()
     // 在这里设置需要缓存的组件名称
     const keepAliveComponents = routeStore.keepAliveComponents
     // 获取当前组件名

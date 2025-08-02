@@ -15,7 +15,7 @@ import { isString } from '@/utils/is/'
 import { deepMerge, isUrl } from '@/utils'
 import { setObjToUrlParams } from '@/utils/urlUtils'
 
-import { useUserStoreWidthOut } from '@/store/modules/user'
+import { useUserStoreWithOut } from '@/store/modules/user'
 
 import router from '@/router'
 import { storage } from '@/utils/Storage'
@@ -186,7 +186,7 @@ const transform: AxiosTransform = {
    */
   requestInterceptors: (config, options) => {
     // 请求之前处理config
-    const userStore = useUserStoreWidthOut()
+    const userStore = useUserStoreWithOut()
     const token = userStore.getToken
     if (token && (config as Recordable)?.requestOptions?.withToken !== false) {
       // jwt token
