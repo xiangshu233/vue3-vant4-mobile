@@ -14,6 +14,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router, { setupRouter } from './router'
 import { setupStore } from '@/store'
+import { setupViewportHeight } from '@/utils/viewportHeight'
 
 async function bootstrap() {
   const app = createApp(App)
@@ -21,6 +22,8 @@ async function bootstrap() {
   setupStore(app)
   // 挂载路由
   setupRouter(app)
+  // 设置视口高度处理
+  setupViewportHeight()
   await router.isReady()
   // 路由准备就绪后挂载APP实例
   app.mount('#app', true)
