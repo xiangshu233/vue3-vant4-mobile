@@ -14,6 +14,8 @@
 
 <h1 align="center">vue3-vant4-mobile</h1>
 
+<h3  align="center">（vercel 被刷了月度额度没有了所以网站预览暂时无法查看，只能等下月 vercel 重置了）</h3>
+
 ## Stargazers over time
 
 [![Stargazers over time](https://starchart.cc/xiangshu233/vue3-vant4-mobile.svg?variant=adaptive)](https://starchart.cc/xiangshu233/vue3-vant4-mobile)
