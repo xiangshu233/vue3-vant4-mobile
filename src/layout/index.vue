@@ -1,6 +1,6 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
-  <div class="h-screen flex flex-col">
+  <div class="h-[calc(100vh-var(--vh-offset,0px))] h-[100dvh] flex flex-col">
     <van-nav-bar v-if="getShowHeader" placeholder fixed :title="getTitle" />
     <routerView class="flex-1 overflow-x-hidden">
       <template #default="{ Component, route }">
