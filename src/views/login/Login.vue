@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="h-screen flex justify-center p-8">
+  <div class="login-page">
+    <div class="login-scroll px-8 pt-8">
       <div class="w-full flex flex-col">
         <LoginTitle />
         <LoginForm />
@@ -21,6 +21,22 @@ import LoginWave from './LoginWave.vue'
 </script>
 
 <style scoped lang="less">
+.login-page {
+  position: relative;
+  height: 100dvh;
+  overflow-y: auto;
+}
+
+.login-scroll {
+  min-height: 100%;
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 120px);
+  -webkit-overflow-scrolling: touch;
+}
+
+:deep(.wave-wrapper) {
+  pointer-events: none;
+}
+
 :deep(.van-field__left-icon) {
   display: flex;
 }
