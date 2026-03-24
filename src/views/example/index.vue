@@ -4,7 +4,7 @@
       <van-cell center title="🌓 暗黑模式">
         <template #right-icon>
           <i inline-block align-middle i="dark:carbon-moon carbon-sun" />
-          <span class="ml-2">{{ isDark ? 'Dark' : 'Light' }}</span>
+          <span class="mx-2">{{ isDark ? 'Dark' : 'Light' }}</span>
           <van-switch v-model="darkSwitch" size="22" />
         </template>
       </van-cell>

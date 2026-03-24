@@ -42,6 +42,7 @@ const keepAliveComponents = computed(() => routeStore.keepAliveComponents)
 
 const tabbarItems = [
   { label: 'Home', path: '/dashboard/index', icon: 'i-ph:house-line' },
+  { label: 'Example', path: '/example/index', icon: 'i-ph:flask' },
   { label: 'Search', path: '/message/index', icon: 'i-ph:magnifying-glass' },
   { label: 'User', path: '/my/index', icon: 'i-ph:user-circle' },
 ]

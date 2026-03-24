@@ -127,6 +127,7 @@ const toolbarColumns = computed(() => Math.max(1, navItems.value.length + (props
 const toolbarCssVars = computed(() => ({
   '--accent-color': designStore.appTheme,
   '--accent-soft-color': `${designStore.appTheme}33`,
+  '--toolbar-max-width': toolbarColumns.value >= 5 ? '430px' : '340px',
   'gridTemplateColumns': `repeat(${toolbarColumns.value}, 1fr)`,
 }))
 
@@ -291,7 +292,7 @@ onBeforeUnmount(() => {
 .floating-toolbar {
   pointer-events: auto;
   position: relative;
-  width: min(92vw, 340px);
+  width: min(94vw, var(--toolbar-max-width));
   height: 62px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -352,9 +353,9 @@ onBeforeUnmount(() => {
   position: absolute;
   left: 0;
   top: 50%;
-  width: 70px;
-  height: 44px;
-  margin-top: -22px;
+  width: 62px;
+  height: 38px;
+  margin-top: -19px;
   transition: transform 0.28s ease;
   pointer-events: none;
 }
@@ -411,7 +412,7 @@ onBeforeUnmount(() => {
   display: grid;
   place-items: center;
   color: rgba(255, 255, 255, 0.45);
-  font-size: 22px;
+  font-size: 20px;
   cursor: pointer;
   transition: color 0.25s ease;
 }
