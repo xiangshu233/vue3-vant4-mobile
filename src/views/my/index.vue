@@ -88,6 +88,11 @@ const getUserCoverBg = computed(() => {
 </script>
 
 <style lang="less" scoped>
+.my-page {
+  min-height: 100%;
+  padding-bottom: calc(110px + env(safe-area-inset-bottom));
+}
+
 .my-bg {
   clip-path: inset(0 -55% 0 -55% round 0 0 100% 100%);
   background-size: cover;

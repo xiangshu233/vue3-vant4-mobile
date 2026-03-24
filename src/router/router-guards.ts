@@ -15,29 +15,26 @@ const LOGIN_PATH = PageEnum.BASE_LOGIN
 const whitePathList = [LOGIN_PATH] // no redirect whitelist
 
 export function createRouterGuards(router: Router) {
-  router.beforeEach(async (to, from, next) => {
+  router.beforeEach(async (to, from) => {
     // to: 即将要进入的目标
     // from: 当前导航正要离开的路由
     NProgress.start()
     const userStore = useUserStoreWithOut()
 
     if (from.path === LOGIN_PATH && to.name === PageEnum.ERROR_PAGE_NAME) {
-      next(PageEnum.BASE_HOME)
-      return
+      return PageEnum.BASE_HOME
     }
 
     // Whitelist can be directly entered
     if (whitePathList.includes(to.path as PageEnum)) {
-      next()
-      return
+      return true
     }
 
     const token = storage.get(ACCESS_TOKEN)
 
     if (!token) {
       // redirect login page
-      next(LOGIN_PATH)
-      return
+      return LOGIN_PATH
     }
 
     // 当上次更新时间为空时获取用户信息
@@ -46,12 +43,11 @@ export function createRouterGuards(router: Router) {
         await userStore.GetUserInfo()
       }
       catch (err) {
-        next()
-        return
+        return true
       }
     }
 
-    next()
+    return true
   })
 
   // 进入某个路由之后触发的钩子

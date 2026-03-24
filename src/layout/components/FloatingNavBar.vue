@@ -62,7 +62,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useDark } from '@vueuse/core'
-import { useRoute, useRouter } from 'vue-router'
+import { NavigationFailureType, isNavigationFailure, useRoute, useRouter } from 'vue-router'
 import { useDesignSettingStore } from '@/store/modules/designSetting'
 
 interface NavItem {
@@ -188,8 +188,20 @@ function bindResizeObserver() {
   }
 }
 
+function normalizePath(path: string) {
+  return path.replace(/\/+$/, '') || '/'
+}
+
 function goNav(path: string) {
-  router.push(path)
+  // Avoid redundant navigation warnings when clicking current tab.
+  if (normalizePath(currentRoute.path) === normalizePath(path)) {
+    return
+  }
+  router.push(path).catch((err) => {
+    if (!isNavigationFailure(err, NavigationFailureType.duplicated)) {
+      throw err
+    }
+  })
 }
 
 function handleNavClick(index: number, path: string) {
