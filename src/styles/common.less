@@ -17,8 +17,8 @@ html.dark {
   }
 
   body {
-    background-color: #121212;
-    color: var(--van-text-color) !important;
+    background-color: #000000;
+    color: rgba(255, 255, 255, 0.9) !important;
   }
 }
 
@@ -93,15 +93,38 @@ a:hover {
 }
 
 html.light {
+  body {
+    background-color: #f5f6fa;
+  }
+
   .my-card {
     backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 70%);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(24, 39, 75, 0.1);
+    box-shadow: 0 4px 10px rgba(41, 58, 88, 0.05);
   }
 }
 
 html.dark {
   .my-card {
-    backdrop-filter: blur(10px);
-    background: rgba(30, 30, 30, 70%);
+    backdrop-filter: blur(12px);
+    background: rgba(18, 18, 18, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  .van-cell-group--inset {
+    margin: 16px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .van-cell-group--inset .van-cell {
+    background: rgba(18, 18, 18, 0.6);
+  }
+
+  .van-cell-group .van-cell::after {
+    border-color: rgba(255, 255, 255, 0.08);
   }
 }

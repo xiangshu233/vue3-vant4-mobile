@@ -1,14 +1,14 @@
 <template>
   <vanConfigProvider :theme="getDarkMode" :theme-vars="getThemeVars()">
-    <routerView v-slot="{ Component }">
+    <RouterView v-slot="{ Component }">
       <div class="absolute bottom-0 top-0 w-full overflow-hidden">
         <transition :name="getTransitionName" mode="out-in" appear>
-          <keep-alive v-if="keepAliveComponents" :include="keepAliveComponents">
+          <KeepAlive v-if="keepAliveComponents" :include="keepAliveComponents">
             <component :is="Component" />
-          </keep-alive>
+          </KeepAlive>
         </transition>
       </div>
-    </routerView>
+    </RouterView>
   </vanConfigProvider>
 </template>
 

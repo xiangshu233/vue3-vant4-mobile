@@ -33,8 +33,7 @@ interface LoginParams {
   password: string
 }
 
-export const useUserStore = defineStore({
-  id: 'app-user',
+export const useUserStore = defineStore('app-user', {
   state: (): IUserState => ({
     userInfo: null,
     token: undefined,

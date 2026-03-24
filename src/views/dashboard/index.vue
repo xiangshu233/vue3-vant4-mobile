@@ -1,8 +1,7 @@
 <template>
   <div class="h-screen flex flex-col items-center justify-center p-60px">
     <div class="wel-box w-full flex flex-col items-center justify-between">
-      <Logo class="!h-30 !w-30" />
-      <div class="text-darkBlue dark:text-garyWhite mb-4 mt-12 text-center text-2xl font-black">
+      <div class="page-title mb-4 mt-12 text-center">
         {{ title }}
       </div>
       <div class="mb-6 mt-4 w-full">
@@ -10,12 +9,12 @@
           <van-swipe-item
             v-for="(text, index) in getSwipeText"
             :key="index"
-            class="text-center text-gray-700 leading-relaxed dark:text-gray-400"
+            class="swipe-item text-center leading-relaxed"
           >
-            <p class="text-lg">
+            <p class="swipe-title">
               {{ text.title }}
             </p>
-            <p class="text-sm">
+            <p class="swipe-details">
               {{ text.details }}
             </p>
           </van-swipe-item>
@@ -28,7 +27,6 @@
 <script setup lang="ts">
 import { useDesignSettingStore } from '@/store/modules/designSetting'
 import { useGlobSetting } from '@/hooks/setting'
-import Logo from '@/components/Logo.vue'
 
 defineOptions({
   name: 'DashboardPage',
@@ -77,4 +75,56 @@ const getSwipeText = computed(() => {
 })
 </script>
 
-<style scoped lang="less"></style>
+<style scoped lang="less">
+.page-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+html.light .page-title {
+  color: #1a1a2e;
+}
+
+html.dark .page-title {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+html.light .page-title::after,
+html.dark .page-title::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  margin: 8px auto 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    v-bind('designStore.appTheme'),
+    transparent
+  );
+  border-radius: 1px;
+}
+
+.swipe-item {
+  padding: 0 8px;
+}
+
+html.light .swipe-title {
+  color: #333;
+}
+
+html.dark .swipe-title {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+html.light .swipe-details {
+  color: #666;
+}
+
+html.dark .swipe-details {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+}
+</style>

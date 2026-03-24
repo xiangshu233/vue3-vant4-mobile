@@ -69,16 +69,17 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       __APP_INFO__: JSON.stringify(__APP_INFO__),
     },
 
-    esbuild: {
-      // 使用 esbuild 压缩 剔除 console.log
-      drop: VITE_DROP_CONSOLE ? ['debugger', 'console'] : [],
-      // minify: true, // minify: true, 等于 minify: 'esbuild',
-    },
-
     build: {
       // 设置最终构建的浏览器兼容目标
       target: 'es2015',
-      minify: 'esbuild',
+      // Vite 8 的 oxc 不支持 drop 选项，按需切换到 terser 去除 console/debugger
+      minify: VITE_DROP_CONSOLE ? 'terser' : 'oxc',
+      terserOptions: {
+        compress: {
+          drop_console: VITE_DROP_CONSOLE,
+          drop_debugger: VITE_DROP_CONSOLE,
+        },
+      },
       // 构建后是否生成 source map 文件(用于线上报错代码报错映射对应代码)
       sourcemap: false,
       cssTarget: 'chrome80',
@@ -98,8 +99,8 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       reportCompressedSize: true,
       // chunk 大小警告的限制（以 kbs 为单位）
       chunkSizeWarningLimit: 2000,
-      // 自定义底层的 Rollup 打包配置
-      rollupOptions: {
+      // 自定义底层的 Rolldown 打包配置
+      rolldownOptions: {
         // 静态资源分类打包
         output: {
           chunkFileNames: 'js/[name]-[hash].js', // 引入文件名的名称

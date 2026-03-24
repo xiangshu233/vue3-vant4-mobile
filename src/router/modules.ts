@@ -10,7 +10,7 @@ const routeModuleList: Array<RouteRecordRaw> = [
     component: Layout,
     meta: {
       title: '主控台',
-      icon: 'i-simple-icons:atlassian',
+      icon: 'i-ph:house',
     },
     children: [
       {
@@ -30,7 +30,7 @@ const routeModuleList: Array<RouteRecordRaw> = [
     component: Layout,
     meta: {
       title: '图表',
-      icon: 'i-simple-icons:soundcharts',
+      icon: 'i-ph:chart-line',
     },
     children: [
       {
@@ -50,7 +50,7 @@ const routeModuleList: Array<RouteRecordRaw> = [
     component: Layout,
     meta: {
       title: '示例',
-      icon: 'i-material-symbols:award-star',
+      icon: 'i-ph:code',
     },
     children: [
       {
@@ -70,7 +70,7 @@ const routeModuleList: Array<RouteRecordRaw> = [
     component: Layout,
     meta: {
       title: '我的',
-      icon: 'i-simple-icons:docsify',
+      icon: 'i-ph:user',
     },
     children: [
       {

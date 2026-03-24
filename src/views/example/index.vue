@@ -1,12 +1,11 @@
 <template>
-  <div class="my-4">
+  <div class="example-page my-4 pb-24">
     <van-cell-group inset>
       <van-cell center title="🌓 暗黑模式">
         <template #right-icon>
           <i inline-block align-middle i="dark:carbon-moon carbon-sun" />
           <span class="ml-2">{{ isDark ? 'Dark' : 'Light' }}</span>
-          <span class="mx-2">{{ isDark }}</span>
-          <van-switch v-model="checked" size="22" @click="toggle()" />
+          <van-switch v-model="darkSwitch" size="22" />
         </template>
       </van-cell>
       <template v-for="item in menuItems" :key="item.route">
@@ -17,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { useDark, useToggle } from '@vueuse/core'
+import { useDark } from '@vueuse/core'
 import { useDesignSettingStore } from '@/store/modules/designSetting'
 
 const designStore = useDesignSettingStore()
@@ -25,16 +24,16 @@ const designStore = useDesignSettingStore()
 const isDark = useDark({
   valueDark: 'dark',
   valueLight: 'light',
+  disableTransition: false,
 })
 
-const checked = ref(isDark.value)
-
-const toggleDark = useToggle(isDark)
-
-function toggle() {
-  toggleDark()
-  designStore.setDarkMode(isDark.value ? 'dark' : 'light')
-}
+const darkSwitch = computed({
+  get: () => isDark.value,
+  set: (value: boolean) => {
+    isDark.value = value
+    designStore.setDarkMode(value ? 'dark' : 'light')
+  },
+})
 
 const menuItems = [
   { title: '🐗 keep-alive', route: '/editNickname' },

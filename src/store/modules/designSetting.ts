@@ -5,8 +5,7 @@ import type { DesignSettingState } from '@/settings/designSetting'
 
 const { darkMode, appTheme, appThemeList, isPageAnimate, pageAnimateType } = designSetting
 
-export const useDesignSettingStore = defineStore({
-  id: 'app-design-setting',
+export const useDesignSettingStore = defineStore('app-design-setting', {
   state: (): DesignSettingState => ({
     darkMode,
     appTheme,
@@ -41,13 +40,8 @@ export const useDesignSettingStore = defineStore({
   },
   // 持久化
   persist: {
-    enabled: true,
-    strategies: [
-      {
-        key: 'DESIGN-SETTING',
-        storage: localStorage,
-      },
-    ],
+    key: 'DESIGN-SETTING',
+    storage: localStorage,
   },
 })
 

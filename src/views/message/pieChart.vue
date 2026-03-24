@@ -1,5 +1,5 @@
 <template>
-  <div class="my-card m-40px rounded-2xl p-30px shadow-xl">
+  <div class="my-card m-16px rounded-2xl p-24px">
     <div ref="chartRef" :style="{ height: '350px' }" />
   </div>
 </template>
@@ -7,11 +7,16 @@
 <script setup lang="ts">
 import type { EChartsOption } from 'echarts'
 import { useECharts } from '@/hooks/web/useECharts'
+import { useDesignSettingStore } from '@/store/modules/designSetting'
 
 const chartRef = ref<HTMLDivElement | null>(null)
 const { setOptions } = useECharts(chartRef as Ref<HTMLDivElement>)
+const designStore = useDesignSettingStore()
+
+const chartColors = [designStore.appTheme, '#4a9eff', '#5dd9a8', '#ff9f7a', '#7ec8e3', '#b8a9e0']
 
 const chartOptions: EChartsOption = {
+  color: chartColors,
   tooltip: {
     trigger: 'item',
   },

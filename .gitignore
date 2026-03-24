@@ -23,4 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 /components.d.ts
-/components.d.ts
+.agents/
+skills-lock.json
